@@ -1,2 +1,3 @@
-import { fetchTrending } from './js/requests';
-fetchTrending();
+import { renderAll } from './js/common.js';
+
+renderAll();
