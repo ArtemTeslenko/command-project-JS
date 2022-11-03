@@ -1,0 +1,18 @@
+$colors: (
+  'white-text': #ffffff,
+  'orange-text': #ff6b08,
+  'secondary-text': #8c8c8c,
+  'footer-text': #545454,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+
+// ⬇️ ⬇️ ⬇️ Приклад використання ⬇️ ⬇️ ⬇️
+// .link {
+//   color: getColor('orange-text');
+// }
+
+$font-normal: 400;
+$font-bold: 500;
