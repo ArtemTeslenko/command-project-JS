@@ -1,0 +1,2 @@
+const t=document.querySelector("main");function e(e){return e.results.map((e=>t.insertAdjacentHTML("beforeend",`<div style="width: 300px"><img src="https://image.tmdb.org/t/p/w500/${e.poster_path}"/></div>`)))}function n(){fetch("https://api.themoviedb.org/3/trending/all/day?api_key=45074c10b8f2ea3914a60876b2d17a1a&page=1").then((t=>t.json())).then((t=>e(t)))}n();
+//# sourceMappingURL=index.07e0efd5.js.map
