@@ -1,0 +1,20 @@
+%common-btn {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  background-color: getColor('orange-btn');
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  @include transitions(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: #de5900;
+  }
+}
+
+// ⬇️ ⬇️ ⬇️ Приклад використання ⬇️ ⬇️ ⬇️
+// .button {
+//   @extend %common-btn;
+//   width: 120px;
+// }
