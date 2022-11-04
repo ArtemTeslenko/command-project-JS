@@ -2,7 +2,7 @@
 body {
   background-color: #e5e5e5;
   color: #000000;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -43,8 +43,7 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -58,14 +57,13 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  padding-top: 150px;
-  padding-left: 237px;
-  padding-right: 237px;
-  height: 558px;
-  width: 806px;
-  background-color: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 300px;
+  width: 280px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -81,7 +79,7 @@ img {
   top: 8px;
   right: 8px;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -122,7 +120,7 @@ img {
   position: relative;
 }
 .link--current::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -139,17 +137,14 @@ img {
   .page-header .container {
     padding-top: 40px;
     padding-bottom: 92px;
-    background-image: url('../../src/images/header_mob_all.jpg');
+    background-image: url("../../src/images/header_mob_all.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
 }
-@media screen and (min-width: 320px) and (min-device-pixel-ratio: 2),
-  screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-width: 320px) and (min-resolution: 192dpi),
-  screen and (min-width: 320px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 320px) and (min-device-pixel-ratio: 2), screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 320px) and (min-resolution: 192dpi), screen and (min-width: 320px) and (min-resolution: 2dppx) {
   .page-header .container {
-    background-image: url('../../src/images/header_mob_all@2x.jpg');
+    background-image: url("../../src/images/header_mob_all@2x.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -158,28 +153,22 @@ img {
   .page-header .container {
     padding-top: 45px;
     padding-bottom: 80px;
-    background-image: url('../../src/images/header_tabl_all.jpg');
+    background-image: url("../../src/images/header_tabl_all.jpg");
   }
 }
-@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-width: 768px) and (min-resolution: 192dpi),
-  screen and (min-width: 768px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .page-header .container {
-    background-image: url('../../src/images/header_tabl_all@2x.jpg');
+    background-image: url("../../src/images/header_tabl_all@2x.jpg");
   }
 }
 @media screen and (min-width: 1280px) {
   .page-header .container {
-    background-image: url('../../src/images/header_desk_all.jpg');
+    background-image: url("../../src/images/header_desk_all.jpg");
   }
 }
-@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
-  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-width: 1280px) and (min-resolution: 192dpi),
-  screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .page-header .container {
-    background-image: url('../../src/images/header_desk_all@2x.jpg');
+    background-image: url("../../src/images/header_desk_all@2x.jpg");
   }
 }
 
@@ -216,7 +205,7 @@ img {
 
 .header-logo__text {
   color: rgb(255, 255, 255);
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -230,7 +219,7 @@ img {
 
 .header-nav__menu {
   display: flex;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -271,7 +260,7 @@ img {
   outline: none;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -301,4 +290,4 @@ img {
   border: none;
   outline: none;
   background-color: transparent;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
