@@ -3,7 +3,8 @@ import { createFilmMarkup } from './render';
 import { cleanRender } from './customFunction/functionCleanRender';
 import { fetchFilmsTrends } from './requests';
 import { fetchGenreId } from './requests';
-let genreIdArr = [];
+
+export let genreIdArr = [];
 let page = 1;
 let totalPage;
 import { onClick } from './modal';
@@ -35,11 +36,11 @@ fetchFilmsTrends(page).then(response => {
   console.log(response.results);
 });
 
-export default function getGenreName(genre_ids) {
-  let genreName = [];
-  genre_ids.forEach(genre_id => {
-    console.log('ku', genreIdArr);
-    genreName.push(genreIdArr.find(genre => genre.id === genre_id).name);
-  });
-  return genreName;
-}
+// export default function getGenreName(genre_ids) {
+//   let genreName = [];
+//   genre_ids.forEach(genre_id => {
+//     console.log('ku', genreIdArr);
+//     genreName.push(genreIdArr.find(genre => genre.id === genre_id).name);
+//   });
+//   return genreName;
+// }

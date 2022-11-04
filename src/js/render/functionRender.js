@@ -1,4 +1,4 @@
-import getGenreName from '../common.js';
+import { getGenreName } from '../customFunction/getGenreName';
 
 export function createFilmMarkup(arrFilms) {
   return arrFilms
