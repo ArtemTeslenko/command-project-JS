@@ -3,7 +3,6 @@ import { getGenreName } from '../customFunction/getGenreName';
 export function createFilmMarkup(arrFilms) {
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path }) => {
-      console.log(original_title, release_date, genre_ids, poster_path);
       let genres = getGenreName(genre_ids);
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
@@ -29,12 +28,3 @@ export function createFilmMarkup(arrFilms) {
     })
     .join('');
 }
-// function getGenreName(genre_ids) {
-//   console.log('genre_ids', genre_ids);
-//   let genreName = [];
-//   genre_ids.forEach(genre_id => {
-//     console.log('ku', genreIdArr);
-//     genreName.push(genreIdArr.find(genre => genre.id === genre_id).name);
-//   });
-//   return genreName;
-// }
