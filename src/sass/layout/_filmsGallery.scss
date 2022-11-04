@@ -1,0 +1,120 @@
+.films-gallery-container {
+  padding-top: 20px;
+  //   padding-bottom: 20px;
+  margin-bottom: 40px;
+  @include tablet {
+    padding-top: 32px;
+    margin-bottom: 61px;
+  }
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+.films-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 20px;
+  //   justify-content: space-between;
+  @include tablet {
+    column-gap: 32px;
+    row-gap: 32px;
+  }
+  @include desktop {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+}
+.film-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 280px;
+  min-width: 280px;
+  // height: 443px;
+  @include tablet {
+    flex-basis: calc((100% - 32px) / 2);
+    // height: 494px;
+    width: 336px;
+    min-width: 336px;
+  }
+  @include desktop {
+    flex-basis: calc((100% - 32px) / 3);
+    // height: 634px;
+    // width: 395px;
+    // min-width: 395px;
+  }
+}
+.film-card__img-box {
+  width: 100%;
+  min-height: 402px;
+  height: 402px;
+  @include tablet {
+    min-height: 455px;
+    height: 455px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  @include desktop {
+    min-height: 574px;
+    height: 574px;
+  }
+}
+.film-card__link {
+  width: 100%;
+  height: 100%;
+}
+.film-card__img {
+  // object-fit: cover;
+  // height: 574px;
+  width: 100%;
+  height: 100%;
+}
+.film-card__info {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include tablet {
+    padding-top: 8px;
+  }
+  @include desktop {
+    padding-top: 12px;
+  }
+}
+// background: linear-gradient(0deg, #000000, #000000),
+//   linear-gradient(0deg, #ff6b08, #ff6b08);
+.film-card__name {
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  @include tablet {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+.film-card__data {
+  color: rgba(255, 107, 8, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  @include tablet {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}

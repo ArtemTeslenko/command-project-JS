@@ -1,1 +1,2 @@
-export * from './testRender';
+// export * from './testRender';
+export * from './functionRender';
