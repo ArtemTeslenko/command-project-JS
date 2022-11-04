@@ -1,2 +1,0 @@
-!function(){var t=document.querySelector("main");function n(n){return n.results.map((function(n){return t.insertAdjacentHTML("beforeend",(e=n.poster_path,'<div style="width: 300px"><img src="https://image.tmdb.org/t/p/w500/'.concat(e,'"/></div>')));var e}))}function e(){fetch("https://api.themoviedb.org/3/trending/all/day?api_key=".concat("45074c10b8f2ea3914a60876b2d17a1a","&page=1")).then((function(t){return t.json()})).then((function(t){return n(t)}))}e()}();
-//# sourceMappingURL=index.5ef4b090.js.map
