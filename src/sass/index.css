@@ -60,6 +60,19 @@ img {
   }
 }
 
+.link--current {
+  position: relative;
+}
+.link--current::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 0, 27);
+}
+
 .page-header .container {
   width: 100%;
   opacity: 0.95;
