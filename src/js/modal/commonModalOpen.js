@@ -4,10 +4,15 @@ const buttonClose=document.querySelector(".modal-button")
 const bodyEl=document.querySelector("body")
 
 
-function onClouseModal(el) {
+function onClouseModal(e) {
     backdropEl.classList.add("is-hidden")
-    
   }
+
+function onClouseModalBackdrop(e) {
+  if(e.target===e.currentTarget)
+  {backdropEl.classList.add("is-hidden")}
+  return
+  } 
 
 function onOpenModal(e) {
     e.preventDefault();
@@ -26,5 +31,5 @@ function creatKeydownEscape(e) {
 export function onClick(btn) {
   btn.addEventListener('click', onOpenModal)
   buttonClose.addEventListener('click', onClouseModal)
-  backdropEl.addEventListener("click", onClouseModal)
+  backdropEl.addEventListener("click", onClouseModalBackdrop)
 }
