@@ -2,7 +2,7 @@ import { getGenreName } from '../customFunction/getGenreName';
 
 export function createFilmMarkup(arrFilms) {
   return arrFilms
-    .map(({ original_title, release_date, genre_ids, poster_path }) => {
+    .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
       let genres = getGenreName(genre_ids);
 
       genres = genres.join(', ');
@@ -15,6 +15,7 @@ export function createFilmMarkup(arrFilms) {
         <img class="film-card__img"
           src="https://www.themoviedb.org/t/p/w500/${poster_path}"
           alt=""
+          id="${id}"
         />
         </a></div>
       
