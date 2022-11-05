@@ -1,0 +1,181 @@
+.page-header .container {
+  width: 100%;
+  opacity: 0.95; //???????? 0.9????
+  //   @media screen and (max-width: 320px)
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 92px;
+    background-image: url('../../src/images/header_mob_all.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      & {
+        background-image: url('../../src/images/header_mob_all@2x.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  //   @media screen and (min-width: 320px) and (max-width: 767px)
+  @include tablet {
+    padding-top: 45px;
+    padding-bottom: 80px;
+    // height: 216px;
+
+    background-image: url('../../src/images/header_tabl_all.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      & {
+        background-image: url('../../src/images/header_tabl_all@2x.jpg');
+        // background-size: cover;
+
+        // background-repeat: no-repeat;
+      }
+    }
+  }
+  @include desktop {
+    background-image: url('../../src/images/header_desk_all.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      & {
+        background-image: url('../../src/images/header_desk_all@2x.jpg');
+        // background-size: cover;
+
+        // background-repeat: no-repeat;
+      }
+    }
+  }
+}
+.header-nav {
+  display: flex;
+  margin-bottom: 54px;
+  align-items: center;
+  justify-content: space-between;
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+.header-logo {
+  display: flex;
+  //   margin-right: 113px;
+  align-items: center;
+  //   @include tablet {
+  //     margin-right: 387px;
+  //   }
+  //   @include desktop {
+  //     margin-right: 898px;
+  //   }
+}
+.header-logo__icon {
+  fill: white;
+
+  @include tablet {
+    margin-right: 8px;
+  }
+  @include desktop {
+    margin-right: 10px;
+  }
+}
+.header-logo__text {
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.17;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header-nav__menu {
+  display: flex;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17px;
+
+  text-transform: uppercase;
+}
+.header-nav__item .link {
+  //   display: flex;
+  //   padding-top: 32px;
+  //   padding-bottom: 32px;
+  color: rgba(255, 255, 255, 1);
+}
+.header-nav__item:not(:last-child) {
+  margin-right: 40px;
+}
+.search-form {
+  position: relative;
+  //   display: flex;
+  //   margin-bottom: 92px;
+  //   justify-content: center;
+  background-color: transparent;
+  width: 280px;
+  @include tablet {
+    margin: 0 auto;
+    width: 336px;
+  }
+  @include desktop {
+    width: 394px;
+  }
+}
+.search-form__input {
+  border: none;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 1);
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  // -webkit-appearance: none;
+  // -webkit-border-radius: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.17;
+  color: rgba(255, 255, 255, 1);
+  &::placeholder {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+// .search-form__icon {
+//   position: absolute;
+//   right: 0;
+//   bottom: 6px;
+//   cursor: pointer;
+// }
+.search-form__btn {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
