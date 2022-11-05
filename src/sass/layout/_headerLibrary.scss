@@ -1,0 +1,69 @@
+.header-btn__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.header-btn {
+  display: block;
+
+  width: 152px;
+  height: 44px;
+
+  background: rgba(0, 0, 0, 0.56);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+
+  @include mobile {
+    width: 129.53px;
+    height: 44px;
+  }
+
+  @include tablet {
+    width: 152px;
+    height: 44px;
+  }
+
+  @include desktop {
+    width: 148px;
+    height: 42px;
+  }
+}
+
+.header-btn__watched {
+  margin-right: 16px;
+
+  @include mobile {
+    margin-right: 20px;
+  }
+
+  @include tablet {
+    margin-right: 32px;
+  }
+
+  @include desktop {
+    margin-right: 16px;
+  }
+}
+
+.header-btn__watched,
+.header-btn__queue {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.header-btn:hover,
+.header-btn:focus,
+.header-btn:active {
+  background: #ff6b01;
+  box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+  border-radius: 5px;
+}
