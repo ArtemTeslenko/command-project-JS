@@ -4,6 +4,9 @@ export function createFilmMarkup(arrFilms) {
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path }) => {
       let genres = getGenreName(genre_ids);
+
+      genres = genres.join(', ');
+
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
       return `<div class="film-card">
