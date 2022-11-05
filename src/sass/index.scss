@@ -1,10 +1,12 @@
 @import './common';
 @import './base/reset';
 @import './utils/variables';
-@import './commonModal';
 @import './utils/mixin';
 @import './components/container';
-@import './components/current-link';
-@import './layout/header-home';
 @import './layout/filmsGallery';
 @import './utils/commonBtn';
+@import './components/container';
+@import './layout/commonModal';
+@import './components/currentLink';
+@import './layout/headerHome';
+@import './utils/footer';
