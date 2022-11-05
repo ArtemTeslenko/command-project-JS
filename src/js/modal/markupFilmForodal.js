@@ -1,19 +1,19 @@
-// import { fetchFilms } from "./fetchFilms";
+import { fetchFilmId } from "./fetchFilmId";
+let id
 
-// function onFilmFromId(e){
-//     e.preventDefault();
+function testFetchFilmId(e){
+ 
+    // console.log("id film", e.target.id);
+    // id=e.target.id;
+    id = 436270
   
-//     backdropEl.classList.remove("is-hidden");
-  
-//     console.log("id film", e.target.id);
-//     id=e.target.id;
-  
-//     fetchFilmId(page,id).then(respons => {
-//       console.log("respons_film 2", respons);
-//      return
-//     }) 
-//    }
+    fetchFilmId(id).then(respons => {
+      console.log("respons_film 2", respons);
+     return
+    }) 
+   }
 
-// export function onFindFilmForClick(){
-//     galleryEl.addEventListener('click', onFilmFromId)
-// }
+export function testOnClickFetchFilmId(btn) {
+  btn.addEventListener('click', testFetchFilmId);
+}
+   
