@@ -6,7 +6,6 @@ import { trendsControls } from './controls';
 const buttonTestEl = document.querySelector('.test');
 export function renderAll() {
   // fetchTrending();
-  onClick();
   trendsControls();
   onClick(buttonTestEl);
   renderBtnModalFilm();
