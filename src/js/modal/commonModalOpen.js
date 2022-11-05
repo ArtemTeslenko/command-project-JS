@@ -2,6 +2,8 @@ const backdropEl =document.querySelector(".backdrop")
 const buttonTestEl=document.querySelector(".test")
 const buttonClose=document.querySelector(".modal-button")
 const bodyEl=document.querySelector("body")
+const footerBtn = document.querySelector(".footer__btn")
+
 
 
 function onClouseModal(e) {
@@ -32,4 +34,5 @@ export function onClick(btn) {
   btn.addEventListener('click', onOpenModal)
   buttonClose.addEventListener('click', onClouseModal)
   backdropEl.addEventListener("click", onClouseModalBackdrop)
+  
 }
