@@ -1,1 +1,1 @@
-import { refs } from './js/reference/libraryRefs';
+import { refs } from './js/reference/libraryRefs.js';
