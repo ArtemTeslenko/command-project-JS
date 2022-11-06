@@ -1,36 +1,41 @@
 // import { testOnClickFetchFilmId } from '../modal'
+import { refs } from '../../js/reference/homeRefs';
 import { FetchFilmId } from '../modal';
 import { clianFilmCard } from './markupFilmForodal';
 
-const backdropEl = document.querySelector('.backdrop');
-const buttonTestEl = document.querySelector('.test');
-const buttonClose = document.querySelector('.modal__button');
-const bodyEl = document.querySelector('body');
-const mainEl = document.querySelector('main');
 let filmCardLink = 0;
 let filmCardLinkId = 0;
 
+
 function onClouseModal(e) {
-  backdropEl.classList.add('is-hidden');
+  refs.backdropEl.classList.add('is-hidden');
+  refs.bodyNoScrollEl.classList.remove('no-scroll');
   clianFilmCard();
 }
 
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
-    backdropEl.classList.add('is-hidden');
+    refs.backdropEl.classList.add('is-hidden');
+    refs.bodyNoScrollEl.classList.remove('no-scroll');
   }
   return;
 }
 
 function onOpenModal(e) {
-  // e.preventDefault();
-  backdropEl.classList.remove('is-hidden');
-  bodyEl.addEventListener('keydown', creatKeydownEscape);
+  refs.backdropEl.classList.remove('is-hidden');
+  refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
+
+  refs.bodyNoScrollEl.classList.toggle('no-scroll');
+  // // ----------
+  // window.addEventListener('scroll', e => {
+  //   window.scrollTo(0, 0);
+  // });
+  // //------------
 
   function creatKeydownEscape(e) {
     if (e.code === 'Escape') {
-      backdropEl.classList.add('is-hidden');
-      bodyEl.removeEventListener('keydown', creatKeydownEscape);
+      refs.backdropEl.classList.add('is-hidden');
+      refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
     }
   }
 }
@@ -39,19 +44,20 @@ function onEventListenerClick(e) {
   e.preventDefault();
   filmCardLink = e.target;
   filmCardLinkId = e.target.id;
-
-  FetchFilmId(filmCardLinkId);
-  onOpenModal(filmCardLink);
+  if (filmCardLink !== e.currentTarget) {
+    FetchFilmId(filmCardLinkId);
+    onOpenModal(filmCardLink);
+  }
 }
 
 export function onClick(btn) {
   btn.addEventListener('click', onOpenModal);
-  buttonClose.addEventListener('click', onClouseModal);
-  backdropEl.addEventListener('click', onClouseModalBackdrop);
+  refs.buttonCloseEl.addEventListener('click', onClouseModal);
+  refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
 }
 
 export function onOpenModalFilm(e) {
-  mainEl.addEventListener('click', onEventListenerClick);
-  buttonClose.addEventListener('click', onClouseModal);
-  backdropEl.addEventListener('click', onClouseModalBackdrop);
+  refs.mainEl.addEventListener('click', onEventListenerClick);
+  refs.buttonCloseEl.addEventListener('click', onClouseModal);
+  refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
 }
