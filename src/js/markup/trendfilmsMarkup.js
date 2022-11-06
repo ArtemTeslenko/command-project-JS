@@ -5,6 +5,10 @@ export function createFilmMarkup(arrFilms) {
     .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
       let genres = getGenreName(genre_ids);
 
+      if (genres.length > 2) {
+        genres = genres.slice(0, 2);
+        genres.push('Other');
+      }
       genres = genres.join(', ');
 
       const date = new Date(release_date);
