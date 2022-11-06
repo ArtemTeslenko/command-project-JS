@@ -1,6 +1,5 @@
-import { renderAll } from './js/common.js';
+import { trendsControls } from './js/controls';
+import { onOpenModalFilm } from './js/modal';
 
-renderAll();
-
-const btnWatchedEl = document.querySelector('.header-btn__watched');
-console.log(btnWatchedEl);
+trendsControls();
+onOpenModalFilm();
