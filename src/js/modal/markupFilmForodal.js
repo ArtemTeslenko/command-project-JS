@@ -1,7 +1,7 @@
 import { fetchFilmId } from './fetchFilmId';
 import { markupBtnModalFilm } from '../markup';
 
-let film = "";
+let film = {};
 const modalCardEl = document.querySelector('.modal-card');
 
 export async function FetchFilmId(id) {
@@ -13,9 +13,9 @@ export async function FetchFilmId(id) {
   console.log('return', film);
 
   const marcup = markupBtnModalFilm(film);
-  return modalCardEl.innerHTML = marcup;
+  return (modalCardEl.innerHTML = marcup);
 }
 
 export function clianFilmCard() {
-  return modalCardEl.innerHTML = "";
+  return (modalCardEl.innerHTML = '');
 }
