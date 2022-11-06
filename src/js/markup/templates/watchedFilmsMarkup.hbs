@@ -12,14 +12,15 @@
       <h2 class='film-card__name film-card__item'>
         {{title}}
       </h2>
-      <p class='film-card__data film-card__item'>
-        {{genre_ids}}
-        |
-        {{release_date}}
-      </p>
-      <p class='film-card__data film-card__item'>
-        {{vote_average}}
-      </p>
+      <div class='film-card-wrap'>
+        <p class='film-card__data film-card__item'>
+          {{genre_ids}}
+          |
+          {{release_date}}
+        </p>
+        <p class='film-card__average'>
+          {{vote_average}}
+        </p></div>
     </div>
   </div>
 {{/each}}

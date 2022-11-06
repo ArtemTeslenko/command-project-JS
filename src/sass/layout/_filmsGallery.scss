@@ -109,3 +109,28 @@
     line-height: 1.2;
   }
 }
+
+.film-card-wrap {
+  display: flex;
+  flex-direction: row;
+}
+.film-card__average {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  width: 36px;
+  height: 16px;
+  color: #ffffff;
+  background: #ff6b01;
+  border-radius: 5px;
+  @include desktop {
+    width: 40px;
+    height: 20px;
+  }
+}
