@@ -1,0 +1,25 @@
+{{#each this}}
+  <div class='film-card'>
+    <div class='film-card__img-box'>
+      <a class='film-card__link link' href=''>
+        <img
+          class='film-card__img'
+          src='{{poster_path}}'
+          alt='{{title}}'
+          loading='lazy'
+        /></a></div>
+    <div class='film-card__info'>
+      <h2 class='film-card__name film-card__item'>
+        {{title}}
+      </h2>
+      <p class='film-card__data film-card__item'>
+        {{genres}}
+        |
+        {{release_date}}
+      </p>
+      <p class='film-card__data film-card__item'>
+        {{vote_average}}
+      </p>
+    </div>
+  </div>
+{{/each}}
