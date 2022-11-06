@@ -1,11 +1,18 @@
+// import { testOnClickFetchFilmId } from '../modal'
+import { FetchFilmId } from '../modal';
+import { clianFilmCard } from './markupFilmForodal';
+
 const backdropEl = document.querySelector('.backdrop');
 const buttonTestEl = document.querySelector('.test');
-const buttonClose = document.querySelector('.modal-button');
+const buttonClose = document.querySelector('.modal__button');
 const bodyEl = document.querySelector('body');
-const footerBtn = document.querySelector('.footer__btn');
+const mainEl = document.querySelector('main');
+let filmCardLink = 0;
+let filmCardLinkId = 0;
 
 function onClouseModal(e) {
   backdropEl.classList.add('is-hidden');
+  clianFilmCard();
 }
 
 function onClouseModalBackdrop(e) {
@@ -16,9 +23,8 @@ function onClouseModalBackdrop(e) {
 }
 
 function onOpenModal(e) {
-  e.preventDefault();
+  // e.preventDefault();
   backdropEl.classList.remove('is-hidden');
-
   bodyEl.addEventListener('keydown', creatKeydownEscape);
 
   function creatKeydownEscape(e) {
@@ -29,8 +35,23 @@ function onOpenModal(e) {
   }
 }
 
+function onEventListenerClick(e) {
+  e.preventDefault();
+  filmCardLink = e.target;
+  filmCardLinkId = e.target.id;
+
+  FetchFilmId(filmCardLinkId);
+  onOpenModal(filmCardLink);
+}
+
 export function onClick(btn) {
   btn.addEventListener('click', onOpenModal);
+  buttonClose.addEventListener('click', onClouseModal);
+  backdropEl.addEventListener('click', onClouseModalBackdrop);
+}
+
+export function onOpenModalFilm(e) {
+  mainEl.addEventListener('click', onEventListenerClick);
   buttonClose.addEventListener('click', onClouseModal);
   backdropEl.addEventListener('click', onClouseModalBackdrop);
 }

@@ -1,19 +1,21 @@
-// import { fetchFilms } from "./fetchFilms";
+import { fetchFilmId } from './fetchFilmId';
+import { markupBtnModalFilm } from '../markup';
 
-// function onFilmFromId(e){
-//     e.preventDefault();
-  
-//     backdropEl.classList.remove("is-hidden");
-  
-//     console.log("id film", e.target.id);
-//     id=e.target.id;
-  
-//     fetchFilmId(page,id).then(respons => {
-//       console.log("respons_film 2", respons);
-//      return
-//     }) 
-//    }
+let film = {};
+const modalCardEl = document.querySelector('.modal-card');
 
-// export function onFindFilmForClick(){
-//     galleryEl.addEventListener('click', onFilmFromId)
-// }
+export async function FetchFilmId(id) {
+  await fetchFilmId(id).then(respons => {
+    film = respons;
+    return film;
+  });
+
+  console.log('return', film);
+
+  const marcup = markupBtnModalFilm(film);
+  return (modalCardEl.innerHTML = marcup);
+}
+
+export function clianFilmCard() {
+  return (modalCardEl.innerHTML = '');
+}
