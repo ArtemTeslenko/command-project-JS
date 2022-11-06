@@ -1,14 +1,11 @@
 import { fetchFilmId } from './fetchFilmId';
 import { markupBtnModalFilm } from '../markup';
 
-let film;
+let film = "";
 const modalCardEl = document.querySelector('.modal-card');
 
-export async function testFetchFilmId(id) {
+export async function FetchFilmId(id) {
   await fetchFilmId(id).then(respons => {
-    console.log('respons_film 2', respons);
-    console.log('respons.title', respons.title);
-    console.log('film.poster_path', respons.original_title);
     film = respons;
     return film;
   });
@@ -17,13 +14,8 @@ export async function testFetchFilmId(id) {
 
   const marcup = markupBtnModalFilm(film);
   return modalCardEl.innerHTML = marcup;
-  //----
-  // const MarkUpFilmId = markupBtnModalFilm(respons);
-  // modalEl.insertAdjacentHTML('beforeend', MarkUpFilmId);
-  //---------------
 }
-// ----------
-// export function testOnClickFetchFilmId(btn) {
-//   btn.addEventListener('click', testFetchFilmId);
-// }
-// ------------
+
+export function clianFilmCard() {
+  return modalCardEl.innerHTML = "";
+}

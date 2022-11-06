@@ -1,17 +1,19 @@
 // import { testOnClickFetchFilmId } from '../modal'
-import { testFetchFilmId } from "../modal";
+import { FetchFilmId } from "../modal";
+import { clianFilmCard } from './markupFilmForodal';
 
 const backdropEl =document.querySelector(".backdrop")
 const buttonTestEl=document.querySelector(".test")
 const buttonClose=document.querySelector(".modal__button")
 const bodyEl=document.querySelector("body")
 const mainEl = document.querySelector('main')
-let filmCardLink
-let filmCardLinkId
+let filmCardLink = 0;
+let filmCardLinkId = 0;
 
 
 function onClouseModal(e) {
-    backdropEl.classList.add("is-hidden")
+  backdropEl.classList.add("is-hidden")
+  clianFilmCard();
   }
 
 function onClouseModalBackdrop(e) {
@@ -35,14 +37,10 @@ function creatKeydownEscape(e) {
 
 function onEventListenerClick(e) {
   e.preventDefault();
-
-  console.log('e.targete',e.target);
-  console.log('e.targete.id',e.target.id);
   filmCardLink = e.target;
   filmCardLinkId = e.target.id
 
-  testFetchFilmId(filmCardLinkId) 
-  // testOnClickFetchFilmId(filmCardLink); 
+  FetchFilmId(filmCardLinkId) 
   onOpenModal(filmCardLink);
 }
 
@@ -52,7 +50,7 @@ export function onClick(btn) {
   backdropEl.addEventListener("click", onClouseModalBackdrop)
 }
 
-export function onOupenModalFilm(e) {
+export function onOpenModalFilm(e) {
   mainEl.addEventListener('click',onEventListenerClick)
   buttonClose.addEventListener('click', onClouseModal)
   backdropEl.addEventListener("click", onClouseModalBackdrop)
