@@ -14,13 +14,13 @@ export function createFilmMarkup(arrFilms) {
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
       return `<div class="film-card">
-      <a class="film-card__link link" href="">
+      <a class="film-card__link link" href="" id="${id}">
       <div class="film-card__img-box">
         
         <img class="film-card__img"
           src="https://www.themoviedb.org/t/p/w500/${poster_path}"
           alt=""
-          id="${id}"
+          
         />
         </div>
       

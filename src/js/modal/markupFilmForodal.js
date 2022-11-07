@@ -10,8 +10,6 @@ export async function FetchFilmId(id) {
     return film;
   });
 
-  console.log('return', film);
-
   const marcup = markupBtnModalFilm(film);
   return (modalCardEl.innerHTML = marcup);
 }
