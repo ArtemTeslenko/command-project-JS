@@ -1,0 +1,29 @@
+// .scroll-up {
+//   width: 130px;
+
+// }
+
+#scrollTop {
+  width: 70px;
+  position: fixed;
+  bottom: 100px;
+  right: 70px;
+  z-index: 9999;
+
+  transition: all 200ms linear;
+}
+
+.isHiddenBtn {
+  opacity: 0;
+  transition: all 200ms linear;
+}
+
+.arrow-up {
+  cursor: pointer;
+}
+
+// .scroll-up {
+//   width: 132px;
+//   height: 132px;
+//   fill: #ff6b02;
+// }
