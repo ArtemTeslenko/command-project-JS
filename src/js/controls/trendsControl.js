@@ -9,7 +9,7 @@ import { paginationRender } from '../customFunction/pagination';
 export let genreIdArr = [];
 
 //-----------
-//-----------
+
 export function trendsControls() {
   let page = 1;
 
@@ -18,8 +18,11 @@ export function trendsControls() {
       genreIdArr = genreId.genres;
     })
     .catch(error => console.log(error));
+  //------
 
-  //----------
+  fetchMovies(page);
+
+  //-----------
   function fetchMovies(page) {
     fetchFilms(page, 'movie', 'week').then(data => {
       const destinationEl = refs.galleryEl;
@@ -45,6 +48,4 @@ export function trendsControls() {
 
     fetchMovies(e.target.dataset.page);
   });
-
-  fetchMovies(page);
 } // не трогать
