@@ -5,4 +5,7 @@ export const refs = {
   bodyEl: document.querySelector('body'),
   mainEl: document.querySelector('main'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
+  //------ Ganna K ------
+  galleryEl: document.querySelector('.films-gallery'),
+  paginationEl: document.querySelector('.pagination'),
 };

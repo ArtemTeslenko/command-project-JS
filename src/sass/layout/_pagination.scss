@@ -1,0 +1,110 @@
+.pagination__cont {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include tablet {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+  //453px
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.btn--decrement,
+.btn--increment {
+  cursor: pointer;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  outline: 1px solid green;
+
+  background-color: rgba(247, 247, 247, 1);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn--decrement {
+  margin-right: 6px;
+
+  @include tablet {
+    margin-right: 16px;
+  }
+}
+.pagination__icon {
+  color: black;
+}
+.pagination__wrap {
+  display: flex;
+  justify-content: center;
+}
+.btn--increment {
+  margin-left: 6px;
+
+  @include tablet {
+    margin-left: 16px;
+  }
+}
+.pagination__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // gap: 16px;
+}
+.pagination__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+  // font-family: 'Roboto';
+  // font-style: normal;
+  // font-weight: 500;
+  // font-size: 12px;
+  // line-height: 1.14;
+}
+.pagination__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: rgba(0, 0, 0, 1);
+}
+// .pagination__item:not(:last-child) {
+//   margin-right: 16px;
+// }
+.pagination__item--active {
+  background-color: rgba(255, 107, 8, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+}
+.item--hidden-mob--1 .item6,
+.item--hidden-mob--1 .item7,
+.item--hidden-mob--1 .item8,
+.item--hidden-mob--1 .item9,
+.item--hidden-mob--2 .item1,
+.item--hidden-mob--2 .item2,
+.item--hidden-mob--2 .item8,
+.item--hidden-mob--2 .item9,
+.item--hidden-mob--3 .item1,
+.item--hidden-mob--3 .item2,
+.item--hidden-mob--3 .item3,
+.item--hidden-mob--3 .item4 {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
