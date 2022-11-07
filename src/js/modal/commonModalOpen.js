@@ -1,11 +1,8 @@
 // import { testOnClickFetchFilmId } from '../modal'
 import { refs } from '../../js/reference/homeRefs';
+import { refs } from '../../js/reference/libraryRefs';
 import { FetchFilmId } from '../modal';
 import { clianFilmCard } from './markupFilmForodal';
-
-let filmCardLink = 0;
-let filmCardLinkId = 0;
-
 
 function onClouseModal(e) {
   refs.backdropEl.classList.add('is-hidden');
@@ -26,14 +23,13 @@ function onOpenModal(e) {
   refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
 
   refs.bodyNoScrollEl.classList.toggle('no-scroll');
-  // // ----------
-  // window.addEventListener('scroll', e => {
-  //   window.scrollTo(0, 0);
-  // });
-  // //------------
 
+  refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
+  refs.buttonCloseEl.addEventListener('click', onClouseModal);
   function creatKeydownEscape(e) {
-    if (e.code === 'Escape') {
+    {
+      if (e.code === 'Escape') {
+      }
       refs.backdropEl.classList.add('is-hidden');
       refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
     }
@@ -42,22 +38,16 @@ function onOpenModal(e) {
 
 function onEventListenerClick(e) {
   e.preventDefault();
-  filmCardLink = e.target;
-  filmCardLinkId = e.target.id;
-  if (filmCardLink !== e.currentTarget) {
-    FetchFilmId(filmCardLinkId);
-    onOpenModal(filmCardLink);
+   if (e.target.closest('.film-card__link')) {
+    FetchFilmId(e.target.closest('.film-card__link').id);
+    onOpenModal();
   }
 }
 
 export function onClick(btn) {
   btn.addEventListener('click', onOpenModal);
-  refs.buttonCloseEl.addEventListener('click', onClouseModal);
-  refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
 }
 
-export function onOpenModalFilm(e) {
-  refs.mainEl.addEventListener('click', onEventListenerClick);
-  refs.buttonCloseEl.addEventListener('click', onClouseModal);
-  refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
+export function onOpenModalFilm() {
+  refs.filmsGalleryEl.addEventListener('click', onEventListenerClick);
 }
