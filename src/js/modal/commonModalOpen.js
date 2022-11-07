@@ -25,16 +25,17 @@ function creatKeydownEscape(e) {
   {
     if (e.code === 'Escape') {
     }
+    refs.bodyNoScrollEl.classList.remove('no-scroll');
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
   }
 }
 
-// відкриває і закриває модалку 
+// відкриває і закриває модалку
 function onOpenModal(e) {
   refs.backdropEl.classList.remove('is-hidden');
   refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
-  refs.bodyNoScrollEl.classList.toggle('no-scroll');
+  refs.bodyNoScrollEl.classList.add('no-scroll');
   refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
   refs.buttonCloseEl.addEventListener('click', onClouseModal);
 }
