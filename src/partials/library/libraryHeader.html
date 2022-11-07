@@ -1,2 +1,27 @@
-<a href="./index.html">Home</a>
-<a href="#">My library</a>
+<header class="page-header__lib">
+  <div class="container">
+    <nav class="header-nav">
+      <a class="header-logo link" href="./index.html">
+        <svg class="header-logo__icon" width="24" height="24">
+          <use href="./images/icons.svg#icon-film"></use>
+        </svg>
+        <span class="header-logo__text">Filmoteka</span>
+      </a>
+      <ul class="header-nav__menu list">
+        <li class="header-nav__item">
+          <a class="link" href="./index.html">HOME</a>
+        </li>
+        <li class="header-nav__item">
+          <a class="link link--current" href="./library.html">MY LIBRARY</a>
+          <!-- &nbsp -->
+        </li>
+      </ul>
+    </nav>
+    <div class="header-btn__wrapper">
+      <button class="header-btn header-btn__watched" type="button">
+        Watched
+      </button>
+      <button class="header-btn header-btn__queue" type="button">Queue</button>
+    </div>
+  </div>
+</header>
