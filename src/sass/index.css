@@ -431,8 +431,8 @@ img {
 .btn--increment {
   cursor: pointer;
   display: flex;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   justify-content: center;
   align-items: center;
   outline: none;
@@ -440,6 +440,13 @@ img {
   background-color: rgb(247, 247, 247);
   border: none;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .btn--decrement,
+.btn--increment {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .btn--decrement {
@@ -483,8 +490,14 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
+}
+@media screen and (min-width: 768px) {
+  .pagination__item {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .pagination__link {

@@ -4,5 +4,5 @@ import { onOpenModalFilm } from './js/modal';
 import { scrollToTop } from './js/controls';
 
 trendsControls();
-// onOpenModalFilm();
+onOpenModalFilm();
 scrollToTop();

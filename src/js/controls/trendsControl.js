@@ -42,7 +42,7 @@ export function trendsControls() {
   refs.paginationEl.addEventListener('click', e => {
     e.preventDefault();
     cleanRender(refs.galleryEl);
-    console.log('e', e.target.dataset.page);
+
     fetchMovies(e.target.dataset.page);
   });
 
