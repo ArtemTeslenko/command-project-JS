@@ -8,11 +8,18 @@ export function markupBtnModalFilm(film) {
     />
     <div class="modal-card__info">
      <h2>${film.title}</h2>
-     <ul>
-       <li class="list">Vote/Votes <div><span>${film.vote_average}</span>/<span>${film.vote_count}</span></div></li>
-       <li class="list">Popularity <span>${film.popularity}</span></li>
-       <li class="list">Original Title <span>${film.original_title}</span></li>
+     <div class="table">
+     <ul class="table__parametr">
+       <li class="list">Vote/Votes </li>
+       <li class="list">Popularity </li>
+       <li class="list">Original Title </li>
      </ul>
+         <ul class="table__value">
+       <li class="list"><span>${film.vote_average}</span>/<span>${film.vote_count}</span></li>
+       <li class="list">${film.popularity}</li>
+       <li class="list">${film.original_title}</li>
+     </ul>
+     </div>
      <p>
        <h3>About</h3>
        <div>${film.overview}</div>
