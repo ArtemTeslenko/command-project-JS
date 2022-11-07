@@ -4,13 +4,14 @@ import { refs } from '../../js/reference/libraryRefs';
 import { FetchFilmId } from '../modal';
 import { clianFilmCard } from './markupFilmForodal';
 
-
-function onClouseModal(e) {
+// функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()
+function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
   clianFilmCard();
 }
 
+// функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
@@ -18,6 +19,8 @@ function onClouseModalBackdrop(e) {
   }
   return;
 }
+
+// функція закриває модалку по кліку на Escape
 function creatKeydownEscape(e) {
   {
     if (e.code === 'Escape') {

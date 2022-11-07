@@ -110,11 +110,17 @@
   line-height: 1.15;
   margin-bottom: 20px;
 }
+.table {
+  margin-bottom: 20px;
+}
 .table__parametr {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   color: getColor('secondary-text');
+}
+.table__parametr-list:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .table__value {
@@ -122,17 +128,48 @@
   font-size: 12px;
   line-height: 1.17;
 }
+.table__value-list:not(:last-child) {
+  margin-bottom: 8px;
+}
 
+.table-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
 .table__span-value {
   width: 36px;
   height: 16px;
   left: 148px;
   top: 488px;
+  margin-right: 1px;
 
-  background: #ff6b01;
+  background: getColor('orange-btn');
   border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
+.table__value-slash {
+  margin-right: 7px;
+}
+
+.about {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.about-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  margin-bottom: 20px;
+}
 .button {
   @extend %common-btn;
   width: 110px;
@@ -143,4 +180,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button-add__watched {
+  margin-right: 20px;
 }
