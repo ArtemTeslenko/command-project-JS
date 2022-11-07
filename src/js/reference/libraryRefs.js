@@ -1,4 +1,5 @@
 export const refs = {
+  loadMoreBtnEl: document.querySelector('.load-more-btn'),
   bodyEl: document.querySelector('body'),
   backdropEl: document.querySelector('.backdrop'),
   buttonCloseEl: document.querySelector('.modal__button'),

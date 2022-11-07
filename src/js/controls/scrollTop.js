@@ -1,9 +1,9 @@
-const scrollBtn = document.querySelector('.arrow-up');
+import { refs } from '../reference/homeRefs';
 function onScrollShowArrow() {
   if (window.scrollY > 700) {
-    scrollBtn.classList.remove('isHiddenBtn');
+    refs.scrollBtnEl.classList.remove('isHiddenBtn');
   } else if (window.scrollY < 700) {
-    scrollBtn.classList.add('isHiddenBtn');
+    refs.scrollBtnEl.classList.add('isHiddenBtn');
   }
 }
 function onClickArrow() {
@@ -12,5 +12,5 @@ function onClickArrow() {
 
 export function scrollToTop() {
   window.addEventListener('scroll', onScrollShowArrow);
-  scrollBtn.addEventListener('click', onClickArrow);
+  refs.scrollBtnEl.addEventListener('click', onClickArrow);
 }
