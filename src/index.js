@@ -3,7 +3,7 @@ import { trendsControls } from './js/controls';
 import { onOpenModalFilm } from './js/modal';
 import { onClick } from './js/modal';
 
-
 trendsControls();
 onOpenModalFilm();
-onClick(refs.footerBtn);
+//зразок використання модалки
+modalTemplate(refs.footerBtn);
