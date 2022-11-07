@@ -470,6 +470,8 @@ img {
 }
 
 .pagination__list {
+  margin: 0;
+  padding-left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
