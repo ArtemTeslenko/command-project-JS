@@ -1,0 +1,17 @@
+#scrollTop {
+  width: 70px;
+  position: fixed;
+  bottom: 100px;
+  right: 70px;
+  z-index: 9999;
+  @include transitions(all);
+}
+
+.isHiddenBtn {
+  opacity: 0;
+  @include transitions(all);
+}
+
+.arrow-up {
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@ export const refs = {
   backdropEl: document.querySelector('.backdrop'),
   buttonCloseEl: document.querySelector('.modal__button'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
+  scrollBtnEl: document.querySelector('.arrow-up'),
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
