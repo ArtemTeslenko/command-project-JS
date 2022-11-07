@@ -5,4 +5,5 @@ export const refs = {
   bodyEl: document.querySelector('body'),
   mainEl: document.querySelector('main'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
+  scrollBtnEl: document.querySelector('.arrow-up'),
 };
