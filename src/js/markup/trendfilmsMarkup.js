@@ -3,7 +3,6 @@ import { getGenreName } from '../customFunction/getGenreName';
 export function createFilmMarkup(arrFilms) {
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
-      console.log(poster_path);
       let genres = getGenreName(genre_ids);
 
       if (genres.length > 2) {

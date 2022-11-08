@@ -22,7 +22,6 @@ export function trendsControls() {
 
       function fetchMovies(page) {
         fetchFilms(page, 'movie', 'week').then(data => {
-          console.log(data);
           const destinationEl = refs.galleryEl;
 
           filmsTrendRender(data, destinationEl);
