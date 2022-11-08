@@ -1,5 +1,6 @@
 import { fetchFilmId } from './fetchFilmId';
 import { markupBtnModalFilm } from '../markup';
+import { addToLokalStorage } from '../controls';
 
 let film = {};
 const modalCardEl = document.querySelector('.modal-card');
@@ -10,7 +11,7 @@ export async function FetchFilmId(id) {
     return film;
   });
 
-  console.log('return', film);
+  addToLokalStorage(film);
 
   const marcup = markupBtnModalFilm(film);
   return (modalCardEl.innerHTML = marcup);

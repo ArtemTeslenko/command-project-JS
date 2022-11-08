@@ -11,48 +11,39 @@
   background-color: rgba(0, 0, 0, 0.2);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // @include transitions(opacity);
+  // @include transitions(visibility);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: collapse;
-  // @include transitions(opacity);
-  // @include transitions(visibility);
 }
-.modal-card__img {
-  @include tablet {
-    max-height: 373px;
-    max-width: 264px;
-  }
-  @include desktop {
-    height: 478px;
-    width: 374px;
-  }
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
 }
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  @include mobile {
-    padding-top: 48px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-    min-height: 300px;
-    width: 280px;
-  }
+  padding-top: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  min-height: 300px;
+  width: 280px;
 
   @include tablet {
     padding-top: 40px;
     padding-left: 36px;
     padding-right: 72px;
     padding-bottom: 40px;
-    min-height: 552px;
     width: 704px;
   }
 
@@ -72,9 +63,26 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-card {
+  @include tablet {
+    display: flex;
+  }
+}
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
+.modal-card__img {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  @include tablet {
+    max-width: 264px;
+    max-height: 374px;
+    margin-right: 68px;
+  }
+  @include desktop {
+    margin-right: 16px;
+    max-width: 375px;
+    max-height: 478px;
+    height: 478px;
+  }
 }
 
 .modal__button {
@@ -99,12 +107,110 @@
 
 .table {
   display: flex;
+  min-height: 88px;
 }
 
+.modal-card__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
 .table__parametr {
-  margin-right: 39px;
-  @include desktop {
-    margin-right: 83px;
+  padding-right: 39px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: getColor('secondary-text');
+}
+.table-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+.table__span-value {
+  width: 36px;
+  height: 16px;
+  left: 148px;
+  top: 488px;
+  margin-right: 1px;
+
+  background: getColor('orange-btn');
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.table__value-slash {
+  margin-right: 7px;
+}
+
+.about {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.about-text {
+  overflow: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  margin-bottom: 20px;
+  width: 240px;
+  max-height: 236px;
+  @include tablet {
+    width: 264px;
   }
 }
 
+.button-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-add__watched {
+  @extend %common-btn;
+  width: 110px;
+  min-height: 44px;
+  margin-right: 20px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  @include tablet {
+    width: 120px;
+    margin-right: 15px;
+  }
+}
+
+.button-add__queue {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+  width: 110px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  @include transitions(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: #de5900;
+    border: 1px solid #de5900;
+  }
+}

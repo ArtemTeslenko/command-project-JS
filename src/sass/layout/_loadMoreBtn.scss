@@ -1,0 +1,30 @@
+.load-more-btn {
+  @extend %common-btn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  cursor: pointer;
+}
+
+.spinner {
+  margin-right: 5px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.isHidden-spinner {
+  display: none;
+}
+.without-spinner {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}

@@ -1,30 +1,49 @@
 import { FetchFilmId } from '../markup';
+import { getGenreName } from '../customFunction/getGenreName';
 
+// створює розмітку картки фільма
 export function markupBtnModalFilm(film) {
+  const genres = film.genres.map(film => film.name).join(', ');
+
   return `<img class="modal-card__img"
      src="https://www.themoviedb.org/t/p/w500/${film.poster_path}"
      alt=""
      id=""
     />
     <div class="modal-card__info">
-     <h2>${film.title}</h2>
-     <div class="table">
-     <ul class="table__parametr">
-       <li class="list">Vote/Votes </li>
-       <li class="list">Popularity </li>
-       <li class="list">Original Title </li>
-     </ul>
-         <ul class="table__value">
-       <li class="list"><span>${film.vote_average}</span>/<span>${film.vote_count}</span></li>
-       <li class="list">${film.popularity}</li>
-       <li class="list">${film.original_title}</li>
-     </ul>
-     </div>
+     <h2 class="modal-card__title">${film.title.toUpperCase()}</h2>
+     <table class="table">
+      <tbody>
+        <tr class="table__line">
+          <td class=" table__parametr">Vote/Votes</td>
+          <td class="table__value"><span class="table__span-value">${
+            film.vote_average
+          }</span>
+       <span class="table__value-slash">/</span>
+       <span>${film.vote_count}</span></td>
+        </tr> 
+           <tr class="table__line">
+          <td class="table__parametr">Popularity</td>
+          <td class="table__value">${film.popularity}</td>
+        </tr>
+           <tr class="table__line">
+          <td class="table__parametr">Original Title</td>
+          <td class="table__value table-text">${film.original_title.toUpperCase()}</td>
+        </tr>
+           <tr class="table__line">
+          <td class="table__parametr">Genre</td>
+          <td class="table__value table-text">${genres}</td>
+        </tr>
+      </tbody>
+     </table>    
      <p>
-       <h3>About</h3>
-       <div>${film.overview}</div>
+       <h3 class="about">ABOUT</h3>
+       <div class="about-text">${film.overview}</div>
      </p>
-     <button class="button">add to Watched</button>
-     <button class="button">add to queue</button>
-      </div>`;
+
+     <div class="button-add">
+     <button class="button-add__watched">ADD TO WATCHED</button>
+     <button class="button-add__queue">ADD TO QUEUE</button>
+      </div>
+     </div>`;
 }
