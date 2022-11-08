@@ -1,38 +1,38 @@
 import { refs } from '../../../reference/homeRefs';
-import { modalTemplate } from '../../../modal';
-import { renderModalAuthUsers, renderModalRegUsers } from '../index';
 
-refs.logIn.addEventListener('click', openModalAuth);
+refs.logIn.addEventListener('click', openCloseFormUsers);
+refs.btnCloseForm.addEventListener('click', openCloseFormUsers);
 
-function openModalAuth(e) {
+refs.btnRegUser.addEventListener('click', reRenderForm);
+
+function reRenderForm(e) {
   e.preventDefault();
 
-  modalTemplate(e.target);
-  refs.modalCard.innerHTML = renderModalAuthUsers();
-
-  const btnCloseModal = document.querySelector('.form-auth__button-close');
-  const btnRegUsers = document.querySelector('.form-auth__button-reg');
-
-  btnCloseModal.addEventListener('click', e => {
-    e.preventDefault();
-    refs.backdropEl.classList.toggle('is-hidden');
-  });
-
-  btnRegUsers.addEventListener('click', openModalReguser);
+  if (e.target.textContent === 'Register') {
+    return renderRegForm();
+  }
+  return renderAuthForm();
 }
 
-function openModalReguser(e) {
+function renderRegForm() {
+  refs.titelForm.textContent = 'Registration';
+  refs.btnSubmit.textContent = 'Register';
+  refs.titleQuestionUser.textContent = 'Do have an account?';
+  refs.btnRegUser.textContent = 'Auth';
+}
+
+function renderAuthForm() {
+  refs.titelForm.textContent = 'Login';
+  refs.btnSubmit.textContent = 'LogIn';
+  refs.titleQuestionUser.textContent = 'Do`t have an account?';
+  refs.btnRegUser.textContent = 'Register';
+}
+
+function openCloseFormUsers(e) {
   e.preventDefault();
+  refs.backdropAuth.classList.toggle('is-hidden');
+}
 
-  refs.modalCard.innerHTML = renderModalRegUsers();
-
-  const btnCloseModal = document.querySelector('.form-auth__button-close');
-  const btnRegUsers = document.querySelector('.form-auth__button-reg');
-
-  btnCloseModal.addEventListener('click', e => {
-    e.preventDefault();
-    refs.backdropEl.classList.toggle('is-hidden');
-  });
-
-  btnRegUsers.addEventListener('click', openModalAuth);
+export function openCloseFormUsersOnAuth() {
+  refs.backdropAuth.classList.add('is-hidden');
 }

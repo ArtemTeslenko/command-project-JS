@@ -10,8 +10,18 @@ export const refs = {
   logIn: document.querySelector('#logIn'),
   logOut: document.querySelector('#logOut'),
   btnNotAuth: document.querySelector('.btnNotAuth'),
-  btnAuth: document.querySelector('.btnAuth'),
-  modalCard: document.querySelector('.modal-card'),
+  btnAuth: document.querySelectorAll('.btnAuth'),
+  btnCloseForm: document.querySelector('.form-auth__button-close'),
+  backdropAuth: document.querySelector('.backdrop-auth-user'),
+
+  titelForm: document.querySelector('.form-auth__title'),
+  lablePassword: document.querySelector('input[name="pass"]'),
+  labelEmail: document.querySelector('input[name="email"]'),
+  titleQuestionUser: document.querySelector('.title-question-user'),
+
+  formAuth: document.querySelector('.form-auth__form-login'),
+  btnSubmit: document.querySelector('.form-auth__btn-submit'),
+  btnRegUser: document.querySelector('.form-auth__button-reg'),
 
   //------ Ganna K ------
   galleryEl: document.querySelector('.films-gallery'),
