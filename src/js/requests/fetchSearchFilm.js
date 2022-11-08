@@ -17,7 +17,7 @@ function onSearchMovie(event) {
   movieName = event.target.value;
 }
 
-export function onEventListenerSearchMovie() {
+export function onListenerSearchMovie() {
   refs.searchMovieEl.addEventListener('input', onSearchMovie);
   refs.searchMovieEl.addEventListener('submit', onSearchSubmitMovie);
 }
