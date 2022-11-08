@@ -1,9 +1,12 @@
+import Notiflix from 'notiflix';
 import { refs } from '../reference/homeRefs';
 import { createFilmMarkup } from '../markup/trendfilmsMarkup';
 import { trendsControls } from '../controls/trendsControl';
 import { genreIdArr } from '../controls/trendsControl';
-import Notiflix from 'notiflix';
+
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
+const textNotifly =
+  'Search result not successful. Enter the correct movie name and try again';
 
 let movieName;
 let page;
@@ -37,9 +40,7 @@ function onSearchSubmitMovie(event) {
       // -----Табличка о том, что фильм не найден, библиотека NOTIFY-----
 
       if (data.results.length === 0) {
-        Notiflix.Notify.failure(
-          'Search result not successful. Enter the correct movie name and try again'
-        );
+        Notiflix.Notify.failure(`${textNotifly}`);
 
         // -----Список найденных фильмов и их рендер -----
       } else {
