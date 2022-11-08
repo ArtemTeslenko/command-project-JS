@@ -6,4 +6,4 @@ export * from './userInActive';
 export * from './verifySession';
 
 import { veryfiUser } from './index';
-veryfiUser();
+// veryfiUser();
