@@ -24,7 +24,7 @@ export function markupBtnModalFilm(film) {
        <h3>About</h3>
        <div>${film.overview}</div>
      </p>
-     <button class="button">add to Watched</button>
-     <button class="button">add to queue</button>
+     <button class="button js-button-watched">add to Watched</button>
+     <button class="button js-button-queue">add to queue</button>
       </div>`;
 }
