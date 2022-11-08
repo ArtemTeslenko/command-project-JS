@@ -11,8 +11,7 @@
   background-color: rgba(0, 0, 0, 0.2);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -23,6 +22,8 @@
   // @include transitions(visibility);
 }
 .modal-card__img {
+  border-radius: 5px;
+  margin-bottom: 20px;
   @include tablet {
     max-height: 373px;
     max-width: 264px;
@@ -38,21 +39,18 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  @include mobile {
-    padding-top: 48px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-    min-height: 300px;
-    width: 280px;
-  }
+  padding-top: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  min-height: 300px;
+  width: 280px;
 
   @include tablet {
     padding-top: 40px;
     padding-left: 36px;
     padding-right: 72px;
     padding-bottom: 40px;
-    min-height: 552px;
     width: 704px;
   }
 
@@ -71,7 +69,6 @@
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
@@ -107,4 +104,84 @@
     margin-right: 83px;
   }
 }
+.modal-card__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.table {
+  margin-bottom: 20px;
+}
+.table__parametr {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: getColor('secondary-text');
+}
+.table__parametr-list:not(:last-child) {
+  margin-bottom: 8px;
+}
 
+.table__value {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+}
+.table__value-list:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.table-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+.table__span-value {
+  width: 36px;
+  height: 16px;
+  left: 148px;
+  top: 488px;
+  margin-right: 1px;
+
+  background: getColor('orange-btn');
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.table__value-slash {
+  margin-right: 7px;
+}
+
+.about {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.about-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  margin-bottom: 20px;
+}
+.button {
+  @extend %common-btn;
+  width: 110px;
+  min-height: 44px;
+}
+
+.button-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-add__watched {
+  margin-right: 20px;
+}
