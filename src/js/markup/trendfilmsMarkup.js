@@ -15,12 +15,10 @@ export function createFilmMarkup(arrFilms) {
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
       if (poster_path === null) {
-        console.log('ja');
         imgSrc = require('../../images/no-photo.jpg');
-        console.log(imgSrc);
       }
       return `<div class="film-card">
-      <a class="film-card__link link" href="">
+      <a class="film-card__link link" href="" id="${id}">
       <div class="film-card__img-box"> 
         <img class="film-card__img"
           src="${imgSrc}"
