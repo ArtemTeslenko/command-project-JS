@@ -1,1 +1,0 @@
-{"mappings":"gfAAAA,EAAA,UAGA,E,WAAAC,kB","sources":["src/library.js"],"sourcesContent":["import { refs } from './js/reference/libraryRefs.js';\nimport { onMyLibraryOpen } from './js/controls';\n\nonMyLibraryOpen();\n"],"names":["parcelRequire","onMyLibraryOpen"],"version":3,"file":"library.9706728b.js.map"}
