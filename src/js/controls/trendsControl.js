@@ -9,44 +9,87 @@ import { paginationArrowHidden } from '../customFunction/paginationArrowHidden';
 
 export let genreIdArr = [];
 
+// export function trendsControls() {
+//   let page = 1;
+//   async function mainFunctionCode() {
+//    const response= await fetch ('https://api.themoviedb.org/3/genre/movie/list?api_key=894ef72300682f1db325dae2afe3e7e2&language=en-US')      .then(genreId => {
+//   const data= await response.json
+//      genreIdArr = genreId.genres;
+//     //   })
+//     //   .catch(error => console.log(error));
+//     // fetchMovies(page);
+
+//     function fetchMovies(page) {
+//       fetchFilms(page, 'movie', 'week').then(data => {
+//         const destinationEl = refs.galleryEl;
+
+//         filmsTrendRender(data, destinationEl);
+//         let totalPage = data.total_pages;
+
+//         if (totalPage > 1) {
+//           const renderedPagination = paginationRender(
+//             Number(data.total_pages),
+//             Number(data.page),
+//             'movie',
+//             'week'
+//           );
+//           refs.paginationEl.innerHTML = renderedPagination;
+
+//           paginationArrowHidden(data.page, data.total_pages);
+//         }
+//       });
+//     }
+//     //----------
+//     refs.paginationEl.addEventListener('click', e => {
+//       e.preventDefault();
+//       cleanRender(refs.galleryEl);
+
+//       fetchMovies(e.target.dataset.page);
+//     });
+//   }
+//   mainFunctionCode();
+// }
 export function trendsControls() {
   let page = 1;
-  const mainFunctionCode = async () => {
-    await fetchGenreId()
-      .then(genreId => {
-        genreIdArr = genreId.genres;
-      })
-      .catch(error => console.log(error));
-    fetchMovies(page);
+  async function mainFunctionCode() {
+    try {
+      await fetchGenreId()
+        .then(genreId => {
+          genreIdArr = genreId.genres;
+        })
+        .catch(error => console.log(error));
+      fetchMovies(page);
 
-    function fetchMovies(page) {
-      fetchFilms(page, 'movie', 'week').then(data => {
-        const destinationEl = refs.galleryEl;
+      function fetchMovies(page) {
+        console.log('fetchMovies');
+        fetchFilms(page, 'movie', 'week').then(data => {
+          console.log('fetchFilms');
+          const destinationEl = refs.galleryEl;
 
-        filmsTrendRender(data, destinationEl);
-        let totalPage = data.total_pages;
+          filmsTrendRender(data, destinationEl);
+          let totalPage = data.total_pages;
 
-        if (totalPage > 1) {
-          const renderedPagination = paginationRender(
-            Number(data.total_pages),
-            Number(data.page),
-            'movie',
-            'week'
-          );
-          refs.paginationEl.innerHTML = renderedPagination;
-          console.log(refs.btnDecrementEl);
-          console.log(refs.paginationEl);
-          paginationArrowHidden(data.page, data.total_pages);
-        }
+          if (totalPage > 1) {
+            const renderedPagination = paginationRender(
+              Number(data.total_pages),
+              Number(data.page),
+              'movie',
+              'week'
+            );
+            refs.paginationEl.innerHTML = renderedPagination;
+          }
+        });
+      }
+      //----------
+      refs.paginationEl.addEventListener('click', e => {
+        e.preventDefault();
+        cleanRender(refs.galleryEl);
+
+        fetchMovies(e.target.dataset.page);
       });
+    } catch (e) {
+      console.log(e);
     }
-    //----------
-    refs.paginationEl.addEventListener('click', e => {
-      e.preventDefault();
-      cleanRender(refs.galleryEl);
-
-      fetchMovies(e.target.dataset.page);
-    });
-  };
+  }
   mainFunctionCode();
 }
