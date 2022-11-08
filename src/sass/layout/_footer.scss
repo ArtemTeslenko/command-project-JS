@@ -59,6 +59,7 @@ letter-spacing: 1.14;
     text-align: center;
     text-decoration-line: underline;
     color: getColor('footer-text');
+    
     @include transitions(color);
     line-height: 1.18;
     padding: 0;
