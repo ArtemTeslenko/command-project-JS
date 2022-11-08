@@ -17,7 +17,10 @@ function onSearchMovie(event) {
   movieName = event.target.value;
 }
 
-refs.searchMovieEl.addEventListener('input', onSearchMovie);
+export function onEventListenerSearchMovie() {
+  refs.searchMovieEl.addEventListener('input', onSearchMovie);
+  refs.searchMovieEl.addEventListener('submit', onSearchSubmitMovie);
+}
 
 // -----Функция поиска фильма (без страницы)-----
 
@@ -53,5 +56,3 @@ function onSearchSubmitMovie(event) {
 }
 
 // -----Вызов функции поиска фильма по ключевому слову при нажатии на SUBMIT-----
-
-refs.searchMovieEl.addEventListener('submit', onSearchSubmitMovie);
