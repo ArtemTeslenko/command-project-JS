@@ -20,25 +20,35 @@
 }
 
 .form-label {
-  margin-bottom: 4px;
-  font-size: 15px;
-  line-height: calc(14 / 12);
-  color: var(--primary-text-color);
+  margin-bottom: 0px;
+  font-size: 18px;
+  line-height: calc(18 / 12);
+  color: getColor('orange-text');
   letter-spacing: 0.01em;
-  padding-left: 35%;
+  margin-top: 7px;
+  font-weight: 500;
+}
+.form-label:first-child {
+  margin-top: 0px;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   position: relative;
   width: 100%;
 }
+.form-field:last-child {
+  margin-bottom: 0px;
+}
 .form-input {
   margin-right: 5px;
-  padding: 12px 33px;
-  border: 2px solid;
+  padding: 12px 13px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid;
   border-color: getColor('secondary-text');
   outline: none;
   border-radius: 4px;
@@ -65,4 +75,11 @@
   display: flex;
   justify-content: center;
   color: getColor('orange-text');
+  margin-bottom: 65px;
+}
+
+.button-reg-modal {
+  @extend %common-btn;
+  width: 112px;
+  height: 45px;
 }
