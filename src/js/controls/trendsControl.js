@@ -10,42 +10,80 @@ export let genreIdArr = [];
 
 //-----------
 
+// export function trendsControls() {
+//   let page = 1;
+
+//   fetchGenreId()
+//     .then(genreId => {
+//       genreIdArr = genreId.genres;
+//     })
+//     .catch(error => console.log(error));
+//   //------
+
+//   fetchMovies(page);
+
+//   //-----------
+//   function fetchMovies(page) {
+//     fetchFilms(page, 'movie', 'week').then(data => {
+//       const destinationEl = refs.galleryEl;
+
+//       filmsTrendRender(data, destinationEl);
+//       let totalPage = data.total_pages;
+
+//       if (totalPage > 1) {
+//         const renderedPagination = paginationRender(
+//           Number(data.total_pages),
+//           Number(data.page),
+//           'movie',
+//           'week'
+//         );
+//         refs.paginationEl.innerHTML = renderedPagination;
+//       }
+//     });
+//   }
+//   //----------
+//   refs.paginationEl.addEventListener('click', e => {
+//     e.preventDefault();
+//     cleanRender(refs.galleryEl);
+
+//     fetchMovies(e.target.dataset.page);
+//   });
+// } // не трогать
 export function trendsControls() {
   let page = 1;
+  const kukuku = async () => {
+    await fetchGenreId()
+      .then(genreId => {
+        genreIdArr = genreId.genres;
+      })
+      .catch(error => console.log(error));
+    fetchMovies(page);
 
-  fetchGenreId()
-    .then(genreId => {
-      genreIdArr = genreId.genres;
-    })
-    .catch(error => console.log(error));
-  //------
+    function fetchMovies(page) {
+      fetchFilms(page, 'movie', 'week').then(data => {
+        const destinationEl = refs.galleryEl;
 
-  fetchMovies(page);
+        filmsTrendRender(data, destinationEl);
+        let totalPage = data.total_pages;
 
-  //-----------
-  function fetchMovies(page) {
-    fetchFilms(page, 'movie', 'week').then(data => {
-      const destinationEl = refs.galleryEl;
+        if (totalPage > 1) {
+          const renderedPagination = paginationRender(
+            Number(data.total_pages),
+            Number(data.page),
+            'movie',
+            'week'
+          );
+          refs.paginationEl.innerHTML = renderedPagination;
+        }
+      });
+    }
+    //----------
+    refs.paginationEl.addEventListener('click', e => {
+      e.preventDefault();
+      cleanRender(refs.galleryEl);
 
-      filmsTrendRender(data, destinationEl);
-      let totalPage = data.total_pages;
-
-      if (totalPage > 1) {
-        const renderedPagination = paginationRender(
-          Number(data.total_pages),
-          Number(data.page),
-          'movie',
-          'week'
-        );
-        refs.paginationEl.innerHTML = renderedPagination;
-      }
+      fetchMovies(e.target.dataset.page);
     });
-  }
-  //----------
-  refs.paginationEl.addEventListener('click', e => {
-    e.preventDefault();
-    cleanRender(refs.galleryEl);
-
-    fetchMovies(e.target.dataset.page);
-  });
-} // не трогать
+  };
+  kukuku();
+}
