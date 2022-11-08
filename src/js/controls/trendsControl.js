@@ -5,53 +5,13 @@ import { filmsTrendRender } from '../render/filmsTrendRender';
 import { fetchFilms } from '../requests/fetchFilmsTrends';
 import { cleanRender } from '../customFunction/functionCleanRender';
 import { paginationRender } from '../customFunction/pagination';
+import { paginationArrowHidden } from '../customFunction/paginationArrowHidden';
 
 export let genreIdArr = [];
 
-//-----------
-
-// export function trendsControls() {
-//   let page = 1;
-
-//   fetchGenreId()
-//     .then(genreId => {
-//       genreIdArr = genreId.genres;
-//     })
-//     .catch(error => console.log(error));
-//   //------
-
-//   fetchMovies(page);
-
-//   //-----------
-//   function fetchMovies(page) {
-//     fetchFilms(page, 'movie', 'week').then(data => {
-//       const destinationEl = refs.galleryEl;
-
-//       filmsTrendRender(data, destinationEl);
-//       let totalPage = data.total_pages;
-
-//       if (totalPage > 1) {
-//         const renderedPagination = paginationRender(
-//           Number(data.total_pages),
-//           Number(data.page),
-//           'movie',
-//           'week'
-//         );
-//         refs.paginationEl.innerHTML = renderedPagination;
-//       }
-//     });
-//   }
-//   //----------
-//   refs.paginationEl.addEventListener('click', e => {
-//     e.preventDefault();
-//     cleanRender(refs.galleryEl);
-
-//     fetchMovies(e.target.dataset.page);
-//   });
-// } // не трогать
 export function trendsControls() {
   let page = 1;
-  const kukuku = async () => {
+  const mainFunctionCode = async () => {
     await fetchGenreId()
       .then(genreId => {
         genreIdArr = genreId.genres;
@@ -74,6 +34,9 @@ export function trendsControls() {
             'week'
           );
           refs.paginationEl.innerHTML = renderedPagination;
+          console.log(refs.btnDecrementEl);
+          console.log(refs.paginationEl);
+          paginationArrowHidden(data.page, data.total_pages);
         }
       });
     }
@@ -85,5 +48,5 @@ export function trendsControls() {
       fetchMovies(e.target.dataset.page);
     });
   };
-  kukuku();
+  mainFunctionCode();
 }

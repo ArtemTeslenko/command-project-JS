@@ -16,7 +16,10 @@ export const refs = {
   //------ Ganna K ------
   galleryEl: document.querySelector('.films-gallery'),
   paginationEl: document.querySelector('.pagination'),
-
+  // btnDecrementEl: document.querySelector('.btn--decrement'),
+  // btnIncrementEl: document.querySelector('.btn--increment'),
+  // btnPaginationArrow: document.querySelector('.btn__pagination'),
+  //---------
   scrollBtnEl: document.querySelector('.arrow-up'),
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),

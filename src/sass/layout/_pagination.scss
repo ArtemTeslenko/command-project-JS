@@ -40,6 +40,11 @@
     margin-right: 16px;
   }
 }
+.btn--decrement[disabled='true'],
+.btn--increment[disabled='true'] {
+  cursor: default;
+  background-color: #e5e5e5;
+}
 .pagination__icon {
   color: black;
 }

@@ -1,3 +1,4 @@
+import { refs } from '../reference/homeRefs';
 import { buildUrl } from '../requests';
 import { paginationBtnHidden } from './paginationBtnHidden';
 export function paginationRender(
@@ -72,19 +73,19 @@ export function paginationRender(
   });
   const arrowLeft = require(`../../images/arrow-left.svg`);
   const arrowRight = require(`../../images/arrow-right.svg`);
-  return `<button class="btn--decrement" data-page="${
+  return `<button class="btn__pagination btn--decrement" data-page="${
     currentPage - 1
   }" type="button"><img src="${arrowLeft}" data-page="${
     currentPage - 1
-  }" class="pagination__icon"  width="20" height="20"
+  }" disabled="false" class="pagination__icon"  width="20" height="20"
       alt="selectedItem"></button>
         <div class="pagination__wrap">
         <ul class="pagination__list list">
         ${paginationLinks} </ul>
         </div>
-         <button class="btn--increment" data-page="${
+         <button class="btn__pagination btn--increment" data-page="${
            currentPage + 1
-         }" type="button" >
+         }" disabled="false" type="button" >
     <img src="${arrowRight}" class="pagination__icon" data-page="${
     currentPage + 1
   } "width="20" height="20"></button>`;
