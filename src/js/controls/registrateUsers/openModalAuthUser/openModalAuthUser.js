@@ -2,7 +2,7 @@ import { refs } from '../../../reference/homeRefs';
 import { modalTemplate } from '../../../modal';
 import { renderModalAuthUsers, renderModalRegUsers } from '../index';
 
-// refs.logIn.addEventListener('click', openModalAuth);
+refs.logIn.addEventListener('click', openModalAuth);
 
 function openModalAuth(e) {
   e.preventDefault();
