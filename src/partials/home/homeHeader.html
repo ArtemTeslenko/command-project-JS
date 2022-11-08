@@ -12,11 +12,11 @@
           <a class="link link--current" href="">HOME</a>
         </li>
         <li class="header-nav__item btnNotAuth">
-          <a class="link" id="logIn" href="#">Log In</a>
+          <a class="link" data-modal-open id="logIn" href="#">Log In</a>
         </li>
 
         <li class="header-nav__item btnAuth is-hidden">
-          <a class="link" id="logIn" href="./library.html">MY LIBRARY</a>
+          <a class="login-link link" id="logIn" href="./library.html">MY LIBRARY</a>
         </li>
 
         <li class="header-nav__item btnAuth is-hidden">
@@ -26,11 +26,7 @@
       </ul>
     </nav>
     <form class="search-form">
-      <input
-        class="search-form__input"
-        type="text"
-        placeholder="Movie search"
-      />
+      <input class="search-form__input" type="text" placeholder="Movie search" />
       <button class="search-form__btn" type="submit">
         <svg class="search-form__icon" width="12" height="12">
           <use href="./images/icons.svg#icon-search"></use>
