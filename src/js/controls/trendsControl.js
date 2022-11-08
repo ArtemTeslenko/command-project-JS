@@ -36,6 +36,7 @@ export function trendsControls() {
               'week'
             );
             refs.paginationEl.innerHTML = renderedPagination;
+            paginationArrowHidden(data.page, data.total_pages);
           }
         });
       }
