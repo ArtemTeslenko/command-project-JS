@@ -9,3 +9,4 @@ trendsControls();
 onOpenModalFilm();
 // зразок функції для відкриття чистої модалки
 modalTemplate(refs.footerBtn);
+scrollToTop();
