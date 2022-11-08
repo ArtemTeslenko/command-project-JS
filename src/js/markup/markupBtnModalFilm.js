@@ -12,30 +12,38 @@ export function markupBtnModalFilm(film) {
     />
     <div class="modal-card__info">
      <h2 class="modal-card__title">${film.title.toUpperCase()}</h2>
-     <div class="table">
-     <ul class="table__parametr">
-       <li class="table__parametr-list list">Vote/Votes </li>
-       <li class="table__parametr-list list">Popularity </li>
-       <li class="table__parametr-list list">Original Title </li>
-       <li class="table__parametr-list list">Genre</li>
-     </ul>
-
-         <ul class="table__value">
-       <li class="table__value-list list"><span class="table__span-value">${
-         film.vote_average
-       }</span class="table__value-slash">/<span>${film.vote_count}</span></li>
-       <li class="table__value-list list">${film.popularity}</li>
-       <li class="table__value-list table-text list">${film.original_title.toUpperCase()}</li>
-       <li class="table__value-list table-text list">${genres}</li>
-     </ul>
-     </div>
+     <table class="table">
+      <tbody>
+        <tr class="table__line">
+          <td class=" table__parametr">Vote/Votes</td>
+          <td class="table__value"><span class="table__span-value">${
+            film.vote_average
+          }</span>
+       <span class="table__value-slash">/</span>
+       <span>${film.vote_count}</span></td>
+        </tr> 
+           <tr class="table__line">
+          <td class="table__parametr">Popularity</td>
+          <td class="table__value">${film.popularity}</td>
+        </tr>
+           <tr class="table__line">
+          <td class="table__parametr">Original Title</td>
+          <td class="table__value table-text">${film.original_title.toUpperCase()}</td>
+        </tr>
+           <tr class="table__line">
+          <td class="table__parametr">Genre</td>
+          <td class="table__value table-text">${genres}</td>
+        </tr>
+      </tbody>
+     </table>    
      <p>
        <h3 class="about">ABOUT</h3>
        <div class="about-text">${film.overview}</div>
      </p>
+
      <div class="button-add">
-     <button class="button-add__watched button">add to Watched</button>
-     <button class="button-add__queue button">add to queue</button>
+     <button class="button-add__watched">ADD TO WATCHED</button>
+     <button class="button-add__queue">ADD TO QUEUE</button>
       </div>
      </div>`;
 }
