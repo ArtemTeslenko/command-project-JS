@@ -1,13 +1,13 @@
 import { refs } from '../../../reference/homeRefs';
-import { onClick } from '../../../modal';
+import { modalTemplate } from '../../../modal';
 import { renderModalAuthUsers, renderModalRegUsers } from '../index';
 
-refs.logIn.addEventListener('click', openModalAuth);
+// refs.logIn.addEventListener('click', openModalAuth);
 
 function openModalAuth(e) {
   e.preventDefault();
 
-  onClick(e.target);
+  modalTemplate(e.target);
   refs.modalCard.innerHTML = renderModalAuthUsers();
 
   const btnCloseModal = document.querySelector('.form-auth__button-close');
