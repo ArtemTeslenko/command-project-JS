@@ -8,7 +8,7 @@ export function buildUrl(pageNumber, trendUrl) {
   // const baseUrl = `https://api.themoviedb.org/3/trending/`;
   // const mediaType = `movie`;
   // const time_window = `day`;
-  //https://api.themoviedb.org/3/trending/movie/week?api_key=894ef72300682f1db325dae2afe3e7e2&page=
+  //trend Url -->https://api.themoviedb.org/3/trending/movie/week?api_key=894ef72300682f1db325dae2afe3e7e2&page=
   return `${trendUrl}${pageNumber}`;
 }
 // На всякий случай оставляю. Вдруг уже кто то использует

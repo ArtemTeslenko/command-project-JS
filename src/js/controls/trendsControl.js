@@ -28,16 +28,17 @@ export function trendsControls() {
 
           filmsTrendRender(data, destinationEl);
           let totalPage = data.total_pages;
-
+          // ------ V copie
           if (totalPage > 1) {
             const renderedPagination = paginationRender(
-              Number(data.total_pages),
-              Number(data.page),
-              trendUrl
+              Number(data.total_pages), // total page
+              Number(data.page), // current page
+              trendUrl // big part of url
             );
             refs.paginationEl.innerHTML = renderedPagination;
             paginationArrowHidden(data.page, data.total_pages);
           }
+          // ------ end of V copie
         });
       }
       //----------
