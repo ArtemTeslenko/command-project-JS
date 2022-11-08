@@ -17,6 +17,7 @@ function openModalAuth(e) {
     e.preventDefault();
     refs.backdropEl.classList.toggle('is-hidden');
   });
+  console.log('hik');
 
   btnRegUsers.addEventListener('click', openModalReguser);
 }
