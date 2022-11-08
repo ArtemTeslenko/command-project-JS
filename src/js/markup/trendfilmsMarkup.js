@@ -22,7 +22,7 @@ export function createFilmMarkup(arrFilms) {
       <div class="film-card__img-box"> 
         <img class="film-card__img"
           src="${imgSrc}"
-          alt=""
+          alt="${original_title}"
         />
         </div>  
         <div class="film-card__info">
