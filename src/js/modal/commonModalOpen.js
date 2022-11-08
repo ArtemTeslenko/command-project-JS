@@ -6,7 +6,6 @@ import { clianFilmCard } from './markupFilmForodal';
 let filmCardLink = 0;
 let filmCardLinkId = 0;
 
-
 function onClouseModal(e) {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
