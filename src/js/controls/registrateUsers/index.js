@@ -1,4 +1,3 @@
-export * from './markupModalReg';
 export * from './openModalAuthUser';
 export * from './fireBaseIndex';
 export * from './renderMyLibrary';
