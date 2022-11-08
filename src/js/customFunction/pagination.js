@@ -1,6 +1,6 @@
-import { refs } from '../reference/homeRefs';
 import { buildUrl } from '../requests';
 import { paginationBtnHidden } from './paginationBtnHidden';
+
 export function paginationRender(
   totalPages,
   currentPage,

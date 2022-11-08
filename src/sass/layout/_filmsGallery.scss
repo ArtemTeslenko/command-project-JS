@@ -1,6 +1,5 @@
 .films-gallery-container {
   padding-top: 20px;
-  //   padding-bottom: 20px;
 
   @include tablet {
     padding-top: 32px;
@@ -59,6 +58,10 @@
   height: 100%;
 }
 .film-card__img {
+  background-image: url('../images/no-photo.jpg');
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }

@@ -1,5 +1,3 @@
-import { refs } from '../reference/homeRefs';
-
 export function paginationArrowHidden(page, totalPage) {
   btnDecrementEl = document.querySelector('.btn--decrement');
   btnIncrementEl = document.querySelector('.btn--increment');
