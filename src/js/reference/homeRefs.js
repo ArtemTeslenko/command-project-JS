@@ -6,6 +6,13 @@ export const refs = {
   buttonCloseEl: document.querySelector('.modal__button'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
 
+  // modal authUser
+  logIn: document.querySelector('#logIn'),
+  logOut: document.querySelector('#logOut'),
+  btnNotAuth: document.querySelector('.btnNotAuth'),
+  btnAuth: document.querySelector('.btnAuth'),
+  modalCard: document.querySelector('.modal-card'),
+
   //------ Ganna K ------
   galleryEl: document.querySelector('.films-gallery'),
   paginationEl: document.querySelector('.pagination'),
@@ -14,4 +21,5 @@ export const refs = {
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
+  modalFilmEl: document.querySelector('.modal-card'),
 };

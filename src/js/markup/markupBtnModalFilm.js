@@ -40,6 +40,7 @@ export function markupBtnModalFilm(film) {
        <h3 class="about">ABOUT</h3>
        <div class="about-text">${film.overview}</div>
      </p>
+
      <div class="button-add">
      <button class="button-add__watched">ADD TO WATCHED</button>
      <button class="button-add__queue">ADD TO QUEUE</button>

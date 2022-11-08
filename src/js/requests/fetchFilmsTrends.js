@@ -22,7 +22,7 @@ export function fetchFilmsTrends(page, urlPart) {
     }
   );
 }
-// Я теперь использую этот. Но универсальней
+//Я теперь использую этот. Но универсальней
 export function fetchFilms(page, mediaType, time_window) {
   return fetch(buildUrl(page, mediaType, time_window)).then(response => {
     if (!response.ok) {
@@ -31,3 +31,11 @@ export function fetchFilms(page, mediaType, time_window) {
     return response.json();
   });
 }
+
+// export async function fetchFilms(page, mediaType, time_window) {
+//   const response = await fetch(buildUrl(page, mediaType, time_window));
+//   if (!response.ok) {
+//     throw new Error(response.status);
+//   }
+//   return await response.json();
+// }
