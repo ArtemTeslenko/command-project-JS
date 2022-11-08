@@ -16,11 +16,16 @@
 .page-header__lib .container {
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.56);
+  @media screen and (max-width: 320px) {
+    background-image: url('../../src/images/lib_main_mob_1x.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   @include mobile {
     padding-top: 40px;
-
     background-image: url('../../src/images/lib_main_mob_1x.jpg');
-    background-color: rgba(0, 0, 0, 0.56);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -31,7 +36,6 @@
       (min-resolution: 2dppx) {
       & {
         background-image: url('../../src/images/lib_main_mob_2x.jpg');
-        background-color: rgba(0, 0, 0, 0.56);
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -41,9 +45,7 @@
   //   @media screen and (min-width: 320px) and (max-width: 767px)
   @include tablet {
     padding-top: 45px;
-
     background-image: url('../../src/images/lib_main_tab_1x.jpg');
-    background-color: rgba(0, 0, 0, 0.56);
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -52,12 +54,10 @@
       (min-resolution: 2dppx) {
       & {
         background-image: url('../../src/images/lib_main_tab_2x.jpg');
-        background-color: rgba(0, 0, 0, 0.56);
       }
     }
   }
   @include desktop {
-    background-color: rgba(0, 0, 0, 0.56);
     background-image: url('../../src/images/lib_main_desk_1X.jpg');
 
     @media (min-device-pixel-ratio: 2),
@@ -67,7 +67,6 @@
       (min-resolution: 2dppx) {
       & {
         background-image: url('../../src/images/lib_main_desk_2x.jpg');
-        background-color: rgba(0, 0, 0, 0.56);
       }
     }
   }
@@ -112,7 +111,7 @@
 
 .header-btn__watched {
   margin-right: 16px;
-  background: #ff6b01;
+  // background-color: #ff6b01;
 
   @include mobile {
     margin-right: 20px;
@@ -136,10 +135,11 @@
   text-transform: uppercase;
 }
 
-.header-btn:hover,
-.header-btn:focus,
-.header-btn:active {
-  background: #ff6b01;
+.header-btn:hover {
+  // background: #ff6b01;
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
-  border-radius: 5px;
+}
+
+.is-active__btn {
+  background-color: #ff6b01;
 }

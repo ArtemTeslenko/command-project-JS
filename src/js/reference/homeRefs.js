@@ -5,6 +5,7 @@ export const refs = {
   backdropEl: document.querySelector('.backdrop'),
   buttonCloseEl: document.querySelector('.modal__button'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
+  searchMovieEl: document.querySelector('.search-form'),
 
   // modal authUser
   logIn: document.querySelector('#logIn'),
