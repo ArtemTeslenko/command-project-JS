@@ -1,12 +1,7 @@
 import { buildUrl } from '../requests';
 import { paginationBtnHidden } from './paginationBtnHidden';
 
-export function paginationRender(
-  totalPages,
-  currentPage,
-  mediaType,
-  time_window
-) {
+export function paginationRender(totalPages, currentPage, trendUrl) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
   let paginationLinks = '';
@@ -67,8 +62,7 @@ export function paginationRender(
         paginationArrAtr[itemClass - 1]
       }" href="${buildUrl(
         paginationArrAtr[itemClass - 1],
-        mediaType,
-        time_window
+        trendUrl
       )}" class="link pagination__link ${activeClass} ">${pageNumber}</a></li>`;
   });
   const arrowLeft = require(`../../images/arrow-left.svg`);

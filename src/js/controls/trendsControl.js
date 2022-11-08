@@ -21,7 +21,9 @@ export function trendsControls() {
       fetchMovies(page);
 
       function fetchMovies(page) {
-        fetchFilms(page, 'movie', 'week').then(data => {
+        const trendUrl =
+          'https://api.themoviedb.org/3/trending/movie/week?api_key=894ef72300682f1db325dae2afe3e7e2&page=';
+        fetchFilms(page, trendUrl).then(data => {
           const destinationEl = refs.galleryEl;
 
           filmsTrendRender(data, destinationEl);
@@ -31,8 +33,7 @@ export function trendsControls() {
             const renderedPagination = paginationRender(
               Number(data.total_pages),
               Number(data.page),
-              'movie',
-              'week'
+              trendUrl
             );
             refs.paginationEl.innerHTML = renderedPagination;
             paginationArrowHidden(data.page, data.total_pages);

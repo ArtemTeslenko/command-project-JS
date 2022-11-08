@@ -11,7 +11,7 @@ export function createFilmMarkup(arrFilms) {
       }
       genres = genres.join(', ');
       let imgSrc = 'https://www.themoviedb.org/t/p/w500' + poster_path;
-      //require(`../../images/arrow-left.svg`);
+
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
       if (poster_path === null) {
