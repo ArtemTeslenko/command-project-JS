@@ -1,4 +1,6 @@
 export const refs = {
+  queueEl: document.querySelector('.header-btn__queue'),
+  watchedEl: document.querySelector('.header-btn__watched'),
   loadMoreBtnEl: document.querySelector('.load-more-btn'),
   bodyEl: document.querySelector('body'),
   backdropEl: document.querySelector('.backdrop'),

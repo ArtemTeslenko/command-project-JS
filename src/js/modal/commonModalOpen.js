@@ -24,10 +24,10 @@ function onClouseModalBackdrop(e) {
 function creatKeydownEscape(e) {
   {
     if (e.code === 'Escape') {
+      refs.bodyNoScrollEl.classList.remove('no-scroll');
+      refs.backdropEl.classList.add('is-hidden');
+      refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
     }
-    refs.bodyNoScrollEl.classList.remove('no-scroll');
-    refs.backdropEl.classList.add('is-hidden');
-    refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
   }
 }
 

@@ -1,17 +1,28 @@
-#scrollTop {
-  width: 70px;
-  position: fixed;
-  bottom: 100px;
-  right: 70px;
-  z-index: 9999;
-  @include transitions(all);
-}
-
 .isHiddenBtn {
+  scale: 0;
   opacity: 0;
   @include transitions(all);
 }
 
 .arrow-up {
+  position: fixed;
   cursor: pointer;
+  scale: 0;
+  z-index: 9999;
+  fill: #ff6b01;
+  &:hover {
+    fill: #03a9f4;
+  }
+  @include tablet {
+    scale: 0.3;
+    right: -70px;
+    bottom: 100px;
+  }
+
+  @include desktop {
+    scale: 0.5;
+    bottom: 100px;
+    right: -70px;
+  }
+  @include transitions(all);
 }

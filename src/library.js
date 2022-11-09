@@ -1,5 +1,9 @@
-import { refs } from './js/reference/libraryRefs.js';
-import { createLibraryList } from './js/render/wachedFilmRender';
-import { watchedItems } from './js/render/library-items';
+import { refs } from './js/reference/libraryRefs';
+import { onQueueBtn } from './js/customFunction/getBtnLibrary.js';
+import { onWatchedBtn } from './js/customFunction/getBtnLibrary.js';
+import { onMyLibraryOpen } from './js/controls';
 
-createLibraryList(watchedItems);
+refs.queueEl.addEventListener('click', onQueueBtn);
+refs.watchedEl.addEventListener('click', onWatchedBtn);
+
+onMyLibraryOpen();
