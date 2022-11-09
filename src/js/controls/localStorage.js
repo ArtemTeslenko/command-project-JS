@@ -16,17 +16,16 @@ try {
 
 // Додае ключ та значення в Lokal Storage
 export function addToLokalStorage(film) {
-  console.log(film.id);
   refs.modalFilmEl.addEventListener('click', onModalBtnClick);
 
   function onModalBtnClick(evt) {
-    if (evt.target.classList.contains('js-button-watched')) {
+    if (evt.target.classList.contains('button-add__watched')) {
       addToList(watchedFilmList, film);
       localStorage.setItem(
         STORAGE_WATCHED_KEY,
         JSON.stringify(watchedFilmList)
       );
-    } else if (evt.target.classList.contains('js-button-queue')) {
+    } else if (evt.target.classList.contains('button-add__queue')) {
       addToList(queueFilmList, film);
       localStorage.setItem(STORAGE_QUEUE_KEY, JSON.stringify(queueFilmList));
     }

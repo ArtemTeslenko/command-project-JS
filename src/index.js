@@ -1,8 +1,6 @@
 import { refs } from './js/reference/homeRefs';
-import { trendsControls } from './js/controls';
-import { onOpenModalFilm } from './js/controls';
-import { modalTemplate } from './js/controls';
-import { scrollToTop } from './js/controls';
+import { trendsControls, scrollToTop } from './js/controls';
+import { onOpenModalFilm, modalTemplate } from './js/modal';
 import {} from './js/controls/registrateUsers';
 import { onListenerSearchMovie } from './js/requests';
 
