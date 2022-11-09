@@ -6,7 +6,7 @@ export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
   let paginationLinks = '';
   // ------ 0 Ver
   if (totalPages <= 5) {
-    console.log('in ver 0');
+    console.log('ver 0');
     for (let i = 1; i <= totalPages; i++) {
       paginationArrBtn.push(i);
       paginationArrAtr.push(i);
@@ -14,7 +14,7 @@ export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
   } else {
     // ----- 1 Ver
     if (currentPage < 5) {
-      console.log('in ver 1');
+      console.log('ver 1');
       for (let i = 1; i <= 5; i++) {
         paginationArrBtn.push(i);
         paginationArrAtr.push(i);
@@ -23,8 +23,8 @@ export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
       //paginationBtnHidden(currentPage, totalPages);
     }
     // --- 2 Ver
-    if (currentPage > 5 && currentPage < totalPages - 4) {
-      console.log('in ver 2');
+    if (currentPage >= 5 && currentPage < totalPages - 4) {
+      console.log('ver 2');
       for (let i = currentPage - 2; i <= currentPage + 2; i++) {
         paginationArrBtn.push(i);
         paginationArrAtr.push(i);
@@ -35,7 +35,7 @@ export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
 
     // ---- 3 Ver
     if (currentPage >= totalPages - 4) {
-      console.log('in ver 3');
+      console.log('ver 3');
       for (let i = -4; i <= 0; i++) {
         paginationArrBtn.push(totalPages + i);
         paginationArrAtr.push(totalPages + i);

@@ -12,7 +12,6 @@ export function paginationRenderSmall(totalPages, currentPage, trendUrl) {
     paginationArrBtn.push(i);
     paginationArrAtr.push(i);
   }
-  console.log(paginationArrBtn);
 
   // paginationBtnHidden(currentPage, totalPages); //!!!!!!!!!
 

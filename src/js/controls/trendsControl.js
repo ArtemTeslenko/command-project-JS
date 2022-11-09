@@ -20,7 +20,7 @@ export function trendsControls() {
         })
         .catch(error => console.log(error));
       fetchMovies(page);
-      console.log(screen.width);
+
       function fetchMovies(page) {
         cleanRender(refs.galleryEl);
         const trendUrl =
@@ -33,8 +33,7 @@ export function trendsControls() {
           // ------ V copie
           if (totalPage > 1) {
             paginationControl(
-              6,
-              //Number(data.total_pages), // total page
+              Number(data.total_pages), // total page
               Number(data.page), // current page
               trendUrl // big part of url);
             );
