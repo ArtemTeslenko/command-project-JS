@@ -1,7 +1,7 @@
 // import { testOnClickFetchFilmId } from '../modal'
 import { refs } from '../../js/reference/homeRefs';
 import { refs } from '../../js/reference/libraryRefs';
-import { FetchFilmId } from '../modal';
+import { fetchId } from '../modal';
 import { clianFilmCard } from './markupFilmForodal';
 
 // функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()
@@ -44,7 +44,7 @@ function onOpenModal(e) {
 async function onEventListenerClick(e) {
   e.preventDefault();
   if (e.target.closest('.film-card__link')) {
-    await FetchFilmId(e.target.closest('.film-card__link').id);
+    await fetchId(e.target.closest('.film-card__link').id);
     onOpenModal();
   }
 }
