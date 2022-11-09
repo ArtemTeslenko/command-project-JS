@@ -1,4 +1,4 @@
-import { fetchFilmId } from './fetchFilmId';
+import { fetchFilmId } from '../requests';
 import { markupBtnModalFilm } from '../markup';
 import { addToLokalStorage } from '../controls';
 
@@ -17,6 +17,6 @@ export async function fetchId(id) {
   return (modalCardEl.innerHTML = marcup);
 }
 
-export function clianFilmCard() {
+export function cleanFilmCard() {
   return (modalCardEl.innerHTML = '');
 }

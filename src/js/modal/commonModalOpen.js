@@ -2,13 +2,13 @@
 import { refs } from '../../js/reference/homeRefs';
 import { refs } from '../../js/reference/libraryRefs';
 import { fetchId } from '../modal';
-import { clianFilmCard } from './markupFilmForodal';
+import { cleanFilmCard } from './markupFilmForModal';
 
 // функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
-  clianFilmCard();
+  cleanFilmCard();
 }
 
 // функція закриває модалку по кліку на backdrop
