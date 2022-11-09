@@ -5,6 +5,7 @@ import { modalTemplate } from './js/modal';
 import { scrollToTop } from './js/controls';
 import {} from './js/controls/registrateUsers';
 import { onListenerSearchMovie } from './js/requests';
+import {showTeam} from './js/controls';
 
 trendsControls();
 onOpenModalFilm();
@@ -12,3 +13,4 @@ onOpenModalFilm();
 modalTemplate(refs.footerBtn);
 scrollToTop();
 onListenerSearchMovie();
+showTeam();
