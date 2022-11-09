@@ -1,12 +1,12 @@
-import { FetchFilmId } from '../markup';
-import { getGenreName } from '../customFunction/getGenreName';
-
 // створює розмітку картки фільма
 export function markupBtnModalFilm(film) {
   const genres = film.genres.map(film => film.name).join(', ');
-
+  let imgSrc = `https://www.themoviedb.org/t/p/w500/${film.poster_path}`;
+  if (film.poster_path === null) {
+    imgSrc = require('../../images/movie_time_22.jpg');
+  }
   return `<img class="modal-card__img"
-     src="https://www.themoviedb.org/t/p/w500/${film.poster_path}"
+     src="${imgSrc}"
      alt=""
      id=""
     />
@@ -23,7 +23,7 @@ export function markupBtnModalFilm(film) {
        <span>${film.vote_count}</span></td>
         </tr> 
            <tr class="table__line">
-          <td class="table__parametr">Popularity</td>
+          <td class="table__parametr" >Popularity</td>
           <td class="table__value">${film.popularity}</td>
         </tr>
            <tr class="table__line">
