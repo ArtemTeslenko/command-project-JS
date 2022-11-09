@@ -27,6 +27,7 @@
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
+  background-color: transparent;
 
   @include transitions(background-color);
 

@@ -2,7 +2,7 @@
 export function markupBtnModalFilm(film) {
   const genres = film.genres.map(film => film.name).join(', ');
   let imgSrc = `https://www.themoviedb.org/t/p/w500/${film.poster_path}`;
-  if (film.poster_path === null) {
+  if (!film.poster_path) {
     imgSrc = require('../../images/movie_time_22.jpg');
   }
   return `<img class="modal-card__img"
