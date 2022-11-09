@@ -1,6 +1,7 @@
 import { getGenreName } from '../customFunction/getGenreName';
 
 export function createFilmMarkup(arrFilms) {
+  console.log(arrFilms);
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
       let genres = getGenreName(genre_ids);

@@ -34,7 +34,7 @@ export function trendsControls() {
           if (totalPage > 1) {
             paginationControl(
               Number(data.total_pages), // total page
-              Number(data.page), // current page
+              93, //Number(data.page), // current page
               trendUrl // big part of url);
             );
           }
