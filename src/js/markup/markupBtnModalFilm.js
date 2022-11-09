@@ -22,8 +22,8 @@ export function markupBtnModalFilm(film) {
        <span class="table__value-slash">/</span>
        <span>${film.vote_count}</span></td>
         </tr> 
-           <tr class="table__line">
-          <td class="table__parametr">Popularity</td>
+           <tr class="table__line" width="100">
+          <td class="table__parametr" >Popularity</td>
           <td class="table__value">${film.popularity}</td>
         </tr>
            <tr class="table__line">

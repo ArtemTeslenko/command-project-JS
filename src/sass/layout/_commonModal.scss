@@ -76,12 +76,13 @@
     max-width: 264px;
     max-height: 374px;
     margin-right: 68px;
+    margin-bottom: 0;
   }
   @include desktop {
     margin-right: 16px;
     max-width: 375px;
     max-height: 478px;
-    height: 478px;
+    height: 100%;
   }
 }
 
@@ -114,11 +115,20 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1.15;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  @include desktop {
+    font-size: 30px;
+    line-height: 1.17;
+  }
 }
+
 .table {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+}
+
+.table__line {
+  height: 24px;
 }
 .table__parametr {
   padding-right: 39px;
@@ -170,6 +180,9 @@
   @include tablet {
     width: 264px;
   }
+  @include desktop {
+    width: 391px;
+  }
 }
 
 .button-add {
@@ -192,25 +205,16 @@
     width: 120px;
     margin-right: 15px;
   }
+  @include desktop {
+    width: 136px;
+  }
 }
 
 .button-add__queue {
-  padding-top: 13px;
-  padding-bottom: 13px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  color: #000000;
+  @extend %secondary-btn;
   width: 110px;
 
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-
-  @include transitions(background-color);
-
-  &:hover,
-  &:focus {
-    background-color: #de5900;
-    border: 1px solid #de5900;
-  }
 }
