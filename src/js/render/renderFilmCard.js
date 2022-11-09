@@ -1,11 +1,12 @@
+import { refs } from '../reference/homeRefs';
+import { refs } from '../reference/libraryRefs';
 import { fetchFilmId } from '../requests';
 import { markupBtnModalFilm } from '../markup';
 import { addToLokalStorage } from '../controls';
 
 let film = {};
-const modalCardEl = document.querySelector('.modal-card');
 
-export async function fetchId(id) {
+export async function renderFilmCard(id) {
   await fetchFilmId(id).then(respons => {
     film = respons;
     return film;
@@ -14,9 +15,9 @@ export async function fetchId(id) {
   addToLokalStorage(film);
 
   const marcup = markupBtnModalFilm(film);
-  return (modalCardEl.innerHTML = marcup);
+  return (refs.modalCardEl.innerHTML = marcup);
 }
 
 export function cleanFilmCard() {
-  return (modalCardEl.innerHTML = '');
+      return refs.modalCardEl.innerHTML = '';
 }

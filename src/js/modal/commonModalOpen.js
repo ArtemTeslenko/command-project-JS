@@ -1,21 +1,29 @@
-// import { testOnClickFetchFilmId } from '../modal'
 import { refs } from '../../js/reference/homeRefs';
 import { refs } from '../../js/reference/libraryRefs';
-import { fetchId } from '../modal';
-import { cleanFilmCard } from './markupFilmForModal';
+import { renderFilmCard } from '../render';
+import { cleanFilmCard } from '../render/renderFilmCard';
+
+// відкриває модалку (перевикористовувати)
+export function modalTemplate(btn) {
+  btn.addEventListener('click', onOpenModal);
+}
+// відкриває модалку з рендером картки фільму
+export function onOpenModalFilm() {
+  refs.filmsGalleryEl.addEventListener('click', onEventListenerClick);
+}
 
 // функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
-  cleanFilmCard();
+   cleanFilmCard();
 }
-
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
+     cleanFilmCard();
   }
   return;
 }
@@ -27,32 +35,30 @@ function creatKeydownEscape(e) {
       refs.bodyNoScrollEl.classList.remove('no-scroll');
       refs.backdropEl.classList.add('is-hidden');
       refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
+     cleanFilmCard();
     }
   }
 }
 
-// відкриває і закриває модалку
-function onOpenModal(e) {
-  refs.backdropEl.classList.remove('is-hidden');
-  refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
-  refs.bodyNoScrollEl.classList.add('no-scroll');
+function commonClose() {
   refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
   refs.buttonCloseEl.addEventListener('click', onClouseModal);
+  refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
+}
+ 
+// відкриває і закриває модалку
+function onOpenModal() {
+  refs.backdropEl.classList.remove('is-hidden');
+  refs.bodyNoScrollEl.classList.add('no-scroll');
+  commonClose();
 }
 
 // перевіряє умову відкриття модалки з рендером картки фільму
 async function onEventListenerClick(e) {
   e.preventDefault();
   if (e.target.closest('.film-card__link')) {
-    await fetchId(e.target.closest('.film-card__link').id);
+    await renderFilmCard(e.target.closest('.film-card__link').id);
     onOpenModal();
   }
 }
-// відкриває модалку (перевикористовувати)
-export function modalTemplate(btn) {
-  btn.addEventListener('click', onOpenModal);
-}
-// відкриває модалку з рендером картки фільму
-export function onOpenModalFilm() {
-  refs.filmsGalleryEl.addEventListener('click', onEventListenerClick);
-}
+
