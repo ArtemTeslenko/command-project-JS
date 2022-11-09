@@ -1,55 +1,51 @@
 import { buildUrl } from '../requests';
-//import { paginationBtnHidden } from './paginationBtnHidden';
 
-export function paginationRenderL(totalPages, currentPage, trendUrl) {
+export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
   let paginationLinks = '';
-
-  // ----- 1 Ver
-  if (currentPage <= 6) {
-    for (let i = 1; i <= 7; i++) {
+  // ------ 0 Ver
+  if (totalPages <= 5) {
+    console.log('in ver 0');
+    for (let i = 1; i <= totalPages; i++) {
       paginationArrBtn.push(i);
       paginationArrAtr.push(i);
     }
-    paginationArrBtn.push('...');
-    paginationArrAtr.push(8);
-    paginationArrBtn.push(totalPages);
-    paginationArrAtr.push(totalPages);
-    //paginationBtnHidden(currentPage, totalPages);
-  }
-  // --- 2 Ver
-  if (currentPage > 6 && currentPage < totalPages - 5) {
-    paginationArrBtn.push(1);
-    paginationArrAtr.push(1);
-    paginationArrBtn.push('...');
-    paginationArrAtr.push(currentPage - 3);
-    for (let i = currentPage - 2; i <= currentPage + 2; i++) {
-      paginationArrBtn.push(i);
-      paginationArrAtr.push(i);
-    }
-    paginationArrBtn.push('...');
-    paginationArrAtr.push(currentPage + 3);
+  } else {
+    // ----- 1 Ver
+    if (currentPage < 5) {
+      console.log('in ver 1');
+      for (let i = 1; i <= 5; i++) {
+        paginationArrBtn.push(i);
+        paginationArrAtr.push(i);
+      }
 
-    paginationArrBtn.push(totalPages);
-    paginationArrAtr.push(totalPages);
-    //paginationBtnHidden(currentPage, totalPages);
-  }
-
-  // ---- 3 Ver
-  if (currentPage >= totalPages - 5) {
-    paginationArrBtn.push(1);
-    paginationArrAtr.push(1);
-    paginationArrBtn.push('...');
-    paginationArrAtr.push(totalPages - 7);
-    for (let i = -6; i <= 0; i++) {
-      paginationArrBtn.push(totalPages + i);
-      paginationArrAtr.push(totalPages + i);
       //paginationBtnHidden(currentPage, totalPages);
+    }
+    // --- 2 Ver
+    if (currentPage > 5 && currentPage < totalPages - 4) {
+      console.log('in ver 2');
+      for (let i = currentPage - 2; i <= currentPage + 2; i++) {
+        paginationArrBtn.push(i);
+        paginationArrAtr.push(i);
+      }
+
+      //paginationBtnHidden(currentPage, totalPages);
+    }
+
+    // ---- 3 Ver
+    if (currentPage >= totalPages - 4) {
+      console.log('in ver 3');
+      for (let i = -4; i <= 0; i++) {
+        paginationArrBtn.push(totalPages + i);
+        paginationArrAtr.push(totalPages + i);
+        //paginationBtnHidden(currentPage, totalPages);
+      }
     }
   }
 
   let itemClass = 0;
+
   paginationArrBtn.forEach(pageNumber => {
     itemClass += 1;
 
@@ -84,4 +80,3 @@ export function paginationRenderL(totalPages, currentPage, trendUrl) {
     currentPage + 1
   } "width="20" height="20"></button>`;
 }
-//disabled="false"

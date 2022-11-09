@@ -4,8 +4,8 @@ import { fetchGenreId } from '../requests';
 import { filmsTrendRender } from '../render/filmsTrendRender';
 import { fetchFilms } from '../requests/fetchFilmsTrends';
 import { cleanRender } from '../customFunction/functionCleanRender';
-import { paginationRender } from '../customFunction/paginationL';
-import { paginationArrowHidden } from '../customFunction/paginationArrowHidden';
+// import { paginationRender } from '../customFunction/paginationL';
+// import { paginationArrowHidden } from '../customFunction/paginationArrowHidden';
 import { paginationControl } from '../customFunction/paginationControls';
 
 export let genreIdArr = [];
@@ -20,7 +20,7 @@ export function trendsControls() {
         })
         .catch(error => console.log(error));
       fetchMovies(page);
-
+      console.log(screen.width);
       function fetchMovies(page) {
         cleanRender(refs.galleryEl);
         const trendUrl =
@@ -33,7 +33,8 @@ export function trendsControls() {
           // ------ V copie
           if (totalPage > 1) {
             paginationControl(
-              Number(data.total_pages), // total page
+              6,
+              //Number(data.total_pages), // total page
               Number(data.page), // current page
               trendUrl // big part of url);
             );
