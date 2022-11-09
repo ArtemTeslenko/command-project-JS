@@ -28,3 +28,4 @@ export function paginationBtnHidden(page, totalPage) {
     refs.paginationEl.classList.add('item--hidden-mob--3');
   }
 }
+//btnPaginationArrow
