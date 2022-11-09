@@ -1,5 +1,5 @@
-import { refs } from '../../js/reference/homeRefs';
-import { refs } from '../../js/reference/libraryRefs';
+import { refs } from '../reference/homeRefs';
+import { refs } from '../reference/libraryRefs';
 import { renderFilmCard } from '../render';
 import { cleanFilmCard } from '../render/renderFilmCard';
 
@@ -16,14 +16,14 @@ export function onOpenModalFilm() {
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
-   cleanFilmCard();
+  cleanFilmCard();
 }
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
-     cleanFilmCard();
+    cleanFilmCard();
   }
   return;
 }
@@ -35,7 +35,7 @@ function creatKeydownEscape(e) {
       refs.bodyNoScrollEl.classList.remove('no-scroll');
       refs.backdropEl.classList.add('is-hidden');
       refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
-     cleanFilmCard();
+      cleanFilmCard();
     }
   }
 }
@@ -45,7 +45,7 @@ function commonClose() {
   refs.buttonCloseEl.addEventListener('click', onClouseModal);
   refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
 }
- 
+
 // відкриває і закриває модалку
 function onOpenModal() {
   refs.backdropEl.classList.remove('is-hidden');
@@ -61,4 +61,3 @@ async function onEventListenerClick(e) {
     onOpenModal();
   }
 }
-
