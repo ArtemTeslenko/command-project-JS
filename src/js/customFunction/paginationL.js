@@ -1,7 +1,7 @@
 import { buildUrl } from '../requests';
 import { paginationBtnHidden } from './paginationBtnHidden';
 
-export function paginationRender(totalPages, currentPage, trendUrl) {
+export function paginationRenderL(totalPages, currentPage, trendUrl) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
   let paginationLinks = '';
@@ -69,9 +69,9 @@ export function paginationRender(totalPages, currentPage, trendUrl) {
   const arrowRight = require(`../../images/arrow-right.svg`);
   return `<button class="btn__pagination btn--decrement" data-page="${
     currentPage - 1
-  }" type="button"><img src="${arrowLeft}" data-page="${
-    currentPage - 1
-  }" disabled="false" class="pagination__icon"  width="20" height="20"
+  }" 
+  type="button"><img src="${arrowLeft}" data-page="${currentPage - 1}" 
+  class="pagination__icon "  width="20" height="20"
       alt="selectedItem"></button>
         <div class="pagination__wrap">
         <ul class="pagination__list list">
@@ -79,8 +79,9 @@ export function paginationRender(totalPages, currentPage, trendUrl) {
         </div>
          <button class="btn__pagination btn--increment" data-page="${
            currentPage + 1
-         }" disabled="false" type="button" >
-    <img src="${arrowRight}" class="pagination__icon" data-page="${
+         }"  type="button" >
+    <img src="${arrowRight}" class="pagination__icon " data-page="${
     currentPage + 1
   } "width="20" height="20"></button>`;
 }
+//disabled="false"

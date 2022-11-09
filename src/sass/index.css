@@ -505,7 +505,6 @@ img {
 .btn--decrement,
 .btn--increment {
   cursor: pointer;
-  display: flex;
   width: 38px;
   height: 38px;
   justify-content: center;
@@ -530,12 +529,6 @@ img {
   .btn--decrement {
     margin-right: 16px;
   }
-}
-
-.btn--decrement[disabled=true],
-.btn--increment[disabled=true] {
-  cursor: default;
-  background-color: #e5e5e5;
 }
 
 .pagination__icon {
