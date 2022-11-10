@@ -33,8 +33,8 @@ export function trendsControls() {
           // ------ V copie
           if (totalPage > 1) {
             paginationControl(
-              Number(data.total_pages), // total page
-              93, //Number(data.page), // current page
+              Number(data.total_pages),
+              Number(data.page), // current page,
               trendUrl // big part of url);
             );
           }

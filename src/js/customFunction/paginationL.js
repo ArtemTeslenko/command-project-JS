@@ -7,7 +7,8 @@ export function paginationRenderL(totalPages, currentPage, trendUrl) {
   let paginationLinks = '';
 
   // ----- 1 Ver
-  if (currentPage <= 6) {
+  // 6
+  if (currentPage <= 5) {
     for (let i = 1; i <= 7; i++) {
       paginationArrBtn.push(i);
       paginationArrAtr.push(i);
@@ -19,7 +20,8 @@ export function paginationRenderL(totalPages, currentPage, trendUrl) {
     //paginationBtnHidden(currentPage, totalPages);
   }
   // --- 2 Ver
-  if (currentPage > 6 && currentPage < totalPages - 5) {
+  //6,5
+  if (currentPage > 5 && currentPage < totalPages - 4) {
     paginationArrBtn.push(1);
     paginationArrAtr.push(1);
     paginationArrBtn.push('...');
@@ -37,7 +39,8 @@ export function paginationRenderL(totalPages, currentPage, trendUrl) {
   }
 
   // ---- 3 Ver
-  if (currentPage >= totalPages - 5) {
+  //5
+  if (currentPage >= totalPages - 4) {
     paginationArrBtn.push(1);
     paginationArrAtr.push(1);
     paginationArrBtn.push('...');
