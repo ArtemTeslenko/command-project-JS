@@ -1,9 +1,12 @@
-import { refs } from '../reference/homeRefs.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { refs } from '../reference/homeRefs.js';
 import { renderLibraryList } from '../render';
 
 const STORAGE_WATCHED_KEY = 'watched';
 const STORAGE_QUEUE_KEY = 'queue';
+const successNotify = 'The movie added to the list';
+const infoNotify = 'The movie has already been added to the list';
+const warningNotify = 'List is empty!';
 
 let watchedFilmList = [];
 let queueFilmList = [];
@@ -16,7 +19,7 @@ try {
 
 // Додае ключ та значення в Lokal Storage
 export function addToLokalStorage(film) {
-  refs.modalFilmEl.addEventListener('click', onModalBtnClick);
+  refs.modalCardEl.addEventListener('click', onModalBtnClick);
 
   function onModalBtnClick(evt) {
     if (evt.target.classList.contains('button-add__watched')) {
@@ -29,7 +32,7 @@ export function addToLokalStorage(film) {
       addToList(queueFilmList, film);
       localStorage.setItem(STORAGE_QUEUE_KEY, JSON.stringify(queueFilmList));
     }
-    refs.modalFilmEl.removeEventListener('click', onModalBtnClick);
+    refs.modalCardEl.removeEventListener('click', onModalBtnClick);
   }
 }
 
@@ -37,18 +40,35 @@ export function addToLokalStorage(film) {
 function addToList(arr, film) {
   if (!arr.find(item => item.id === film.id)) {
     arr.push(film);
-    Notify.success('The movie has been added to the list');
+    Notify.success(successNotify, {
+      position: 'center-top',
+    });
   } else {
-    Notify.info('The movie has already been added to the list');
+    Notify.info(infoNotify, {
+      position: 'center-top',
+    });
   }
 }
 
 //Рендерить сторінку по даним з Lokal Storage
-export function onMyLibraryOpen() {
+export function onWatchedOpen() {
   try {
-    const filmItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
-    renderLibraryList(filmItems);
+    const watchedItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
+    renderLibraryList(watchedItems);
   } catch (error) {
-    Notify.warning('List is empty!');
+    Notify.warning(warningNotify, {
+      position: 'center-top',
+    });
+  }
+}
+
+export function onQueueOpen() {
+  try {
+    const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
+    renderLibraryList(qeueItems);
+  } catch (error) {
+    Notify.warning(warningNotify, {
+      position: 'center-top',
+    });
   }
 }

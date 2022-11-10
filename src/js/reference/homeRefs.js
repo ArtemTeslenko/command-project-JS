@@ -34,5 +34,4 @@ export const refs = {
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
-  modalFilmEl: document.querySelector('.modal-card'),
 };

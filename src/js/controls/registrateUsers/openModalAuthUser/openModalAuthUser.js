@@ -1,9 +1,10 @@
 import { refs } from '../../../reference/homeRefs';
 
-refs.logIn.addEventListener('click', openCloseFormUsers);
-refs.btnCloseForm.addEventListener('click', openCloseFormUsers);
-
-refs.btnRegUser.addEventListener('click', reRenderForm);
+export function listenerBack() {
+  refs.logIn.addEventListener('click', openCloseFormUsers);
+  refs.btnCloseForm.addEventListener('click', openCloseFormUsers);
+  refs.btnRegUser.addEventListener('click', reRenderForm);
+}
 
 function reRenderForm(e) {
   e.preventDefault();
