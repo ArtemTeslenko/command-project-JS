@@ -1,6 +1,6 @@
 import { fetchFilmId } from './fetchFilmId';
 import { markupBtnModalFilm } from '../markup';
-import { addToLokalStorage } from '../controls';
+import { addToLokalStorage, addFilmProfail } from '../controls';
 
 let film = {};
 const modalCardEl = document.querySelector('.modal-card');
@@ -14,7 +14,11 @@ export async function FetchFilmId(id) {
   addToLokalStorage(film);
 
   const marcup = markupBtnModalFilm(film);
-  return (modalCardEl.innerHTML = marcup);
+  modalCardEl.innerHTML = marcup;
+
+  // Вызывает функцию для поска кнопод для добавления фильмов в просмотренные
+  // путь controls --> data --> addFilmUsers
+  return addFilmProfail(film);
 }
 
 export function clianFilmCard() {
