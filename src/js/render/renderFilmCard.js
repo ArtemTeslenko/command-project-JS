@@ -18,6 +18,3 @@ export async function renderFilmCard(id) {
   return (refs.modalCardEl.innerHTML = marcup);
 }
 
-export function cleanFilmCard() {
-      return refs.modalCardEl.innerHTML = '';
-}
