@@ -1,6 +1,11 @@
 import { buildUrl } from '../requests';
 
-export function paginationRenderMobile(totalPages, currentPage, trendUrl) {
+export function paginationRenderMobile(
+  totalPages,
+  currentPage,
+  trendUrl,
+  directionEl
+) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
   let paginationLinks = '';

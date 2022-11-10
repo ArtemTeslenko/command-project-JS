@@ -28,6 +28,7 @@ export const refs = {
   //------ Ganna K ------
   galleryEl: document.querySelector('.films-gallery'),
   paginationEl: document.querySelector('.pagination'),
+  paginationSearchEl: document.querySelector('.pagination-search'),
 
   //---------
   scrollBtnEl: document.querySelector('.arrow-up'),

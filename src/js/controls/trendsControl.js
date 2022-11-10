@@ -35,7 +35,8 @@ export function trendsControls() {
             paginationControl(
               Number(data.total_pages), // total page
               Number(data.page), // current page
-              trendUrl // big part of url);
+              trendUrl, // big part of url);
+              refs.paginationEl
             );
           }
           // ------ end of V copie
