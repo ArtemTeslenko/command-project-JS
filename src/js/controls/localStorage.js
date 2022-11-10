@@ -9,8 +9,6 @@ const successNotify = 'The movie added to the list';
 const infoNotify = 'The movie has already been added to the list';
 const warningNotify = 'List is empty!';
 
-libraryEl = document.querySelector('.library-gallery');
-
 let watchedFilmList = [];
 let queueFilmList = [];
 try {
