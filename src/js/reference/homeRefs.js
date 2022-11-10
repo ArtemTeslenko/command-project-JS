@@ -6,6 +6,7 @@ export const refs = {
   buttonCloseEl: document.querySelector('.modal__button'),
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
   searchMovieEl: document.querySelector('.search-form'),
+  modalCardEl: document.querySelector('.modal-card'),
 
   // modal authUser
   logIn: document.querySelector('#logIn'),
@@ -28,9 +29,9 @@ export const refs = {
   galleryEl: document.querySelector('.films-gallery'),
   paginationEl: document.querySelector('.pagination'),
 
+  //---------
   scrollBtnEl: document.querySelector('.arrow-up'),
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
-  modalFilmEl: document.querySelector('.modal-card'),
 };

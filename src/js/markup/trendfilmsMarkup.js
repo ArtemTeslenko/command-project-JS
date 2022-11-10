@@ -10,20 +10,21 @@ export function createFilmMarkup(arrFilms) {
         genres.push('Other');
       }
       genres = genres.join(', ');
+      let imgSrc = 'https://www.themoviedb.org/t/p/w500' + poster_path;
 
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
+      if (poster_path === null) {
+        imgSrc = require('../../images/no-photo.jpg');
+      }
       return `<div class="film-card">
       <a class="film-card__link link" href="" id="${id}">
-      <div class="film-card__img-box">
-        
+      <div class="film-card__img-box"> 
         <img class="film-card__img"
-          src="https://www.themoviedb.org/t/p/w500/${poster_path}"
-          alt=""
-          
+          src="${imgSrc}"
+          alt="${original_title}"
         />
-        </div>
-      
+        </div>  
         <div class="film-card__info">
           <h2 class="film-card__name film-card__item">
             ${original_title}

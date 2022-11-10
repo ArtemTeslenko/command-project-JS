@@ -4,86 +4,52 @@ import { fetchGenreId } from '../requests';
 import { filmsTrendRender } from '../render/filmsTrendRender';
 import { fetchFilms } from '../requests/fetchFilmsTrends';
 import { cleanRender } from '../customFunction/functionCleanRender';
-import { paginationRender } from '../customFunction/pagination';
+// import { paginationRender } from '../customFunction/paginationL';
+// import { paginationArrowHidden } from '../customFunction/paginationArrowHidden';
+import { paginationControl } from '../customFunction/paginationControls';
 
 export let genreIdArr = [];
 
-//-----------
-
-// export function trendsControls() {
-//   let page = 1;
-
-//   fetchGenreId()
-//     .then(genreId => {
-//       genreIdArr = genreId.genres;
-//     })
-//     .catch(error => console.log(error));
-//   //------
-
-//   fetchMovies(page);
-
-//   //-----------
-//   function fetchMovies(page) {
-//     fetchFilms(page, 'movie', 'week').then(data => {
-//       const destinationEl = refs.galleryEl;
-
-//       filmsTrendRender(data, destinationEl);
-//       let totalPage = data.total_pages;
-
-//       if (totalPage > 1) {
-//         const renderedPagination = paginationRender(
-//           Number(data.total_pages),
-//           Number(data.page),
-//           'movie',
-//           'week'
-//         );
-//         refs.paginationEl.innerHTML = renderedPagination;
-//       }
-//     });
-//   }
-//   //----------
-//   refs.paginationEl.addEventListener('click', e => {
-//     e.preventDefault();
-//     cleanRender(refs.galleryEl);
-
-//     fetchMovies(e.target.dataset.page);
-//   });
-// } // не трогать
 export function trendsControls() {
   let page = 1;
-  const kukuku = async () => {
-    await fetchGenreId()
-      .then(genreId => {
-        genreIdArr = genreId.genres;
-      })
-      .catch(error => console.log(error));
-    fetchMovies(page);
+  async function mainFunctionCode() {
+    try {
+      await fetchGenreId()
+        .then(genreId => {
+          genreIdArr = genreId.genres;
+        })
+        .catch(error => console.log(error));
+      fetchMovies(page);
 
-    function fetchMovies(page) {
-      fetchFilms(page, 'movie', 'week').then(data => {
-        const destinationEl = refs.galleryEl;
+      function fetchMovies(page) {
+        cleanRender(refs.galleryEl);
+        const trendUrl =
+          'https://api.themoviedb.org/3/trending/movie/week?api_key=894ef72300682f1db325dae2afe3e7e2&page=';
+        fetchFilms(page, trendUrl).then(data => {
+          const destinationEl = refs.galleryEl;
 
-        filmsTrendRender(data, destinationEl);
-        let totalPage = data.total_pages;
-
-        if (totalPage > 1) {
-          const renderedPagination = paginationRender(
-            Number(data.total_pages),
-            Number(data.page),
-            'movie',
-            'week'
-          );
-          refs.paginationEl.innerHTML = renderedPagination;
-        }
+          filmsTrendRender(data, destinationEl);
+          let totalPage = data.total_pages;
+          // ------ V copie
+          if (totalPage > 1) {
+            paginationControl(
+              Number(data.total_pages), // total page
+              Number(data.page), // current page
+              trendUrl // big part of url);
+            );
+          }
+          // ------ end of V copie
+        });
+      }
+      //----------
+      refs.paginationEl.addEventListener('click', e => {
+        e.preventDefault();
+        //cleanRender(refs.galleryEl);
+        fetchMovies(e.target.dataset.page);
       });
+    } catch (e) {
+      console.log(e);
     }
-    //----------
-    refs.paginationEl.addEventListener('click', e => {
-      e.preventDefault();
-      cleanRender(refs.galleryEl);
-
-      fetchMovies(e.target.dataset.page);
-    });
-  };
-  kukuku();
+  }
+  mainFunctionCode();
 }

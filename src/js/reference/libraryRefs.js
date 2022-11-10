@@ -9,4 +9,6 @@ export const refs = {
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
+  modalCardEl: document.querySelector('.modal-card'),
+  libraryEl: document.querySelector('.library-gallery'),
 };
