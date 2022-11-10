@@ -20,7 +20,3 @@ export async function renderFilmCard(id) {
   // путь controls --> data --> addFilmUsers
   return addFilmProfail(film);
 }
-
-export function cleanFilmCard() {
-  return (refs.modalCardEl.innerHTML = '');
-}
