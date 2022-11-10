@@ -1,7 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from '../reference/homeRefs.js';
 import { renderLibraryList } from '../render';
-import { cleanRender } from '../customFunction';
 
 const STORAGE_WATCHED_KEY = 'watched';
 const STORAGE_QUEUE_KEY = 'queue';
@@ -57,7 +56,6 @@ export function onWatchedOpen() {
     const watchedItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
     renderLibraryList(watchedItems);
   } catch (error) {
-    cleanRender(libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
@@ -69,7 +67,6 @@ export function onQueueOpen() {
     const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
     renderLibraryList(qeueItems);
   } catch (error) {
-    cleanRender(libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
