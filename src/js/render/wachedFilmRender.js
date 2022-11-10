@@ -1,8 +1,8 @@
+import { refs } from '../reference/libraryRefs.js';
 import { createLibraryMarkup } from '../markup/libraryMrkup';
 
-const libraryEl = document.querySelector('.library-gallery');
 export function renderLibraryList(filmItems) {
   const libraryMarkup = createLibraryMarkup(filmItems);
 
-  libraryEl.innerHTML = libraryMarkup;
+  refs.libraryEl.innerHTML = libraryMarkup;
 }

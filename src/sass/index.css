@@ -505,7 +505,6 @@ img {
 .btn--decrement,
 .btn--increment {
   cursor: pointer;
-  display: flex;
   width: 38px;
   height: 38px;
   justify-content: center;
@@ -530,12 +529,6 @@ img {
   .btn--decrement {
     margin-right: 16px;
   }
-}
-
-.btn--decrement[disabled=true],
-.btn--increment[disabled=true] {
-  cursor: default;
-  background-color: #e5e5e5;
 }
 
 .pagination__icon {
@@ -596,23 +589,6 @@ img {
   background-color: rgb(255, 107, 8);
   color: rgb(255, 255, 255);
   border-radius: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .item--hidden-mob--1 .item6,
-.item--hidden-mob--1 .item7,
-.item--hidden-mob--1 .item8,
-.item--hidden-mob--1 .item9,
-.item--hidden-mob--2 .item1,
-.item--hidden-mob--2 .item2,
-.item--hidden-mob--2 .item8,
-.item--hidden-mob--2 .item9,
-.item--hidden-mob--3 .item1,
-.item--hidden-mob--3 .item2,
-.item--hidden-mob--3 .item3,
-.item--hidden-mob--3 .item4 {
-    display: none;
-  }
 }
 
 .no-scroll {
