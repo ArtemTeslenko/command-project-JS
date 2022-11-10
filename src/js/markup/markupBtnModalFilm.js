@@ -5,7 +5,8 @@ export function markupBtnModalFilm(film) {
   if (!film.poster_path) {
     imgSrc = require('../../images/movie_time_22.jpg');
   }
-  return `<img class="modal-card__img"
+  return `<div class="modal-card__size">
+  <img class="modal-card__img"
      src="${imgSrc}"
      alt=""
      id=""
@@ -45,5 +46,6 @@ export function markupBtnModalFilm(film) {
      <button class="button-add__watched">ADD TO WATCHED</button>
      <button class="button-add__queue">ADD TO QUEUE</button>
       </div>
+     </div>
      </div>`;
 }
