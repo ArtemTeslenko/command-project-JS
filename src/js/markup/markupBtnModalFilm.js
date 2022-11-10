@@ -43,8 +43,8 @@ export function markupBtnModalFilm(film) {
      </p>
 
      <div class="button-add">
-     <button class="button-add__watched">ADD TO WATCHED</button>
-     <button class="button-add__queue">ADD TO QUEUE</button>
+     <button class="button-add__watched" name="watched">ADD TO WATCHED</button>
+     <button class="button-add__queue" name="queue">ADD TO QUEUE</button>
       </div>
      </div>
      </div>`;
