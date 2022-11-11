@@ -1,5 +1,5 @@
 import { setVerifyToken, getUsersessionData } from '../index';
-import { writeUserData } from '../../data/sdc';
+// import { writeUserData } from '../../data/sdc';
 import { onAuthStateChanged } from 'firebase/auth';
 
 //==
@@ -30,7 +30,7 @@ onAuthStateChanged(auth, user => {
 export function veryfiUserId(movieData, category) {
   onAuthStateChanged(auth, user => {
     if (user) {
-      writeUserData(movieData, user.uid, category);
+      // writeUserData(movieData, user.uid, category);
     } else {
       console.log(
         'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'

@@ -27,7 +27,7 @@ export function addFilmProfail(filmData) {
       overview: filmData.overview,
     };
 
-    veryfiUserId(movieData, e.target.name);
+    // veryfiUserId(movieData, e.target.name);
     // writeUserData(movieData);
   }
 }
