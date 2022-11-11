@@ -7,8 +7,10 @@ import { addToLokalStorage, addFilmProfail } from '../controls';
 let film = {};
 
 export async function renderFilmCard(id) {
+  refs.modalSpinnerEl.classList.remove('is-hidden');
   await fetchFilmId(id).then(respons => {
     film = respons;
+    refs.modalSpinnerEl.classList.add('is-hidden');
     return film;
   });
 

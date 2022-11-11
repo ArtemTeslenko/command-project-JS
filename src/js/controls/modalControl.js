@@ -7,8 +7,9 @@ export function modalTemplate(btn) {
   btn.addEventListener('click', onOpenModal);
 }
 // відкриває модалку з рендером картки фільму
-export function onOpenModalFilm(e) {
-  e.addEventListener('click', onEventListenerClick);
+
+export function onOpenModalFilm(element) {
+  element.addEventListener('click', onEventListenerClick);
 }
 
 // функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()

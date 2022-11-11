@@ -8,7 +8,7 @@ export function markupBtnModalFilm(film) {
   return `<div class="modal-card__size">
   <img class="modal-card__img"
      src="${imgSrc}"
-     alt=""
+     alt="${film.title}"
      id="${film.id}"
     />
     <div class="modal-card__info">

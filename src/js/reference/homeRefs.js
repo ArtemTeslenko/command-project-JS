@@ -8,6 +8,7 @@ export const refs = {
   searchMovieEl: document.querySelector('.search-form'),
   modalCardEl: document.querySelector('.modal-card'),
   modalCardImg: document.querySelector('.modal-card__img'),
+  modalSpinnerEl: document.querySelector('.modal-spinner'),
 
   // modal authUser
   logIn: document.querySelector('#logIn'),

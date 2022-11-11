@@ -1,7 +1,14 @@
 export function createLibraryMarkup(arrFilms) {
   return arrFilms
     .map(
-      ({ original_title, release_date, genres, poster_path, vote_average }) => {
+      ({
+        original_title,
+        release_date,
+        genres,
+        id,
+        poster_path,
+        vote_average,
+      }) => {
         let genreArr = [];
         genres.forEach(genre => {
           genreArr.push(genre.name);
@@ -13,7 +20,7 @@ export function createLibraryMarkup(arrFilms) {
         vote_average = vote_average.toFixed(1);
 
         return `<div class="film-card">
-  <a class="film-card__link link" href="">
+  <a class="film-card__link link" href="" id="${id}">
     <div class="film-card__img-box">
       <img
         class="film-card__img"
