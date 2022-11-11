@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .isHiddenBtn {
   scale: 0;
   opacity: 0;
@@ -11,7 +15,7 @@
   z-index: 9999;
   fill: #ff6b01;
   &:hover {
-    fill: #03a9f4;
+    fill: #de5900;
   }
   @include tablet {
     scale: 0.3;
