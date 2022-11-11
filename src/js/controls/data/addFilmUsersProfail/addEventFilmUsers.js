@@ -1,6 +1,6 @@
-import { writeUserData } from '../index';
-import { getDataUser } from '../index';
-import { veryfiUserId } from '../../registrateUsers/userInActiv';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../index';
+import { getDatabase, ref, set } from 'firebase/database';
 
 export function addFilmProfail(filmData) {
   const btnWached = document.querySelector('.button-add__watched');
@@ -27,7 +27,31 @@ export function addFilmProfail(filmData) {
       overview: filmData.overview,
     };
 
-    veryfiUserId(movieData, e.target.name);
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        const db = getDatabase();
+        set(
+          ref(
+            db,
+            'users/' + `${user.uid}/` + `${e.target.name}/` + movieData.title
+          ),
+          movieData
+        )
+          .then(() => {
+            console.log('Данные записаны.');
+          })
+          .catch(error => {
+            console.log(error);
+            console.log('Ошибка!!! Данные не записаны.');
+          });
+      } else {
+        console.log(
+          'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+        );
+      }
+    });
+
+    // veryfiUserId(movieData, e.target.name);
     // writeUserData(movieData);
   }
 }

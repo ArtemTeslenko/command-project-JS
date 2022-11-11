@@ -3,20 +3,20 @@ import { getDatabase, ref, set, child, get, update } from 'firebase/database';
 import { conversionArray } from './index';
 import { app } from '../registrateUsers/fireBaseIndex/firebaseIndex';
 
-// add Film Users Profail
-export function writeUserData(dataFilm, uid, category) {
-  // console.log(uid);
-  // conversionArray(dataFilm, getDataUser(uid));
-  const db = getDatabase();
-  set(ref(db, 'users/' + `${uid}/` + `${category}/` + dataFilm.title), dataFilm)
-    .then(() => {
-      console.log('Данные записаны.');
-    })
-    .catch(error => {
-      console.log('Ошибка!!! Данные не записаны.');
-    });
-  getDataUser(dataFilm, uid);
-}
+// // add Film Users Profail
+// export function writeUserData(dataFilm, uid, category) {
+//   // console.log(uid);
+//   // conversionArray(dataFilm, getDataUser(uid));
+//   const db = getDatabase();
+//   set(ref(db, 'users/' + `${uid}/` + `${category}/` + dataFilm.title), dataFilm)
+//     .then(() => {
+//       console.log('Данные записаны.');
+//     })
+//     .catch(error => {
+//       console.log('Ошибка!!! Данные не записаны.');
+//     });
+//   getDataUser(dataFilm, uid);
+// }
 
 // writeUserData();
 
