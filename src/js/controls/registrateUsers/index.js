@@ -5,5 +5,5 @@ export * from './userAuth';
 export * from './userInActiv';
 export * from './verifySession';
 
-import { veryfiUser } from './userInActiv';
-veryfiUser();
+// import { veryfiUser } from './userInActiv';
+// veryfiUser();
