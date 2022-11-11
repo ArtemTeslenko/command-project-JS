@@ -2,7 +2,6 @@ import {
   currentToken,
   renderBtnAuth,
   openCloseFormUsersOnAuth,
-  // veryfiUser,
 } from '../index';
 
 let sessionTokenLocal = '';
