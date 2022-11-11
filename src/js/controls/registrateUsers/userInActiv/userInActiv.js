@@ -1,15 +1,19 @@
-import { auth, setVerifyToken, getUsersessionData } from '../index';
+import { setVerifyToken, getUsersessionData } from '../index';
 import { writeUserData } from '../../data/sdc';
 import { onAuthStateChanged } from 'firebase/auth';
 
-export let currentToken = '';
+//==
+import { auth } from '../fireBaseIndex';
+// const auth = auth;
+console.log('external auth', auth);
+//==
 
-// export function veryfiUser() {
+export let currentToken = '';
 onAuthStateChanged(auth, user => {
+  console.log('internal auth', auth);
   if (user) {
-    console.log(user);
+    // console.log(user);
     currentToken = user.accessToken;
-    // return user;
     setVerifyToken(user.accessToken, user.uid);
     getUsersessionData();
   } else {
@@ -18,7 +22,6 @@ onAuthStateChanged(auth, user => {
     );
   }
 });
-// }
 
 // Получение ID  пользователя для записи in BD
 export function veryfiUserId(movieData, category) {
