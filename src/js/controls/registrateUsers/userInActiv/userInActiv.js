@@ -1,9 +1,12 @@
-import { auth, setVerifyToken, getUsersessionData } from '../index';
+import { setVerifyToken, getUsersessionData } from '../index';
 import { writeUserData } from '../../data/sdc';
 import { onAuthStateChanged } from 'firebase/auth';
 
-export let currentToken = '';
+//==
+import { auth } from '../fireBaseIndex';
+//==
 
+export let currentToken = '';
 export function veryfiUser() {
   onAuthStateChanged(auth, user => {
     if (user) {
