@@ -7,6 +7,7 @@ export const refs = {
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
   searchMovieEl: document.querySelector('.search-form'),
   modalCardEl: document.querySelector('.modal-card'),
+  modalCardImg: document.querySelector('.modal-card__img'),
 
   // modal authUser
   logIn: document.querySelector('#logIn'),

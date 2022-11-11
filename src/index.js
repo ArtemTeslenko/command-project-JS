@@ -1,6 +1,7 @@
 import { refs } from './js/reference/homeRefs';
 import { trendsControls, scrollToTop, listenerUserOut } from './js/controls';
 import { onOpenModalFilm, modalTemplate } from './js/controls';
+import { renderControl } from './js/controls';
 // import {} from './js/controls/registrateUsers'; // names for Vlad Sid
 import { onListenerSearchMovie } from './js/requests';
 import {
@@ -18,6 +19,10 @@ modalTemplate(refs.footerBtn);
 scrollToTop();
 onListenerSearchMovie();
 showTeam();
+// listenerBack(); // names for Vlad Sid
+// listenerBackFBAuth(); // names for Vlad Sid
+// listenerUserOut(); // names for Vlad Sid
+renderControl();
 listenerBack(); // names for Vlad Sid
 listenerBackFBAuth(); // names for Vlad Sid
 listenerUserOut(); // names for Vlad Sid
