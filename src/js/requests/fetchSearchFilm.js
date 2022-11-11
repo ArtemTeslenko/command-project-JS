@@ -8,6 +8,7 @@ import {
   openSpinnerHome,
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
+import { onClickGanna } from '../controls';
 
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
 const textNotify =
@@ -48,16 +49,22 @@ function onSearchSubmitMovie(event) {
 
 // -----Функция вызова слушателя кнопок и ссылок пагинации-----
 
-export function onSearchPagination() {
-  refs.paginationSearchEl.addEventListener('click', e => {
-    e.preventDefault();
-    mainSearch(e.target.dataset.page);
-  });
-}
+// export function onSearchPagination() {
+//   refs.paginationSearchEl.addEventListener('click', e => {
+//     e.preventDefault();
+//     mainSearch(e.target.dataset.page);
+//   });
+// }
+function onClickVl(e) {
+  e.preventDefault();
+  console.log('in Vladimir');
 
+  mainSearch(e.target.dataset.page);
+}
 // -----Основная функция поиска фильмов и рендера фильмов и кнопок(ссылок) пагинации-----
 
 function mainSearch(page) {
+  refs.paginationEl.removeEventListener('click', onClickGanna);
   openSpinnerHome();
 
   refs.galleryEl.innerHTML = '';
@@ -74,7 +81,8 @@ function mainSearch(page) {
             Number(data.total_pages),
             Number(data.page),
             trendUrl,
-            refs.paginationSearchEl
+            refs.paginationEl,
+            onClickVl //refs.paginationSearchEl
           );
         }
       }

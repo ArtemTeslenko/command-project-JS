@@ -3,12 +3,14 @@ import { paginationRenderSmall } from './paginationSmall';
 import { refs } from '../reference/homeRefs';
 import { paginationArrowHidden } from './paginationArrowHidden';
 import { paginationRenderMobile } from './paginationMobile';
+import { onClickGanna } from '../controls';
 
 export function paginationControl(
   totalPage,
   currentPage,
   trendUrl,
-  directionEl
+  directionEl,
+  funcOnClick
 ) {
   if (screen.width >= 768) {
     if (totalPage > 9) {
@@ -41,4 +43,6 @@ export function paginationControl(
     directionEl.innerHTML = renderedPagination;
     paginationArrowHidden(currentPage, totalPage);
   }
+
+  refs.paginationEl.addEventListener('click', funcOnClick);
 }
