@@ -5,14 +5,23 @@ import {
 } from '../index';
 
 let sessionTokenLocal = '';
+// let currentToken = '';
+// setVerifyToken();
 
-export function setVerifyToken(sessionToken, uid) {
-  dataSessionUser = {
+export function setVerifyToken(accessToken, uid) {
+  const dataSessionUser = {
     uid: uid,
-    token: sessionToken,
+    token: accessToken,
   };
 
+  // const user = veryfiUser();
+  // console.log(user);
+  // currentToken = user.accessToken;
+  // dataSessionUser.uid = user.uid;
+  // dataSessionUser.uid = user.accessToken;
+  // console.log(name().json());
   localStorage.setItem('userSession', JSON.stringify(dataSessionUser));
+  // getUsersessionData();
 }
 
 export function getUsersessionData() {

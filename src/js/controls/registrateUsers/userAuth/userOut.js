@@ -4,7 +4,9 @@ import { auth, renderBtnAuth } from '../index';
 
 // const logOutUser = document.querySelector('#logOut');
 
-refs.logOut.addEventListener('click', userOut);
+export function listenerUserOut() {
+  refs.logOut.addEventListener('click', userOut);
+}
 
 // ========== OutUser ============
 export function userOut(e) {

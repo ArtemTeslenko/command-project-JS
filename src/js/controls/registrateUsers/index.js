@@ -2,8 +2,8 @@ export * from './openModalAuthUser';
 export * from './fireBaseIndex';
 export * from './renderMyLibrary';
 export * from './userAuth';
-export * from './userInActive';
+export * from './userInActiv';
 export * from './verifySession';
 
-import { veryfiUser } from './index';
+// import { veryfiUser } from './userInActiv';
 // veryfiUser();

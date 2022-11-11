@@ -8,8 +8,8 @@ export function markupBtnModalFilm(film) {
   return `<div class="modal-card__size">
   <img class="modal-card__img"
      src="${imgSrc}"
-     alt=""
-     id=""
+     alt="${film.title}"
+     id="${film.id}"
     />
     <div class="modal-card__info">
      <h2 class="modal-card__title">${film.title.toUpperCase()}</h2>
@@ -43,8 +43,8 @@ export function markupBtnModalFilm(film) {
      </p>
 
      <div class="button-add">
-     <button class="button-add__watched">ADD TO WATCHED</button>
-     <button class="button-add__queue">ADD TO QUEUE</button>
+     <button class="button-add__watched" name="watched">ADD TO WATCHED</button>
+     <button class="button-add__queue" name="queue">ADD TO QUEUE</button>
       </div>
      </div>
      </div>`;

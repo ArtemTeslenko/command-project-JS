@@ -24,6 +24,7 @@
 }
 
 .modal {
+  overflow: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,6 +32,7 @@
 
   min-height: 300px;
   min-width: 200px;
+  max-height: 100vw;
 
   @include tablet {
     min-width: 400px;
@@ -50,6 +52,7 @@
   }
 }
 .modal-card__size {
+  // overflow: auto;
   padding-top: 48px;
   padding-left: 20px;
   padding-right: 20px;
@@ -231,4 +234,14 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+}
+
+.modal-spinner{
+  position: absolute;
+  top: 130px;
+  left: 50px;
+}
+
+.modal-spinner.is-hidden{
+   opacity: 0;
 }

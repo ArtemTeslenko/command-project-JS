@@ -2,7 +2,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from '../reference/homeRefs.js';
 import { refs } from '../reference/libraryRefs';
 import { renderLibraryList } from '../render';
-import { cleanRender } from '../customFunction';
 
 const STORAGE_WATCHED_KEY = 'watched';
 const STORAGE_QUEUE_KEY = 'queue';
@@ -15,7 +14,9 @@ let queueFilmList = [];
 try {
   watchedFilmList = [...JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY))];
   queueFilmList = [...JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY))];
-} catch {}
+} catch (error) {
+  console.log(error);
+}
 
 // Додае ключ та значення в Lokal Storage
 export function addToLokalStorage(film) {
