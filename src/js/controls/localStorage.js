@@ -57,7 +57,7 @@ export function onWatchedOpen() {
     const watchedItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
     renderLibraryList(watchedItems);
   } catch (error) {
-    cleanRender(refs.libraryEl);
+    // cleanRender(refs.libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
