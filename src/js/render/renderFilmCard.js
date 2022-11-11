@@ -22,3 +22,7 @@ export async function renderFilmCard(id) {
   // путь controls --> data --> addFilmUsers
   return addFilmProfail(film);
 }
+
+export function clianFilmCard() {
+  return (modalCardEl.innerHTML = '');
+}
