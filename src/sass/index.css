@@ -832,6 +832,16 @@ img {
   line-height: 1.33;
 }
 
+.modal-spinner {
+  position: absolute;
+  top: 130px;
+  left: 50px;
+}
+
+.modal-spinner.is-hidden {
+  opacity: 0;
+}
+
 .page-header__lib {
   height: 215px;
 }
@@ -1053,6 +1063,10 @@ img {
   margin-right: 6px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .isHiddenBtn {
   scale: 0;
   opacity: 0;
@@ -1072,7 +1086,7 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .arrow-up:hover {
-  fill: #03a9f4;
+  fill: #de5900;
 }
 @media screen and (min-width: 768px) {
   .arrow-up {
@@ -1098,7 +1112,6 @@ img {
 }
 
 .spinner {
-  margin-right: 5px;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
 }
@@ -1237,4 +1250,18 @@ img {
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
+}
+
+.spinner {
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -11,4 +11,5 @@ export const refs = {
   footerBtn: document.querySelector('.footer__btn'),
   modalCardEl: document.querySelector('.modal-card'),
   libraryEl: document.querySelector('.library-gallery'),
+  modalSpinnerEl: document.querySelector('.modal-spinner'),
 };
