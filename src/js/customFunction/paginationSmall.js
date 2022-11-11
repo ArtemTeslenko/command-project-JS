@@ -5,7 +5,7 @@ export function paginationRenderSmall(
   totalPages,
   currentPage,
   trendUrl,
-  directionEl
+  
 ) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];

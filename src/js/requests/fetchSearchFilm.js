@@ -8,7 +8,7 @@ import {
   openSpinnerHome,
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
-import { onClickGanna } from '../controls';
+import { onClickTrend } from '../controls';
 
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
 const textNotify =
@@ -27,18 +27,16 @@ export function onListenerSearchMovie() {
 
 function onSearchSubmitMovie(event) {
   event.preventDefault();
-  console.log(event);
+
   // refs.galleryEl.innerHTML = '';
   refs.paginationEl.innerHTML = '';
-  refs.paginationSearchEl.innerHTML = '';
+
   movieName = refs.searchMovieEl[0].value;
   movieNameSubmit = refs.searchMovieEl[1].value;
 
   if (refs.searchMovieEl[0].value === '') {
     return;
   } else {
-    console.log(movieNameSubmit);
-    console.log(1);
     movieNameSubmit = movieName;
     trendUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${movieNameSubmit}&page=`;
     // openSpinnerHome();
@@ -49,22 +47,15 @@ function onSearchSubmitMovie(event) {
 
 // -----Функция вызова слушателя кнопок и ссылок пагинации-----
 
-// export function onSearchPagination() {
-//   refs.paginationSearchEl.addEventListener('click', e => {
-//     e.preventDefault();
-//     mainSearch(e.target.dataset.page);
-//   });
-// }
-function onClickVl(e) {
+function onClickSearch(e) {
   e.preventDefault();
-  console.log('in Vladimir');
 
   mainSearch(e.target.dataset.page);
 }
 // -----Основная функция поиска фильмов и рендера фильмов и кнопок(ссылок) пагинации-----
 
 function mainSearch(page) {
-  refs.paginationEl.removeEventListener('click', onClickGanna);
+  refs.paginationEl.removeEventListener('click', onClickTrend);
   openSpinnerHome();
 
   refs.galleryEl.innerHTML = '';
@@ -81,8 +72,7 @@ function mainSearch(page) {
             Number(data.total_pages),
             Number(data.page),
             trendUrl,
-            refs.paginationEl,
-            onClickVl //refs.paginationSearchEl
+            onClickSearch //refs.paginationSearchEl
           );
         }
       }

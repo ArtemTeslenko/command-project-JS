@@ -4,7 +4,7 @@ export function paginationRenderMobile(
   totalPages,
   currentPage,
   trendUrl,
-  directionEl
+  
 ) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
