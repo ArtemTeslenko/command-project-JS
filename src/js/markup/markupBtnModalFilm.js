@@ -8,8 +8,8 @@ export function markupBtnModalFilm(film) {
   return `<div class="modal-card__size">
   <img class="modal-card__img"
      src="${imgSrc}"
-     alt=""
-     id=""
+     alt="${film.title}"
+     id="${film.id}"
     />
     <div class="modal-card__info">
      <h2 class="modal-card__title">${film.title.toUpperCase()}</h2>

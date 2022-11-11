@@ -235,3 +235,13 @@
   font-size: 12px;
   line-height: 1.33;
 }
+
+.modal-spinner{
+  position: absolute;
+  top: 130px;
+  left: 50px;
+}
+
+.modal-spinner.is-hidden{
+   opacity: 0;
+}

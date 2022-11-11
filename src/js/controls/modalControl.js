@@ -8,8 +8,8 @@ export function modalTemplate(btn) {
   btn.addEventListener('click', onOpenModal);
 }
 // відкриває модалку з рендером картки фільму
-export function onOpenModalFilm(e) {
-  refs.filmsGalleryEl.addEventListener('click', onEventListenerClick);
+export function onOpenModalFilm(element) {
+  element.addEventListener('click', onEventListenerClick);
  
 }
 
