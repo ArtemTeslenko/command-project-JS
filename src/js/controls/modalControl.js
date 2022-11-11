@@ -9,7 +9,7 @@ export function modalTemplate(btn) {
 }
 // відкриває модалку з рендером картки фільму
 export function onOpenModalFilm(e) {
-  refs.filmsGalleryEl.addEventListener('click', onEventListenerClick);
+  e.addEventListener('click', onEventListenerClick);
  
 }
 
