@@ -2,7 +2,7 @@ import {
   currentToken,
   renderBtnAuth,
   openCloseFormUsersOnAuth,
-  veryfiUser,
+  // veryfiUser,
 } from '../index';
 
 let sessionTokenLocal = '';
@@ -10,7 +10,7 @@ let sessionTokenLocal = '';
 // setVerifyToken();
 
 export function setVerifyToken(accessToken, uid) {
-  dataSessionUser = {
+  const dataSessionUser = {
     uid: uid,
     token: accessToken,
   };
