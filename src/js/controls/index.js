@@ -5,3 +5,4 @@ export * from './registrateUsers';
 export * from './data';
 export * from './showTeamControl';
 export * from './modalControl';
+export * from './trailerControl';
