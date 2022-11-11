@@ -2,7 +2,6 @@ import { refs } from '../reference/homeRefs';
 import { refs } from '../reference/libraryRefs';
 import { renderFilmCard } from '../render';
 
-
 // відкриває модалку (перевикористовувати)
 export function modalTemplate(btn) {
   btn.addEventListener('click', onOpenModal);
@@ -10,21 +9,18 @@ export function modalTemplate(btn) {
 // відкриває модалку з рендером картки фільму
 export function onOpenModalFilm(element) {
   element.addEventListener('click', onEventListenerClick);
- 
 }
 
 // функція закриває модалку (наприклад по кліку на кнопку) і очищає модалку clianFilmCard()
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
- 
 }
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
-   
   }
   return;
 }
