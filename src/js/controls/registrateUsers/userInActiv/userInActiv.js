@@ -9,13 +9,11 @@ console.log('external auth', auth);
 //==
 
 export let currentToken = '';
-// export function veryfiUser() {
 onAuthStateChanged(auth, user => {
   console.log('internal auth', auth);
   if (user) {
-    console.log(user);
+    // console.log(user);
     currentToken = user.accessToken;
-    // return user;
     setVerifyToken(user.accessToken, user.uid);
     getUsersessionData();
   } else {
@@ -24,7 +22,6 @@ onAuthStateChanged(auth, user => {
     );
   }
 });
-// }
 
 // Получение ID  пользователя для записи in BD
 export function veryfiUserId(movieData, category) {

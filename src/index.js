@@ -18,6 +18,6 @@ modalTemplate(refs.footerBtn);
 scrollToTop();
 onListenerSearchMovie();
 showTeam();
-// listenerBack(); // names for Vlad Sid
-// listenerBackFBAuth(); // names for Vlad Sid
-// listenerUserOut(); // names for Vlad Sid
+listenerBack(); // names for Vlad Sid
+listenerBackFBAuth(); // names for Vlad Sid
+listenerUserOut(); // names for Vlad Sid
