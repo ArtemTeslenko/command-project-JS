@@ -69,7 +69,7 @@ export function onQueueOpen() {
     const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
     renderLibraryList(qeueItems);
   } catch (error) {
-    cleanRender(refs.libraryEl);
+    // cleanRender(refs.libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
