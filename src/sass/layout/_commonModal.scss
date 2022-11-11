@@ -32,7 +32,7 @@
 
   min-height: 300px;
   min-width: 200px;
-  max-height: 100vw;
+  max-height: 95vh;
 
   @include tablet {
     min-width: 400px;
@@ -51,6 +51,7 @@
     display: flex;
   }
 }
+
 .modal-card__size {
   // overflow: auto;
   padding-top: 48px;
