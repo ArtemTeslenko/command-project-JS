@@ -1,6 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from '../reference/homeRefs.js';
 import { renderLibraryList } from '../render';
+import { getSavedUserFilm } from './data';
 
 const STORAGE_WATCHED_KEY = 'watched';
 const STORAGE_QUEUE_KEY = 'queue';
@@ -53,8 +54,9 @@ function addToList(arr, film) {
 //Рендерить сторінку по даним з Lokal Storage
 export function onWatchedOpen() {
   try {
-    const watchedItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
-    renderLibraryList(watchedItems);
+    // const watchedItems = JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY));
+    // renderLibraryList(watchedItems);
+    getSavedUserFilm('watched');
   } catch (error) {
     Notify.warning(warningNotify, {
       position: 'center-top',
@@ -64,8 +66,9 @@ export function onWatchedOpen() {
 
 export function onQueueOpen() {
   try {
-    const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
-    renderLibraryList(qeueItems);
+    getSavedUserFilm('queue');
+    // const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
+    // renderLibraryList(qeueItems);
   } catch (error) {
     Notify.warning(warningNotify, {
       position: 'center-top',
