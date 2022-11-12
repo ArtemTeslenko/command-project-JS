@@ -5,8 +5,6 @@ import {
 } from '../index';
 
 let sessionTokenLocal = '';
-// let currentToken = '';
-// setVerifyToken();
 
 export function setVerifyToken(accessToken, uid) {
   const dataSessionUser = {
@@ -14,14 +12,7 @@ export function setVerifyToken(accessToken, uid) {
     token: accessToken,
   };
 
-  // const user = veryfiUser();
-  // console.log(user);
-  // currentToken = user.accessToken;
-  // dataSessionUser.uid = user.uid;
-  // dataSessionUser.uid = user.accessToken;
-  // console.log(name().json());
   localStorage.setItem('userSession', JSON.stringify(dataSessionUser));
-  // getUsersessionData();
 }
 
 export function getUsersessionData() {
@@ -32,8 +23,8 @@ export function getUsersessionData() {
 
     accessTokenVerification(sessionTokenLocal);
   } catch (error) {
-    console.log(error.name);
-    console.log(error.message);
+    // console.log(error.name);
+    // console.log(error.message);
   }
 }
 
@@ -43,5 +34,5 @@ export function accessTokenVerification(sessionTokenLocal) {
     return openCloseFormUsersOnAuth();
   }
 
-  console.log('Пользователь не авторизован, авторизуйтесь заново!!!');
+  // console.log('Пользователь не авторизован, авторизуйтесь заново!!!');
 }
