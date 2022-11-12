@@ -1,5 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from '../reference/homeRefs.js';
+import { refs } from '../reference/libraryRefs';
 import { renderLibraryList } from '../render';
 import { getSavedUserFilm } from './data';
 
@@ -58,6 +59,7 @@ export function onWatchedOpen() {
     // renderLibraryList(watchedItems);
     getSavedUserFilm('watched');
   } catch (error) {
+    // cleanRender(refs.libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
@@ -70,6 +72,7 @@ export function onQueueOpen() {
     // const qeueItems = JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY));
     // renderLibraryList(qeueItems);
   } catch (error) {
+    // cleanRender(refs.libraryEl);
     Notify.warning(warningNotify, {
       position: 'center-top',
     });
