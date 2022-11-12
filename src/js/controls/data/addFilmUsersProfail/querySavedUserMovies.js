@@ -1,10 +1,10 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { getDatabase, ref, set, child, get, update } from 'firebase/database';
-// import { app } from '../../data';
 import { app } from '../../registrateUsers/fireBaseIndex';
 import { auth } from '../../registrateUsers';
 import { createLibraryMarkup } from '../../../markup';
 import { refs } from '../../../reference/libraryRefs';
+import Notiflix from 'notiflix';
 
 export function getSavedUserFilm(type) {
   const dbRef = ref(getDatabase(app));
@@ -39,17 +39,20 @@ export function getSavedUserFilm(type) {
           if (snapshot.exists()) {
             renderFilms(Object.entries(snapshot.val().watched));
           } else {
-            console.log('No data available');
+            Notiflix.Notify.failure('No data available');
+            // console.log('No data available');
           }
         })
         .catch(error => {
-          console.log('Ошибка получения данных!!!');
-          console.error(error);
+          Notiflix.Notify.failure('Error getting data!!!');
+
+          // console.log('Ошибка получения данных!!!');
+          // console.error(error);
         });
     } else {
-      console.log(
-        'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
-      );
+      // console.log(
+      // 'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+      // );
     }
   });
 }

@@ -1,8 +1,7 @@
 import { signOut } from 'firebase/auth';
 import { refs } from '../../../reference/homeRefs';
 import { auth, renderBtnAuth } from '../index';
-
-// const logOutUser = document.querySelector('#logOut');
+import Notiflix from 'notiflix';
 
 export function listenerUserOut() {
   refs.logOut.addEventListener('click', userOut);
@@ -17,10 +16,12 @@ export function userOut(e) {
   signOut(auth)
     .then(() => {
       renderBtnAuth();
-      console.log('Выход из аккаунта выполнен!!!');
+      Notiflix.Notify.warning('Logout done!!!');
+      // console.log('Выход из аккаунта выполнен!!!');
     })
     .catch(error => {
-      console.log('Выход из аккаунта не выполнен!!!');
-      console.log(error);
+      Notiflix.Notify.failure('Logout error');
+      // console.log('Logout error');
+      // console.log(error);
     });
 }
