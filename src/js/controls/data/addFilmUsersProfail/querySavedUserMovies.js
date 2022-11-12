@@ -43,7 +43,7 @@ export function getSavedUserFilm(type) {
         })
         .catch(error => {
           console.log('Ошибка получения данных!!!');
-          console.error(error);
+          // console.error(error);
         });
     } else {
       console.log(
