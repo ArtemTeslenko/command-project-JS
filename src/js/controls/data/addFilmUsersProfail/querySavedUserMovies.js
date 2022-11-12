@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { getDatabase, ref, set, child, get, update } from 'firebase/database';
-import { app } from '../../data';
+// import { app } from '../../data';
+import { app } from '../../registrateUsers/fireBaseIndex';
 import { auth } from '../../registrateUsers';
 import { createLibraryMarkup } from '../../../markup';
 import { refs } from '../../../reference/libraryRefs';
@@ -43,7 +44,7 @@ export function getSavedUserFilm(type) {
         })
         .catch(error => {
           console.log('Ошибка получения данных!!!');
-          // console.error(error);
+          console.error(error);
         });
     } else {
       console.log(
