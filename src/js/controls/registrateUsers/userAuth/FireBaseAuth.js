@@ -1,9 +1,10 @@
-import { auth, veryfiUser, getUsersessionData } from '../index';
+import { auth } from '../index';
 import { refs } from '../../../reference/homeRefs';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import Notiflix from 'notiflix';
 
 // ======= RegUser ========
 export function listenerBackFBAuth() {
@@ -22,7 +23,7 @@ export function handleSubmit(event) {
   const pass = refs.lablePassword;
 
   if (login.value === '' || pass.value === '') {
-    return console.log('Please fill in all the fields!');
+    return Notiflix.Notify.warning('Please fill in all the fields!');
   }
 
   regData.email = login.value;
@@ -33,33 +34,28 @@ export function handleSubmit(event) {
   if (refs.btnSubmit.textContent !== 'Register') {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
-        // veryfiUser();
-        // getUsersessionData();
         const user = userCredential.user;
-        console.log('Вход выполнен');
+        Notiflix.Notify.success('Login completed');
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(error);
-        console.log(errorMessage);
-        console.log('Вход не выполнен');
+        // console.log(error);
+        // console.log(errorMessage);
+        Notiflix.Notify.failure('Account login error!!!');
       });
   } else {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
         const user = userCredential.user;
-        console.log('Регистрация успешна');
+        Notiflix.Notify.success('Registration completed successfully');
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        console.log('Ошибка регистрации');
-        // ..
+        // console.log(errorCode);
+        // console.log(errorMessage);
+        Notiflix.Notify.failure('Registration error!!!');
       });
   }
 

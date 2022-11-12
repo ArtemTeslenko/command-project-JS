@@ -21,10 +21,10 @@ onOpenModalFilm(refs.filmsGalleryEl);
 modalTemplate(refs.footerBtn);
 scrollToTop();
 showTeam();
-// listenerBack(); // names for Vlad Sid
-// listenerBackFBAuth(); // names for Vlad Sid
-// listenerUserOut(); // names for Vlad Sid
-renderControl();
 listenerBack(); // names for Vlad Sid
 listenerBackFBAuth(); // names for Vlad Sid
 listenerUserOut(); // names for Vlad Sid
+renderControl();
+// listenerBack(); // names for Vlad Sid
+// listenerBackFBAuth(); // names for Vlad Sid
+// listenerUserOut(); // names for Vlad Sid
