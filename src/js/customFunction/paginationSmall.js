@@ -1,7 +1,12 @@
 import { buildUrl } from '../requests';
 import { paginationBtnHidden } from './paginationBtnHidden';
 
-export function paginationRenderSmall(totalPages, currentPage, trendUrl) {
+export function paginationRenderSmall(
+  totalPages,
+  currentPage,
+  trendUrl,
+  
+) {
   let paginationArrBtn = [];
   let paginationArrAtr = [];
   let paginationLinks = '';

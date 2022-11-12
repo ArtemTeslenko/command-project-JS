@@ -128,3 +128,52 @@
     height: 20px;
   }
 }
+
+.film-gallery__overlay {
+  position: fixed;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 107, 1, 0.2);
+  // opacity: 0.4;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.film-gallery__spiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  background-color: #fff;
+  opacity: 1;
+  border: 2px solid #ff6b01;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.isHidden-spiner {
+  display: none;
+}
+
+.film-gallery__spiner--svg {
+  fill: #ff6b01;
+  justify-content: center;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

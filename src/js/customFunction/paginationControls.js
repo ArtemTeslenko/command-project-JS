@@ -4,7 +4,12 @@ import { refs } from '../reference/homeRefs';
 import { paginationArrowHidden } from './paginationArrowHidden';
 import { paginationRenderMobile } from './paginationMobile';
 
-export function paginationControl(totalPage, currentPage, trendUrl) {
+export function paginationControl(
+  totalPage,
+  currentPage,
+  trendUrl,
+  funcOnClick
+) {
   if (screen.width >= 768) {
     if (totalPage > 9) {
       const renderedPagination = paginationRenderL(
@@ -33,4 +38,6 @@ export function paginationControl(totalPage, currentPage, trendUrl) {
     refs.paginationEl.innerHTML = renderedPagination;
     paginationArrowHidden(currentPage, totalPage);
   }
+
+  refs.paginationEl.addEventListener('click', funcOnClick);
 }
