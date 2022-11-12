@@ -4,7 +4,8 @@ export function createFilmMarkup(arrFilms) {
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
       let genres = getGenreName(genre_ids);
-      if (genres.length === 0) {
+      //genres.length === 0
+      if (!genres.length) {
         genres = 'No genres';
       } else {
         if (genres.length > 2) {
@@ -14,8 +15,13 @@ export function createFilmMarkup(arrFilms) {
         genres = genres.join(', ');
       }
       let yearRelease;
-
-      if (release_date === '') {
+      if (!release_date) {
+        yearRelease = 'No date';
+      } else {
+        const date = new Date(release_date);
+        yearRelease = date.getFullYear();
+      }
+      if (!release_date) {
         yearRelease = 'No date';
       } else {
         const date = new Date(release_date);
@@ -23,7 +29,7 @@ export function createFilmMarkup(arrFilms) {
       }
 
       let imgSrc = 'https://www.themoviedb.org/t/p/w500' + poster_path;
-      if (poster_path === null) {
+      if (!poster_path) {
         imgSrc = require('../../images/movie_time_22.jpg'); //('../../images/no-photo.jpg')
       }
 
