@@ -59,10 +59,6 @@
   height: 100%;
 }
 .film-card__img {
-  // background-image: url('../images/no-photo.jpg');
-  // background-color: #ffffff;
-  // background-size: cover;
-  // background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }
@@ -82,9 +78,7 @@
 
 .film-card__name {
   color: rgba(0, 0, 0, 1);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
+  font-weight: $font-bold;
   font-size: 12px;
   line-height: 1.17;
   text-transform: uppercase;
@@ -98,10 +92,8 @@
   }
 }
 .film-card__data {
-  color: rgba(255, 107, 8, 1);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
+  color: getColor('orange-text');
+  font-weight: $font-bold;
   font-size: 12px;
   line-height: 1.17;
   @include tablet {
@@ -123,15 +115,13 @@
   align-items: center;
   justify-content: center;
   margin-left: 5px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
+  font-weight: $font-bold;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   width: 36px;
   height: 16px;
-  color: #ffffff;
-  background: #ff6b01;
+  color: getColor('white-text');
+  background: getColor('orange-text');
   border-radius: 5px;
   @include desktop {
     width: 40px;

@@ -7,6 +7,8 @@ export const refs = {
   bodyNoScrollEl: document.querySelector('[data-nonScroll]'),
   searchMovieEl: document.querySelector('.search-form'),
   modalCardEl: document.querySelector('.modal-card'),
+  modalCardImg: document.querySelector('.modal-card__img'),
+  modalSpinnerEl: document.querySelector('.modal-spinner'),
 
   // modal authUser
   logIn: document.querySelector('#logIn'),
@@ -36,5 +38,4 @@ export const refs = {
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
-  modalFilmEl: document.querySelector('.modal-card'),
 };

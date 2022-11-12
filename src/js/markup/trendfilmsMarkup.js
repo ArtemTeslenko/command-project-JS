@@ -4,19 +4,35 @@ export function createFilmMarkup(arrFilms) {
   return arrFilms
     .map(({ original_title, release_date, genre_ids, poster_path, id }) => {
       let genres = getGenreName(genre_ids);
-
-      if (genres.length > 2) {
-        genres = genres.slice(0, 2);
-        genres.push('Other');
+      //genres.length === 0
+      if (!genres.length) {
+        genres = 'No genres';
+      } else {
+        if (genres.length > 2) {
+          genres = genres.slice(0, 2);
+          genres.push('Other');
+        }
+        genres = genres.join(', ');
       }
-      genres = genres.join(', ');
+      let yearRelease;
+      if (!release_date) {
+        yearRelease = 'No date';
+      } else {
+        const date = new Date(release_date);
+        yearRelease = date.getFullYear();
+      }
+      if (!release_date) {
+        yearRelease = 'No date';
+      } else {
+        const date = new Date(release_date);
+        yearRelease = date.getFullYear();
+      }
+
       let imgSrc = 'https://www.themoviedb.org/t/p/w500' + poster_path;
-
-      const date = new Date(release_date);
-      const yearRelease = date.getFullYear();
-      if (poster_path === null) {
-        imgSrc = require('../../images/no-photo.jpg');
+      if (!poster_path) {
+        imgSrc = require('../../images/movie_time_22.jpg'); //('../../images/no-photo.jpg')
       }
+
       return `<div class="film-card">
       <a class="film-card__link link" href="" id="${id}">
       <div class="film-card__img-box"> 

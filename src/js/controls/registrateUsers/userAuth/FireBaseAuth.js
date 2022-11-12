@@ -6,7 +6,9 @@ import {
 } from 'firebase/auth';
 
 // ======= RegUser ========
-refs.formAuth.addEventListener('submit', handleSubmit);
+export function listenerBackFBAuth() {
+  refs.formAuth.addEventListener('submit', handleSubmit);
+}
 
 export function handleSubmit(event) {
   event.preventDefault();
