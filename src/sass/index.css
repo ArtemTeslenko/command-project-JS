@@ -754,7 +754,7 @@ img {
   top: 8px;
   right: 8px;
   padding: 0;
-  background-color: #ffffff;
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 50%;
   transition-property: fill, border;
