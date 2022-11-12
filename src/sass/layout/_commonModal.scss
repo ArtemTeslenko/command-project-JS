@@ -52,7 +52,6 @@
 }
 
 .modal-card__size {
-  // overflow: auto;
   padding-top: 48px;
   padding-left: 20px;
   padding-right: 20px;
@@ -78,6 +77,7 @@
     width: 806px;
   }
 }
+
 .modal-card__img {
   border-radius: 5px;
   margin-bottom: 20px;
@@ -92,6 +92,27 @@
     max-width: 375px;
     max-height: 478px;
     height: 100%;
+  }
+}
+
+.modal-card__list {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  @include tablet {
+    max-width: 264px;
+    max-height: 374px;
+    margin-right: 68px;
+    margin-bottom: 0;
+  }
+  @include desktop {
+    margin-right: 16px;
+    max-width: 375px;
+    max-height: 478px;
+    height: 100%;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   }
 }
 
@@ -186,7 +207,7 @@
 }
 
 .about-text {
-  overflow: auto;
+  // overflow: auto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -238,8 +259,9 @@
 
 .modal-spinner {
   position: absolute;
-  top: 130px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-spinner.is-hidden {
