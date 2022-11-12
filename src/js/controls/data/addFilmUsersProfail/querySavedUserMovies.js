@@ -56,7 +56,6 @@ export function getSavedUserFilm(type) {
     }
   });
 }
-getSavedUserFilm();
 
 function renderFilms(films) {
   const libraryMarkup = createLibraryMarkup(films);
