@@ -37,7 +37,6 @@
   @include tablet {
     min-width: 400px;
   }
-
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -103,7 +102,7 @@
   top: 8px;
   right: 8px;
   padding: 0;
-  background-color: #ffffff;
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 50%;
   @include transitions((fill, border));
@@ -237,12 +236,12 @@
   line-height: 1.33;
 }
 
-.modal-spinner{
+.modal-spinner {
   position: absolute;
   top: 130px;
   left: 50px;
 }
 
-.modal-spinner.is-hidden{
-   opacity: 0;
+.modal-spinner.is-hidden {
+  opacity: 0;
 }
