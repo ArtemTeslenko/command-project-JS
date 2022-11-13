@@ -22,7 +22,7 @@ export function footerMarkup(member) {
                     </li>
                     
                     <li class="team__social-list">
-                        <a href="${telegram}" class="team__link" target="_blank">
+                        <a href="${telegram}" class="team__link" target="_blank" >
                             <svg class="team__svg" height="30px" width="30px">
                                 <use href="${svg}#icon-telegram"></use>
                             </svg>
