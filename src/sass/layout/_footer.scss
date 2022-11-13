@@ -96,7 +96,6 @@
 }
 
 .container__team {
-
   @include tablet {
     width: calc((100% - 32px) / 2);
     margin: 0;
@@ -128,7 +127,7 @@
 
 .team__face {
   width: 100%;
- 
+  height: auto;
 }
 
 .team__desc {
@@ -169,7 +168,6 @@
 }
 
 .team__link {
-
   border-radius: 50%;
   width: 30px;
   height: 30px;

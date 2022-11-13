@@ -53,6 +53,7 @@ function commonClose() {
 export function onOpenModal() {
   refs.backdropEl.classList.remove('is-hidden');
   refs.bodyNoScrollEl.classList.add('no-scroll');
+
   commonClose();
 }
 
