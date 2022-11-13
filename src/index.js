@@ -2,22 +2,17 @@ import { refs } from './js/reference/homeRefs';
 import {
   trendsControls,
   scrollToTop,
-  listenerUserOut,
+  onOpenModal,
+  onOpenModalFilm,
+  modalTemplate,
   openModalShowTeam,
-} from './js/controls';
-import { onOpenModal } from './js/controls';
-import { onOpenModalFilm, modalTemplate } from './js/controls';
-import { openModalShowTeam } from './js/controls';
-import { showTeam } from './js/controls';
-import { renderControl } from './js/controls';
-// import {} from './js/controls/registrateUsers'; // names for Vlad Sid
-import { onListenerSearchMovie } from './js/requests';
-import {
+  renderControl,
   showTeam,
   listenerBackFBAuth,
   listenerBack,
   listenerUserOut,
-} from './js/controls'; // names for Vlad Sid
+} from './js/controls';
+import { onListenerSearchMovie } from './js/requests';
 
 onListenerSearchMovie();
 ////onSearchPagination();
