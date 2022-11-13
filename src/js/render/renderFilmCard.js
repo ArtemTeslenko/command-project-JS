@@ -23,6 +23,7 @@ export async function renderFilmCard(id) {
   return addFilmProfail(film);
 }
 
-export function clianFilmCard() {
-  return (modalCardEl.innerHTML = '');
+export function cleanModal() {
+  refs.modalCardEl.innerHTML = '';
+  //return (modalCardEl.innerHTML = '');
 }

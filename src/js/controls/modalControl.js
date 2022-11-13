@@ -1,6 +1,7 @@
 import { refs } from '../reference/homeRefs';
 import { refs } from '../reference/libraryRefs';
 import { renderFilmCard } from '../render';
+import { cleanModal } from '../render';
 
 // відкриває модалку (перевикористовувати)
 export function modalTemplate(btn) {
@@ -16,6 +17,7 @@ export function onOpenModalFilm(element) {
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
+  cleanModal();
 }
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
@@ -34,12 +36,13 @@ function creatKeydownEscape(e) {
       refs.bodyNoScrollEl.classList.remove('no-scroll');
       refs.backdropEl.classList.add('is-hidden');
       refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
-      // cleanFilmCard();
+      cleanModal(); //Ganna
     }
   }
 }
 
 function commonClose() {
+  //clianFilmCard(); // Ganna no works
   refs.backdropEl.addEventListener('click', onClouseModalBackdrop);
   refs.buttonCloseEl.addEventListener('click', onClouseModal);
   refs.bodyEl.addEventListener('keydown', creatKeydownEscape);
@@ -60,7 +63,7 @@ async function onEventListenerClick(e) {
     onOpenModal();
   }
 }
-function cleanModal() {
-  //Ganna
-  refs.modalCardEl.innerHTML = '';
-}
+// function cleanModal() {
+//   //Ganna
+//   refs.modalCardEl.innerHTML = '';
+// }
