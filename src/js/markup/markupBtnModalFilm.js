@@ -6,11 +6,11 @@ export function markupBtnModalFilm(film) {
     imgSrc = require('../../images/movie_time_22.jpg');
   }
   return `<div class="modal-card__size">
-  <a class="modal-card__list" href id="${film.id}">
+  <a class="modal-card__list" href="#" id="${film.id}">
   <img class="modal-card__img"
      src="${imgSrc}"
      alt="${film.title}"
-     id="${film.id}"
+     
     />
     </a>
     <div class="modal-card__info">

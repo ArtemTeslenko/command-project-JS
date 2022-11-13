@@ -1,7 +1,14 @@
 import { refs } from './js/reference/libraryRefs';
-import { onClickQueueAndWatchedOpen } from './js/customFunction/getBtnLibrary.js';
-import { onOpenModalFilm, onWatchedOpen } from './js/controls';
+import { onClickQueueAndWatchedOpen } from './js/customFunction';
+import {
+  onOpenModalFilm,
+  onWatchedOpen,
+  onOpenModalFilmWatched,
+  openModalShowTeam,
+} from './js/controls';
 
 onClickQueueAndWatchedOpen();
 onWatchedOpen();
+// onOpenModalFilm(refs.libraryEl); // to delete !!!check
+openModalShowTeam();
 onOpenModalFilm(refs.libraryEl);
