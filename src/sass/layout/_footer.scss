@@ -97,7 +97,6 @@
 
 .container__team {
 
-
   @include tablet {
     width: calc((100% - 32px) / 2);
     margin: 0;
@@ -110,8 +109,6 @@
 }
 
 .team__list {
-  max-height: 450px;
-  max-width: 320px;
   display: flex;
   box-shadow: 0px 1px 3px #0000001f, 0px 1px 1px #00000024,
     0px 2px 1px #00000033;
@@ -130,9 +127,8 @@
 }
 
 .team__face {
-  
-  max-height: 450px;
-  max-width: 320px;
+  width: 100%;
+ 
 }
 
 .team__desc {
@@ -173,7 +169,7 @@
 }
 
 .team__link {
-  // border: 1px solid getColor('orange-text');
+
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -185,6 +181,7 @@
 }
 
 .team__svg {
+  text-align: center;
   border: 1px solid getColor('orange-text');
   border-radius: 50%;
   stroke: getColor('orange-text');
