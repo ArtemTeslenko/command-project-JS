@@ -5,7 +5,7 @@ export function footerMarkup(member) {
       return `
     <div class="container__team">
         <div class="team__list">
-            <img class="team__face" src="${photo_face}"/>
+            <img class="team__face" src="${photo_face}" height="450px" width="320px"/>
             <div class="team__desc">
                 <ul class = "team__members">
                     <li class="team__members-name">${full_name}</li>
@@ -14,7 +14,7 @@ export function footerMarkup(member) {
 
                 <ul class="team__social-sprite">
                     <li class="team__social-list">
-                        <a href="${git_page}" class="team__link">
+                        <a href="${git_page}" class="team__link" target="_blank">
                             <svg class="team__svg" height="30px" width="30px">
                                 <use href="${svg}#icon-github"></use>
                             </svg>
@@ -22,7 +22,7 @@ export function footerMarkup(member) {
                     </li>
                     
                     <li class="team__social-list">
-                        <a href="${telegram}" class="team__link">
+                        <a href="${telegram}" class="team__link" target="_blank">
                             <svg class="team__svg" height="30px" width="30px">
                                 <use href="${svg}#icon-telegram"></use>
                             </svg>
