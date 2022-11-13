@@ -26,7 +26,7 @@ function getDataUser(film, userId) {
     .then(snapshot => {
       if (snapshot.exists()) {
         // console.log(snapshot.val().watched);
-        console.log(Object.entries(snapshot.val().queue));
+        console.log(snapshot.val().queue);
       } else {
         console.log('No data available');
       }
