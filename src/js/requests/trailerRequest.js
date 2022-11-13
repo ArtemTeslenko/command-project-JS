@@ -8,6 +8,6 @@ export function trailerRequest(data) {
     .then(data => {
       const results = data.results.map(result => result.key);
       renderTrailer(results[0]);
-      console.log(results[0]);
+      //console.log(results[0]);
     });
 }

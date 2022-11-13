@@ -14,6 +14,8 @@ function fetchVideo() {
 refs.imgModalEl.addEventListener('click', onImgClick);
 
 function onImgClick(e) {
+  e.preventDefault();
+  console.log(e);
   const target = e.target;
   if (target.tagName.toLowerCase() === imgModalEl) {
     const movieId = target.dataset.movieId;
