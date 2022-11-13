@@ -3,7 +3,7 @@ import { refs } from '../reference/libraryRefs';
 import { fetchFilmId } from '../requests';
 import { markupBtnModalFilm } from '../markup';
 import { addToLokalStorage, addFilmProfail, funcHuianc } from '../controls';
-import { checkoutBtnModalFilm } from '../custom';
+import { checkoutBtnModalFilm } from '../customFunction';
 
 let film = {};
 
