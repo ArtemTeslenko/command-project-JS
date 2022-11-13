@@ -6,14 +6,14 @@ export function onClickQueueAndWatchedOpen() {
   refs.watchedEl.addEventListener('click', onWatchedBtn);
 }
 
-export function onQueueBtn() {
+function onQueueBtn() {
   refs.watchedEl.classList.remove('is-active__btn');
   refs.queueEl.classList.add('is-active__btn');
 
   onQueueOpen();
 }
 
-export function onWatchedBtn() {
+function onWatchedBtn() {
   refs.watchedEl.classList.add('is-active__btn');
   refs.queueEl.classList.remove('is-active__btn');
 
