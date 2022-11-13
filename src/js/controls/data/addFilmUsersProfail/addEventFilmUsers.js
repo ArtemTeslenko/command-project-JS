@@ -1,6 +1,8 @@
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../index';
+import Notiflix from 'notiflix';
 import { getDatabase, ref, set } from 'firebase/database';
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { auth } from '../../index';
 
 export function addFilmProfail(filmData) {
   const btnWached = document.querySelector('.button-add__watched');
@@ -8,13 +10,91 @@ export function addFilmProfail(filmData) {
 
   const genres = filmData.genres.map(filmData => filmData.name).join(', ');
 
-  btnWached.addEventListener('click', collectMovieDataObject);
-  btnQueue.addEventListener('click', collectMovieDataObject);
+  btnWached.addEventListener('click', checkBtn);
+  btnQueue.addEventListener('click', checkBtn);
 
+  function checkBtn(e) {
+    e.preventDefault();
+    if (e.target.textContent === 'REMOVE FROM WATCH') {
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          const db = getDatabase();
+          set(
+            ref(
+              db,
+              'users/' + `${user.uid}/` + `${e.target.name}/` + filmData.title
+            ),
+            null
+          )
+            .then(() => {
+              Notiflix.Notify.success('Film deleted', {
+                position: 'center-top',
+              });
+              // console.log('Данные записаны.');
+            })
+            .catch(error => {
+              Notiflix.Notify.success(
+                'Error!!! Failed to add movie to library.',
+                {
+                  position: 'center-top',
+                }
+              );
+              // console.log(error);
+              // console.log('Ошибка!!! Данные не записаны.');
+            });
+        } else {
+          // console.log(
+          //   'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+          // );
+        }
+      });
+
+      if (e.target.textContent === 'REMOVE FROM WATCH') {
+        e.target.textContent = 'ADD TO WATCHED';
+      }
+    } else if (e.target.textContent === 'REMOVE FROM QUEUE') {
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          const db = getDatabase();
+          set(
+            ref(
+              db,
+              'users/' + `${user.uid}/` + `${e.target.name}/` + filmData.title
+            ),
+            null
+          )
+            .then(() => {
+              Notiflix.Notify.success('Film deleted', {
+                position: 'center-top',
+              });
+              // console.log('Данные записаны.');
+            })
+            .catch(error => {
+              Notiflix.Notify.success(
+                'Error!!! Failed to add movie to library.',
+                {
+                  position: 'center-top',
+                }
+              );
+              // console.log(error);
+              // console.log('Ошибка!!! Данные не записаны.');
+            });
+        } else {
+          // console.log(
+          //   'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+          // );
+        }
+      });
+
+      if (e.target.textContent === 'REMOVE FROM QUEUE') {
+        e.target.textContent = 'ADD TO QUEUE';
+      }
+    } else {
+      collectMovieDataObject(e);
+    }
+  }
   // Собирает данные филмьа в объект для записи in BD
   function collectMovieDataObject(e) {
-    e.preventDefault();
-
     const movieData = {
       filmId: filmData.id,
       posterPath: filmData.poster_path,
@@ -38,28 +118,32 @@ export function addFilmProfail(filmData) {
           movieData
         )
           .then(() => {
-            console.log('Данные записаны.');
+            Notiflix.Notify.success('Film added to the library', {
+              position: 'center-top',
+            });
+            // console.log('Данные записаны.');
           })
           .catch(error => {
-            console.log(error);
-            console.log('Ошибка!!! Данные не записаны.');
+            Notiflix.Notify.success(
+              'Error!!! Failed to add movie to library.',
+              {
+                position: 'center-top',
+              }
+            );
+            // console.log(error);
+            // console.log('Ошибка!!! Данные не записаны.');
           });
+
+        if (e.target.textContent === 'ADD TO WATCHED') {
+          e.target.textContent = 'REMOVE FROM WATCH';
+        } else if (e.target.textContent === 'ADD TO QUEUE') {
+          e.target.textContent = 'REMOVE FROM QUEUE';
+        }
       } else {
-        console.log(
-          'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
-        );
+        // console.log(
+        //   'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+        // );
       }
     });
-
-    // veryfiUserId(movieData, e.target.name);
-    // writeUserData(movieData);
   }
 }
-
-// export function conversionArray(film, filmsUser) {
-//   console.log(filmsUser);
-//   if (filmsUser === undefined) {
-//     return [film];
-//   }
-//   return (arrFilms = [film, ...filmsUser]);
-// }

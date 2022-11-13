@@ -2,8 +2,8 @@ import { refs } from '../reference/homeRefs';
 import { refs } from '../reference/libraryRefs';
 import { fetchFilmId } from '../requests';
 import { markupBtnModalFilm } from '../markup';
-import { addToLokalStorage, addFilmProfail } from '../controls';
-import { funcHuianc } from '../controls';
+import { addToLokalStorage, addFilmProfail, funcHuianc } from '../controls';
+import { checkoutBtnModalFilm } from '../custom';
 
 let film = {};
 
@@ -19,6 +19,9 @@ export async function renderFilmCard(id) {
 
   const marcup = markupBtnModalFilm(film);
   refs.modalCardEl.innerHTML = marcup;
+  // Првоеряет есть ли фильм в добавленых
+  checkoutBtnModalFilm(film);
+
   // Вызывает функцию для поска кнопод для добавления фильмов в просмотренные
   // путь controls --> data --> addFilmUsers
   funcHuianc();
