@@ -25,10 +25,8 @@ trendsControls();
 // refs.filmsGalleryEl це дів карточки з рендера популярних
 onOpenModalFilm(refs.filmsGalleryEl);
 // зразок функції для відкриття чистої модалки
-// modalTemplate(refs.footerBtn);
 scrollToTop();
 openModalShowTeam();
-// showTeam();
 listenerBack(); // names for Vlad Sid
 listenerBackFBAuth(); // names for Vlad Sid
 listenerUserOut(); // names for Vlad Sid
