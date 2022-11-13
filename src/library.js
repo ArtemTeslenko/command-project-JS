@@ -1,16 +1,13 @@
 import { refs } from './js/reference/libraryRefs';
-import { onQueueBtn } from './js/customFunction/getBtnLibrary.js';
-import { onWatchedBtn } from './js/customFunction/getBtnLibrary.js';
+import { onClickQueueAndWatchedOpen } from './js/customFunction';
 import {
   onOpenModalFilm,
-  onOpenModalFilmWatched,
   onWatchedOpen,
+  onOpenModalFilmWatched,
+  openModalShowTeam,
 } from './js/controls';
-import { openModalShowTeam } from './js/controls/showTeamControl';
 
-refs.queueEl.addEventListener('click', onQueueBtn);
-refs.watchedEl.addEventListener('click', onWatchedBtn);
-
+onClickQueueAndWatchedOpen();
 onWatchedOpen();
-onOpenModalFilm(refs.libraryEl);
+// onOpenModalFilm(refs.libraryEl); // to delete !!!check
 openModalShowTeam();

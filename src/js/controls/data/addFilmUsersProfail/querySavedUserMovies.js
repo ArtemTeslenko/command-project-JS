@@ -17,12 +17,18 @@ export function getSavedUserFilm(type) {
             if (snapshot.exists()) {
               renderFilms(Object.entries(snapshot.val().queue));
             } else {
-              console.log('No data available');
+              Notiflix.Notify.failure('No data available', {
+                position: 'center-top',
+              });
             }
           })
           .catch(error => {
-            console.log('Ошибка получения данных!!!');
-            console.error(error);
+            if (error.message === "can't convert undefined to object") {
+              refs.libraryEl.innerHTML = 'No movies added to the queue';
+            }
+            Notiflix.Notify.failure('Error getting data!!!', {
+              position: 'center-top',
+            });
           });
       } else {
         console.log(
@@ -39,12 +45,18 @@ export function getSavedUserFilm(type) {
           if (snapshot.exists()) {
             renderFilms(Object.entries(snapshot.val().watched));
           } else {
-            Notiflix.Notify.failure('No data available');
-            // console.log('No data available');
+            Notiflix.Notify.failure('No data available', {
+              position: 'center-top',
+            });
           }
         })
         .catch(error => {
-          Notiflix.Notify.failure('Error getting data!!!');
+          if (error.message === "can't convert undefined to object") {
+            refs.libraryEl.innerHTML = 'No movies added to the watched';
+          }
+          Notiflix.Notify.failure('Error getting data!!!', {
+            position: 'center-top',
+          });
 
           // console.log('Ошибка получения данных!!!');
           // console.error(error);

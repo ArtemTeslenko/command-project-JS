@@ -1,21 +1,37 @@
-export function footerMarkup(member){
-return member.map(({photo_face, full_name, role, git_page, telegram, id}) => { 
-return `<section class="section team">
-    <div class="container">
-        <h2 class="team__title">Turbo_Team</h2>
-        <div class="team__card">
-            <img class="team__face" src="${photo_face}" alt="${full_name}"/>
+export function footerMarkup(member) {
+  const svg = require('../../images/icons.svg');
+  return member
+    .map(({ photo_face, full_name, role, git_page, telegram }) => {
+      return `
+    <div class="container__team">
+        <div class="team__list">
+            <img class="team__face" src="${photo_face}"/>
             <div class="team__desc">
-                <ul>
-                    <li class="team__subtitle">${full_name}</li>
-                    <li class="team__subscr">${role}</li>
-                    <li class="team__subscr"><a href="${git_page}">${git_page}</a></li>
-                    <li class="team__subscr"><a href="${telegram}">Telegram</a></li>
+                <ul class = "team__members">
+                    <li class="team__members-name">${full_name}</li>
+                    <li class="team__inform">${role}</li>
+                </ul>
+
+                <ul class="team__social-sprite">
+                    <li class="team__social-list">
+                        <a href="${git_page}" class="team__link">
+                            <svg class="team__svg" height="30px" width="30px">
+                                <use href="${svg}#icon-github"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    
+                    <li class="team__social-list">
+                        <a href="${telegram}" class="team__link">
+                            <svg class="team__svg" height="30px" width="30px">
+                                <use href="${svg}#icon-telegram"></use>
+                            </svg>
+                        </a>
+                    </li>    
                 </ul>
             </div>
-        </div>    
-    </div>
-</section>`
-}).join('');
+        </div>  
+    </div>`;
+    })
+    .join('');
 }
-

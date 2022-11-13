@@ -39,9 +39,7 @@ function onSearchSubmitMovie(event) {
   } else {
     movieNameSubmit = movieName;
     trendUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${movieNameSubmit}&page=`;
-    // openSpinnerHome();
     mainSearch();
-    // window.onload = closeSpinnerHome();
   }
 }
 
@@ -49,7 +47,6 @@ function onSearchSubmitMovie(event) {
 
 function onClickSearch(e) {
   e.preventDefault();
-
   mainSearch(e.target.dataset.page);
 }
 // -----Основная функция поиска фильмов и рендера фильмов и кнопок(ссылок) пагинации-----
@@ -66,6 +63,7 @@ function mainSearch(page) {
       } else {
         const destinationEl = refs.galleryEl;
         filmsTrendRender(data, destinationEl);
+        // closeSpinnerHome();
         let totalPage = data.total_pages;
         if (totalPage > 1) {
           paginationControl(
@@ -77,6 +75,9 @@ function mainSearch(page) {
         }
       }
     })
-    .catch(err => console.log(err));
-  window.onload = closeSpinnerHome();
+    .catch(err => {
+      console.log(err);
+      // closeSpinnerHome();
+    })
+    .finally(() => closeSpinnerHome());
 }

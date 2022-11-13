@@ -1,6 +1,6 @@
 import { footerMarkup } from '../markup';
 import { refs } from '../reference/homeRefs';
-import { cleanModal } from './renderFilmCard';
+// import { cleanModal } from './renderFilmCard'; // to delete
 
 export function renderTeam(member) {
   //const container = document.querySelector('.modal-card');//Ganna
