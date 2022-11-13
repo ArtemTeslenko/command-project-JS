@@ -17,7 +17,7 @@ export function onOpenModalFilm(element) {
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
-  cleanModal();
+  //cleanModal();//Ganna
 }
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {

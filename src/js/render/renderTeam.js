@@ -1,7 +1,9 @@
-import {footerMarkup} from '../markup';
+import { footerMarkup } from '../markup';
+import { refs } from '../reference/homeRefs';
+import { cleanModal } from './renderFilmCard';
 
- export function renderTeam (member){
-    const container = document.querySelector('.modal-card');
-    container.innerHTML = footerMarkup(member);
-
-};
+export function renderTeam(member) {
+  //const container = document.querySelector('.modal-card');//Ganna
+  // container.innerHTML = footerMarkup(member);//Ganna
+  refs.modalCardEl.innerHTML = footerMarkup(member); //Ganna
+}
