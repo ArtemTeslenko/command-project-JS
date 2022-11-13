@@ -747,6 +747,30 @@ img {
   }
 }
 
+.modal-card__list {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .modal-card__list {
+    max-width: 264px;
+    max-height: 374px;
+    margin-right: 68px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-card__list {
+    margin-right: 16px;
+    max-width: 375px;
+    max-height: 478px;
+    height: 100%;
+  }
+}
+.modal-card__list:hover, .modal-card__list:focus {
+  box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+}
+
 .modal__button {
   position: absolute;
   width: 30px;
@@ -843,7 +867,6 @@ img {
 }
 
 .about-text {
-  overflow: auto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -898,8 +921,9 @@ img {
 
 .modal-spinner {
   position: absolute;
-  top: 130px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-spinner.is-hidden {
