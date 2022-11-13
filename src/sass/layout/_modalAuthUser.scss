@@ -29,22 +29,26 @@
   border-radius: 10px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @mixin tablet {
-    @media screen and (min-width: 768px) {
-      width: 500px;
-      padding: 30px;
-    }
+  @include tablet {
+    width: 500px;
+    padding: 30px;
   }
 
-  @mixin desktop {
-    @media screen and (min-width: 1280px) {
-      width: 700px;
-      padding: 40px;
-    }
+  @include desktop {
+    width: 700px;
+    padding: 40px;
   }
 
   &.is-hidden {
     display: none;
+  }
+
+  &__btn-close {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
   }
 
   &__button-close {
@@ -53,9 +57,7 @@
     height: 30px;
 
     border: none;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+
     clip-path: polygon(
       10% 0%,
       0% 10%,
