@@ -7,7 +7,7 @@ export function footerMarkup(member) {
       return `
     <div class="container__team">
         <div class="team__list">
-            <img class="team__face" src="${photo}" alt="${full_name}"/>
+            <img class="team__face" src="${photo_face}" alt="${full_name}"/>
             <div class="team__desc">
                 <ul class = "team__members">
                     <li class="team__members-name">${full_name}</li>
