@@ -251,10 +251,20 @@
 .button-add__queue {
   @extend %secondary-btn;
   width: 110px;
+  min-height: 44px;
+  margin-right: 20px;
 
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+
+  @include tablet {
+    width: 120px;
+    margin-right: 15px;
+  }
+  @include desktop {
+    width: 136px;
+  }
 }
 
 .modal-spinner {

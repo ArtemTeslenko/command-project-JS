@@ -53,8 +53,6 @@ img {
 }
 
 .button-add__queue {
-  padding-top: 13px;
-  padding-bottom: 13px;
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
@@ -911,9 +909,22 @@ img {
 
 .button-add__queue {
   width: 110px;
+  min-height: 44px;
+  margin-right: 20px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+}
+@media screen and (min-width: 768px) {
+  .button-add__queue {
+    width: 120px;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button-add__queue {
+    width: 136px;
+  }
 }
 
 .modal-spinner {
@@ -1191,7 +1202,7 @@ img {
 }
 
 .team__face {
-  min-width: 250px;
+  width: 100%;
 }
 
 .team__desc {
@@ -1242,6 +1253,7 @@ img {
 }
 
 .team__svg {
+  text-align: center;
   border: 1px solid #ff6b08;
   border-radius: 50%;
   stroke: #ff6b08;
