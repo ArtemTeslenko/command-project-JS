@@ -16,11 +16,15 @@ export function userOut(e) {
   signOut(auth)
     .then(() => {
       renderBtnAuth();
-      Notiflix.Notify.warning('Logout done!!!');
+      Notiflix.Notify.warning('Logout done!!!', {
+        position: 'center-top',
+      });
       // console.log('Выход из аккаунта выполнен!!!');
     })
     .catch(error => {
-      Notiflix.Notify.failure('Logout error');
+      Notiflix.Notify.failure('Logout error', {
+        position: 'center-top',
+      });
       // console.log('Logout error');
       // console.log(error);
     });

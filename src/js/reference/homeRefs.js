@@ -15,7 +15,7 @@ export const refs = {
   logOut: document.querySelector('#logOut'),
   btnNotAuth: document.querySelector('.btnNotAuth'),
   btnAuth: document.querySelectorAll('.btnAuth'),
-  btnCloseForm: document.querySelector('.form-auth__button-close'),
+  btnCloseForm: document.querySelector('.form-auth__btn-close'),
   backdropAuth: document.querySelector('.backdrop-auth-user'),
 
   titelForm: document.querySelector('.form-auth__title'),
