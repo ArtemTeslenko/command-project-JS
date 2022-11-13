@@ -96,6 +96,7 @@
 }
 
 .container__team {
+
   @include tablet {
     width: calc((100% - 32px) / 2);
     margin: 0;
@@ -126,7 +127,8 @@
 }
 
 .team__face {
-  min-width: 250px;
+  width: 100%;
+ 
 }
 
 .team__desc {
@@ -167,7 +169,7 @@
 }
 
 .team__link {
-  // border: 1px solid getColor('orange-text');
+
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -179,6 +181,7 @@
 }
 
 .team__svg {
+  text-align: center;
   border: 1px solid getColor('orange-text');
   border-radius: 50%;
   stroke: getColor('orange-text');
