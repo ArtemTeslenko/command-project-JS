@@ -1,46 +1,46 @@
 [
   {
-    "photo_face": "https://abrakadabra.fun/uploads/posts/2021-12/1640104454_7-abrakadabra-fun-p-rostovaya-lineika-dlya-prestupnikov-9.jpg",
+    "photo_face": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfxVmlQkzjhckaFEzaF1Ci82WG5hhS06d0jw&usqp=CAU",
     "full_name": "Artem Teslenko",
     "role": "Developer/Team leader",
     "git_page": "https://github.com/ArtemTeslenko",
     "telegram": "https://t.me/artemTeslenkoW126",
-    "id": 1
+    "id": "1"
   },
 
   {
-    "photo_face": "https://drive.google.com/file/d/1MK1_Yz0EIU-ry7-1gikAAMTOGnUV3ZeN/view?usp=share_link",
+    "photo_face": "https://lh3.google.com/u/0/d/1MK1_Yz0EIU-ry7-1gikAAMTOGnUV3ZeN=w2880-h1578-iv1",
     "full_name": "Anna Lazarenko",
     "role": "Developer/Scram master",
     "git_page": "https://github.com/AniaLaz",
     "telegram": "https://t.me/AniaLaz",
-    "id": 2
+    "id": "2"
   },
 
   {
-    "photo_face": "https://drive.google.com/file/d/1WArawcD9HiFMFZSDxYIEal3J_zHS7t9S/view?usp=share_link",
+    "photo_face": "https://lh3.google.com/u/0/d/1WArawcD9HiFMFZSDxYIEal3J_zHS7t9S=w2880-h1578-iv1",
     "full_name": "Pavlo Bieliak",
     "role": "Developer",
     "git_page": "https://github.com/Paul48wt",
     "telegram": "https://t.me/Paul48wt",
-    "id": 3
+    "id": "3"
   },
   {
-    "photo_face": "https://drive.google.com/file/d/1PQUJJ5tIUuLPvla3b_q2i_2tA9jWh8DD/view?usp=share_link",
+    "photo_face": "https://lh3.google.com/u/0/d/1PQUJJ5tIUuLPvla3b_q2i_2tA9jWh8DD=w2880-h1578-iv1",
     "full_name": "Oksana Robeiko",
     "role": "Developer",
     "git_page": "https://github.com/roi5430",
     "telegram": "https://t.me/ksyuhaR",
-    "id": 4
+    "id": "4"
   },
 
   {
-    "photo_face": "https://drive.google.com/file/d/1pMTFoTVDJ3DxwoRmrTJgnGudqz5Eeqdi/view",
+    "photo_face": "https://lh3.google.com/u/0/d/1pMTFoTVDJ3DxwoRmrTJgnGudqz5Eeqdi=w2880-h1578-iv1",
     "full_name": "Ganna Kovchyk",
     "role": "Developer",
     "git_page": "https://github.com/GannaKov",
     "telegram": "https://t.me/Ganna_GannochKa",
-    "id": 5
+    "id": "5"
   },
 
   {
@@ -49,7 +49,7 @@
     "role": "Developer",
     "git_page": "https://github.com/Chillbeffore",
     "telegram": "https://t.me/Chillbefore",
-    "id": 6
+    "id": "6"
   },
 
   {
@@ -58,16 +58,16 @@
     "role": "Developer",
     "git_page": "https://github.com/TechnicUnion",
     "telegram": "https://t.me/serhiikuntsevskyi",
-    "id": 7
+    "id": "7"
   },
 
   {
-    "photo_face": "https://drive.google.com/file/d/1x98dMZ--NMX0NZZ9WsiE-XqENrs0nvJa/view?usp=share_link",
+    "photo_face": "https://lh3.google.com/u/0/d/1x98dMZ--NMX0NZZ9WsiE-XqENrs0nvJa=w2880-h1578-iv1",
     "full_name": "Vladyslav Sydorenko",
     "role": "Developer",
     "git_page": "https://github.com/VladosSid",
     "telegram": "https://t.me/Vlados_sid",
-    "id": 8
+    "id": "8"
   },
 
   {
@@ -76,6 +76,6 @@
     "role": "Developer",
     "git_page": "https://github.com/Volodymyr1973",
     "telegram": "https://t.me/RVolodymyrI",
-    "id": 9
+    "id": "9"
   }
 ]

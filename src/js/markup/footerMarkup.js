@@ -1,13 +1,11 @@
 export function footerMarkup(member) {
-  const photos = ['vlad', 'ganna', 'anna', 'kseniia', 'pavlo'];
-
   const svg = require('../../images/icons.svg');
   return member
     .map(({ photo_face, full_name, role, git_page, telegram }) => {
       return `
     <div class="container__team">
         <div class="team__list">
-            <img class="team__face" src="${photo_face}" alt="${full_name}"/>
+            <img class="team__face" src="${photo_face}"/>
             <div class="team__desc">
                 <ul class = "team__members">
                     <li class="team__members-name">${full_name}</li>
