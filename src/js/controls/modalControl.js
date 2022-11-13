@@ -18,6 +18,7 @@ export function onOpenModalFilm(element) {
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
+  scrollBtnHidden();
   cleanModal(); //Ganna
 }
 // функція закриває модалку по кліку на backdrop
@@ -25,6 +26,7 @@ function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
+    scrollBtnHidden();
     cleanModal(); //Ganna
   }
   return;
@@ -37,6 +39,7 @@ function creatKeydownEscape(e) {
       refs.bodyNoScrollEl.classList.remove('no-scroll');
       refs.backdropEl.classList.add('is-hidden');
       refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
+      scrollBtnHidden();
       cleanModal(); //Ganna
     }
   }
@@ -53,7 +56,7 @@ function commonClose() {
 export function onOpenModal() {
   refs.backdropEl.classList.remove('is-hidden');
   refs.bodyNoScrollEl.classList.add('no-scroll');
-
+  refs.scrollBtnEl.setAttribute('hidden', 'true');
   commonClose();
 }
 
@@ -69,3 +72,8 @@ async function onEventListenerClick(e) {
 //   //Ganna
 //   refs.modalCardEl.innerHTML = '';
 // }
+function scrollBtnHidden() {
+  if (refs.scrollBtnEl.hasAttribute('hidden')) {
+    refs.scrollBtnEl.removeAttribute('hidden');
+  }
+}
