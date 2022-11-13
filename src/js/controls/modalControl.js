@@ -2,6 +2,7 @@ import { refs } from '../reference/homeRefs';
 import { refs } from '../reference/libraryRefs';
 import { renderFilmCard } from '../render';
 import { cleanModal } from '../render';
+import { funcHuianc } from '../controls';
 
 // відкриває модалку (перевикористовувати)
 export function modalTemplate(btn) {

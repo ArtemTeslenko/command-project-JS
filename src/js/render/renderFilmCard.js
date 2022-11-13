@@ -3,6 +3,7 @@ import { refs } from '../reference/libraryRefs';
 import { fetchFilmId } from '../requests';
 import { markupBtnModalFilm } from '../markup';
 import { addToLokalStorage, addFilmProfail } from '../controls';
+import { funcHuianc } from '../controls';
 
 let film = {};
 
@@ -20,6 +21,7 @@ export async function renderFilmCard(id) {
   refs.modalCardEl.innerHTML = marcup;
   // Вызывает функцию для поска кнопод для добавления фильмов в просмотренные
   // путь controls --> data --> addFilmUsers
+  funcHuianc();
   return addFilmProfail(film);
 }
 
