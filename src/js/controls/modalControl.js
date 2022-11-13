@@ -16,25 +16,29 @@ export function onOpenModalFilm(element) {
 function onClouseModal() {
   refs.backdropEl.classList.add('is-hidden');
   refs.bodyNoScrollEl.classList.remove('no-scroll');
+  refs.modalCardEl.innerHTML = '';
 }
 // функція закриває модалку по кліку на backdrop
 function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
+
+    refs.modalCardEl.innerHTML = '';
   }
   return;
 }
 
 // функція закриває модалку по кліку на Escape
 function creatKeydownEscape(e) {
-  {
-    if (e.code === 'Escape') {
-      refs.bodyNoScrollEl.classList.remove('no-scroll');
-      refs.backdropEl.classList.add('is-hidden');
-      refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
-      // cleanFilmCard();
-    }
+  if (e.code === 'Escape') {
+    refs.bodyNoScrollEl.classList.remove('no-scroll');
+    refs.backdropEl.classList.add('is-hidden');
+
+    onClouseModal();
+    // refs.bodyEl.removeEventListener('keydown', creatKeydownEscape);
+
+    // cleanFilmCard();
   }
 }
 
@@ -45,7 +49,7 @@ function commonClose() {
 }
 
 // відкриває і закриває модалку
-function onOpenModal() {
+export function onOpenModal() {
   refs.backdropEl.classList.remove('is-hidden');
   refs.bodyNoScrollEl.classList.add('no-scroll');
   commonClose();

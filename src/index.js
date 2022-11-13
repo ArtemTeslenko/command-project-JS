@@ -1,6 +1,13 @@
 import { refs } from './js/reference/homeRefs';
-import { trendsControls, scrollToTop, listenerUserOut } from './js/controls';
+import {
+  trendsControls,
+  scrollToTop,
+  listenerUserOut,
+  openModalShowTeam,
+} from './js/controls';
+import { onOpenModal } from './js/controls';
 import { onOpenModalFilm, modalTemplate } from './js/controls';
+import { openModalShowTeam } from './js/controls';
 import { showTeam } from './js/controls';
 import { renderControl } from './js/controls';
 // import {} from './js/controls/registrateUsers'; // names for Vlad Sid
@@ -18,9 +25,10 @@ trendsControls();
 // refs.filmsGalleryEl це дів карточки з рендера популярних
 onOpenModalFilm(refs.filmsGalleryEl);
 // зразок функції для відкриття чистої модалки
-modalTemplate(refs.footerBtn);
+// modalTemplate(refs.footerBtn);
 scrollToTop();
-showTeam();
+openModalShowTeam();
+// showTeam();
 listenerBack(); // names for Vlad Sid
 listenerBackFBAuth(); // names for Vlad Sid
 listenerUserOut(); // names for Vlad Sid

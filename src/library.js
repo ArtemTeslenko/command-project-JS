@@ -6,9 +6,11 @@ import {
   onOpenModalFilmWatched,
   onWatchedOpen,
 } from './js/controls';
+import { openModalShowTeam } from './js/controls/showTeamControl';
 
 refs.queueEl.addEventListener('click', onQueueBtn);
 refs.watchedEl.addEventListener('click', onWatchedBtn);
 
 onWatchedOpen();
 onOpenModalFilm(refs.libraryEl);
+openModalShowTeam();
