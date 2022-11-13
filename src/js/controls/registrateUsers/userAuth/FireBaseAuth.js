@@ -23,7 +23,9 @@ export function handleSubmit(event) {
   const pass = refs.lablePassword;
 
   if (login.value === '' || pass.value === '') {
-    return Notiflix.Notify.warning('Please fill in all the fields!');
+    return Notiflix.Notify.warning('Please fill in all the fields!', {
+      position: 'center-top',
+    });
   }
 
   regData.email = login.value;
@@ -35,27 +37,43 @@ export function handleSubmit(event) {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-        Notiflix.Notify.success('Login completed');
+        Notiflix.Notify.success('Login completed', {
+          position: 'center-top',
+        });
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(error);
         // console.log(errorMessage);
-        Notiflix.Notify.failure('Account login error!!!');
+        Notiflix.Notify.failure('Account login error!!!', {
+          position: 'center-top',
+        });
       });
   } else {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-        Notiflix.Notify.success('Registration completed successfully');
+        Notiflix.Notify.success('Registration completed successfully', {
+          position: 'center-top',
+        });
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);
-        Notiflix.Notify.failure('Registration error!!!');
+        if (errorCode === 'auth/weak-password') {
+          return Notiflix.Notify.failure(
+            `Registration error!!! Password should be at least 6 characters.`,
+            {
+              position: 'center-top',
+            }
+          );
+        }
+        Notiflix.Notify.failure(`Registration error!!!`, {
+          position: 'center-top',
+        });
       });
   }
 
