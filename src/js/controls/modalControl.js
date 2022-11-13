@@ -22,6 +22,7 @@ function onClouseModalBackdrop(e) {
   if (e.target === e.currentTarget) {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyNoScrollEl.classList.remove('no-scroll');
+    cleanModal(); //Ganna
   }
   return;
 }
@@ -58,4 +59,8 @@ async function onEventListenerClick(e) {
     await renderFilmCard(e.target.closest('.film-card__link').id);
     onOpenModal();
   }
+}
+function cleanModal() {
+  //Ganna
+  refs.modalCardEl.innerHTML = '';
 }
