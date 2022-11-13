@@ -19,15 +19,14 @@ export function markupBtnModalFilm(film) {
       <tbody>
         <tr class="table__line">
           <td class=" table__parametr">Vote/Votes</td>
-          <td class="table__value"><span class="table__span-value">${
-            film.vote_average
-          }</span>
+          <td class="table__value">
+       <span class="table__span-value">${film.vote_average.toFixed(1)}</span>
        <span class="table__value-slash">/</span>
        <span>${film.vote_count}</span></td>
         </tr> 
            <tr class="table__line">
           <td class="table__parametr" >Popularity</td>
-          <td class="table__value">${film.popularity}</td>
+          <td class="table__value">${film.popularity.toFixed(1)}</td>
         </tr>
            <tr class="table__line">
           <td class="table__parametr">Original Title</td>
