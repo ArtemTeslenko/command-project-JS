@@ -1,7 +1,8 @@
-import {footerMarkup} from '../markup';
+import { footerMarkup } from '../markup';
 
- export function renderTeam (member){
-    const container = document.querySelector('.modal-card');
-    container.innerHTML = footerMarkup(member);
-
-};
+export function renderTeam(member) {
+  // const qer = footerMarkup(member);
+  // console.log(qer);
+  const container = document.querySelector('.team');
+  container.innerHTML = footerMarkup(member);
+}

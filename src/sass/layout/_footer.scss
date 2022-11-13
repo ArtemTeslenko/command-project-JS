@@ -1,3 +1,10 @@
+// body::-webkit-scrollbar-thumb {
+//     background-color: blue;    /* цвет бегунка */
+//     border-radius: 20px;       /* округлось бегунка */
+//     border: 3px solid orange;  /* отступ вокруг бегунка */
+//   }
+  
+
 .footer {
 background-color: #F7F7F7;
 font-weight: $font-normal;
@@ -74,4 +81,119 @@ letter-spacing: 1.14;
     margin-left: 6px;
     margin-right: 6px;
    
+}
+
+/////////////////////////// MODAL ///////////////////////////////
+
+.team{
+    
+    margin: 35px;
+    overflow: auto;
+    height: 80vh;
+    width: 90vw;
+
+    @include tablet{
+        display: flex;
+        flex-wrap: wrap;
+        gap:30px;
+        justify-content: space-between;
+       
+    }
+
+   
+}
+
+
+.container__team{
+
+
+    @include tablet{
+        width: calc((100% - 32px)/2);
+        margin: 0;
+    }
+
+    @include desktop {
+        width: calc((100% - 64px)/3);
+        margin: 0;
+    }
+}
+
+.team__list{
+    display: flex;
+    box-shadow: 0px 1px 3px #0000001f, 0px 1px 1px #00000024, 0px 2px 1px #00000033;
+    border-radius: 0px 0px 4px 4px;
+    background-color:  #F7F7F7;
+    margin-bottom: 20px;
+    font-size: 14px;
+    width: 100%;
+    flex-flow: column wrap;
+
+
+    @include tablet{
+        margin-bottom: 5px;
+        font-size: 16px;
+        justify-content: center;
+
+    }
+   
+}
+
+.team__face{
+    min-width: 250px;
+
+}
+
+.team__desc{
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.team__members{
+    margin-bottom: 7px;
+}
+
+.team__members-name{
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 7px;
+
+    @include tablet {
+        font-size: 18px;
+    }
+}
+
+.team__inform{
+    color: #a55205;
+} 
+
+.team__social-sprite{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.team__sotial-list{
+margin-right: 10px;
+}
+
+.team__link{
+    // border: 1px solid getColor('orange-text');
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);}
+}
+
+.team__svg{
+    border: 1px solid getColor('orange-text');
+    border-radius: 50%;
+    stroke: getColor('orange-text');
+    fill: getColor('orange-text');
+    @include transitions(filter);
 }
