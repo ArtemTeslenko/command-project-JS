@@ -17,6 +17,7 @@ export function getSavedUserFilm(type) {
             if (snapshot.exists()) {
               renderFilms(Object.entries(snapshot.val().queue));
             } else {
+              refs.libraryEl.innerHTML = 'No movies';
               Notiflix.Notify.failure('No data available', {
                 position: 'center-top',
                 showOnlyTheLastOne: true,
