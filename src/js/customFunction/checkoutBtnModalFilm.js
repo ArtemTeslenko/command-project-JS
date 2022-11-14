@@ -29,9 +29,9 @@ export function checkoutBtnModalFilm(currentFilm) {
         })
         .catch(error => {});
     } else {
-      console.log(
-        'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
-      );
+      //   console.log(
+      //     'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
+      //   );
     }
   });
 }
