@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import { getDatabase, ref, set } from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
-
+import { getSavedUserFilm } from '../../index';
 import { auth } from '../../index';
 
 export function addFilmProfail(filmData) {
@@ -27,6 +27,7 @@ export function addFilmProfail(filmData) {
             null
           )
             .then(() => {
+              getSavedUserFilm('watched');
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
                 showOnlyTheLastOne: true,
@@ -68,6 +69,7 @@ export function addFilmProfail(filmData) {
             null
           )
             .then(() => {
+              getSavedUserFilm('queue');
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
                 showOnlyTheLastOne: true,

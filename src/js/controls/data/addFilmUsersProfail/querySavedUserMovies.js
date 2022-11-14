@@ -17,6 +17,7 @@ export function getSavedUserFilm(type) {
             if (snapshot.exists()) {
               renderFilms(Object.entries(snapshot.val().queue));
             } else {
+              refs.libraryEl.innerHTML = 'No movies';
               Notiflix.Notify.failure('No data available', {
                 position: 'center-top',
                 showOnlyTheLastOne: true,
@@ -25,9 +26,9 @@ export function getSavedUserFilm(type) {
             }
           })
           .catch(error => {
-            if (error.message === "can't convert undefined to object") {
-              refs.libraryEl.innerHTML = 'No movies added to the queue';
-            }
+            //if (error.message === "can't convert undefined to object") {
+            refs.libraryEl.innerHTML = 'No movies added to the queue';
+            // }
             Notiflix.Notify.failure('Error getting data!!!', {
               position: 'center-top',
               showOnlyTheLastOne: true,
@@ -57,9 +58,9 @@ export function getSavedUserFilm(type) {
           }
         })
         .catch(error => {
-          if (error.message === "can't convert undefined to object") {
-            refs.libraryEl.innerHTML = 'No movies added to the watched';
-          }
+          // if (error.message === "can't convert undefined to object") {
+          refs.libraryEl.innerHTML = 'No movies added to the watched';
+          // }
           Notiflix.Notify.failure('Error getting data!!!', {
             position: 'center-top',
             showOnlyTheLastOne: true,
