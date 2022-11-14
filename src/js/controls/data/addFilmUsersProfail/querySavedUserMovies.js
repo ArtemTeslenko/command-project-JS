@@ -27,7 +27,10 @@ export function getSavedUserFilm(type) {
           })
           .catch(error => {
             //if (error.message === "can't convert undefined to object") {
-            refs.libraryEl.innerHTML = 'No movies added to the queue';
+            if (refs.libraryEl) {
+              refs.libraryEl.innerHTML = 'No movies added to the queue';
+            }
+
             // }
             Notiflix.Notify.failure('Error getting data!!!', {
               position: 'center-top',
@@ -59,7 +62,9 @@ export function getSavedUserFilm(type) {
         })
         .catch(error => {
           // if (error.message === "can't convert undefined to object") {
-          refs.libraryEl.innerHTML = 'No movies added to the watched';
+          if (refs.libraryEl) {
+            refs.libraryEl.innerHTML = 'No movies added to the watched';
+          }
           // }
           Notiflix.Notify.failure('Error getting data!!!', {
             position: 'center-top',
