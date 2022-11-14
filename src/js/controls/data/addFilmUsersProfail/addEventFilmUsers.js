@@ -29,6 +29,8 @@ export function addFilmProfail(filmData) {
             .then(() => {
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               });
               // console.log('Данные записаны.');
             })
@@ -37,6 +39,8 @@ export function addFilmProfail(filmData) {
                 'Error!!! Failed to add movie to library.',
                 {
                   position: 'center-top',
+                  showOnlyTheLastOne: true,
+                  clickToClose: true,
                 }
               );
               // console.log(error);
@@ -66,6 +70,8 @@ export function addFilmProfail(filmData) {
             .then(() => {
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               });
               // console.log('Данные записаны.');
             })
@@ -74,6 +80,8 @@ export function addFilmProfail(filmData) {
                 'Error!!! Failed to add movie to library.',
                 {
                   position: 'center-top',
+                  showOnlyTheLastOne: true,
+                  clickToClose: true,
                 }
               );
               // console.log(error);
@@ -120,6 +128,8 @@ export function addFilmProfail(filmData) {
           .then(() => {
             Notiflix.Notify.success('Film added to the library', {
               position: 'center-top',
+              showOnlyTheLastOne: true,
+              clickToClose: true,
             });
             // console.log('Данные записаны.');
           })
@@ -128,6 +138,8 @@ export function addFilmProfail(filmData) {
               'Error!!! Failed to add movie to library.',
               {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               }
             );
             // console.log(error);

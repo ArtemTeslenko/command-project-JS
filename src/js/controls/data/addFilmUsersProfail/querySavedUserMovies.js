@@ -19,6 +19,8 @@ export function getSavedUserFilm(type) {
             } else {
               Notiflix.Notify.failure('No data available', {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               });
             }
           })
@@ -28,6 +30,8 @@ export function getSavedUserFilm(type) {
             }
             Notiflix.Notify.failure('Error getting data!!!', {
               position: 'center-top',
+              showOnlyTheLastOne: true,
+              clickToClose: true,
             });
           });
       } else {
@@ -47,6 +51,8 @@ export function getSavedUserFilm(type) {
           } else {
             Notiflix.Notify.failure('No data available', {
               position: 'center-top',
+              showOnlyTheLastOne: true,
+              clickToClose: true,
             });
           }
         })
@@ -56,6 +62,8 @@ export function getSavedUserFilm(type) {
           }
           Notiflix.Notify.failure('Error getting data!!!', {
             position: 'center-top',
+            showOnlyTheLastOne: true,
+            clickToClose: true,
           });
 
           // console.log('Ошибка получения данных!!!');

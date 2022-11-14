@@ -96,6 +96,7 @@
 }
 
 .modal-card__list {
+  flex-shrink: 0;
   border-radius: 5px;
   margin-bottom: 20px;
   @include tablet {
@@ -207,7 +208,7 @@
 }
 
 .about-text {
-  // overflow: auto;
+  overflow: auto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -217,9 +218,11 @@
   max-height: 236px;
   @include tablet {
     width: 264px;
+    max-height: 236px;
   }
   @include desktop {
     width: 391px;
+    max-height: 160px;
   }
 }
 
