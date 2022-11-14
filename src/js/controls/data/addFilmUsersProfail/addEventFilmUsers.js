@@ -3,6 +3,8 @@ import { getDatabase, ref, set } from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getSavedUserFilm } from '../../index';
 import { auth } from '../../index';
+import { refs } from '../../../reference/homeRefs';
+import { refs } from '../../../reference/libraryRefs';
 
 export function addFilmProfail(filmData) {
   const btnWached = document.querySelector('.button-add__watched');
@@ -69,7 +71,14 @@ export function addFilmProfail(filmData) {
             null
           )
             .then(() => {
-              getSavedUserFilm('queue');
+              if (
+                refs.queueEl &&
+                refs.queueEl.classList.contains('is-active__btn')
+              ) {
+                // console.log(refs.queueEl);
+                getSavedUserFilm('queue');
+              }
+
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
                 showOnlyTheLastOne: true,
