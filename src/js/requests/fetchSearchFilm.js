@@ -9,10 +9,12 @@ import {
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
 import { onClickTrend } from '../controls';
+import { trendsControls } from '../controls';
 
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
 const textNotify =
   'Search result not successful. Enter the correct movie name and try again';
+const textNotifySecond = 'Please, fill the search field';
 let movieName;
 let movieNameSubmit;
 let trendUrl;
@@ -34,8 +36,15 @@ function onSearchSubmitMovie(event) {
   movieName = refs.searchMovieEl[0].value;
   movieNameSubmit = refs.searchMovieEl[1].value;
 
-  if (refs.searchMovieEl[0].value === '') {
-    return;
+  if (
+    refs.searchMovieEl[0].value === '' ||
+    refs.searchMovieEl[0].value.trim() === ''
+  ) {
+    Notiflix.Notify.failure(`${textNotifySecond}`, {
+      position: 'center-top',
+    });
+    trendsControls();
+    refs.searchMovieEl[0].value = '';
   } else {
     movieNameSubmit = movieName;
     trendUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${movieNameSubmit}&page=`;
@@ -59,7 +68,9 @@ function mainSearch(page) {
   fetchFilms(page, trendUrl)
     .then(data => {
       if (data.results.length === 0) {
-        Notiflix.Notify.failure(`${textNotify}`);
+        Notiflix.Notify.failure(`${textNotify}`, {
+          position: 'center-top',
+        });
       } else {
         const destinationEl = refs.galleryEl;
         filmsTrendRender(data, destinationEl);
