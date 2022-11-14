@@ -137,11 +137,11 @@ export function addFilmProfail(filmData) {
           movieData
         )
           .then(() => {
-            Notiflix.Notify.success('Film added to the library', {
-              position: 'center-top',
-              showOnlyTheLastOne: true,
-              clickToClose: true,
-            });
+            // Notiflix.Notify.success('Film added to the library', {
+            //   position: 'center-top',
+            //   showOnlyTheLastOne: true,
+            //   clickToClose: true,
+            // });
             // console.log('Данные записаны.');
           })
           .catch(error => {
