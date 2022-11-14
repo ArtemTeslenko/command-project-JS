@@ -743,6 +743,7 @@ img {
 }
 
 .modal-card__list {
+  flex-shrink: 0;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -862,6 +863,7 @@ img {
 }
 
 .about-text {
+  overflow: auto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -873,11 +875,13 @@ img {
 @media screen and (min-width: 768px) {
   .about-text {
     width: 264px;
+    max-height: 236px;
   }
 }
 @media screen and (min-width: 1280px) {
   .about-text {
     width: 391px;
+    max-height: 160px;
   }
 }
 
@@ -1203,6 +1207,7 @@ img {
 
 .team__face {
   width: 100%;
+  height: auto;
 }
 
 .team__desc {
