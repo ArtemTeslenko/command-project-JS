@@ -8,7 +8,7 @@
 refs.openFilterBtn.addEventListener('click', toggleMenu);
 refs.closeFilterBtn.addEventListener('click', toggleMenu);
 
-function toggleMenu() {
+function toggleFilter() {
   refs.menu.classList.toggle('is-hidden');
-  refs.body.classList.toggle('no-scroll');
+  //   refs.body.classList.toggle('no-scroll');
 }
