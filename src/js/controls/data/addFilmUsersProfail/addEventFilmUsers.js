@@ -16,9 +16,34 @@ export function addFilmProfail(filmData) {
   btnQueue.addEventListener('click', checkBtn);
 
   function checkBtn(e) {
+    const localDataSession = localStorage.getItem('userSession');
+
+    if (localDataSession === null) {
+      console.log('123');
+      // refs.backdropEl.classList.add('is-hidden');
+      // refs.backdropAuth.classList.remove('is-hidden');
+      Notiflix.Confirm.show(
+        'Do you want to save the movie?',
+        'You must be logged in to add to the library. Would you like to sign in?',
+        'Yes',
+        'No',
+        function okCb() {
+          refs.backdropEl.classList.add('is-hidden');
+          refs.backdropAuth.classList.remove('is-hidden');
+        },
+        function cancelCb() {},
+        {
+          width: '320px',
+          borderRadius: '8px',
+        }
+      );
+    }
+
     e.preventDefault();
     if (e.target.textContent === 'REMOVE FROM WATCH') {
       onAuthStateChanged(auth, user => {
+        console.log(e.target.name);
+        console.log(user);
         if (user) {
           const db = getDatabase();
           set(
@@ -54,6 +79,7 @@ export function addFilmProfail(filmData) {
           //   'Не удалось получить данные позьлователя. Авторизйутесь еще раз.'
           // );
         }
+        console.log('not user');
       });
 
       if (e.target.textContent === 'REMOVE FROM WATCH') {
