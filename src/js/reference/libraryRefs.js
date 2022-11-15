@@ -13,4 +13,5 @@ export const refs = {
   libraryEl: document.querySelector('.library-gallery'),
   modalCardImg: document.querySelector('.modal-card__img'),
   modalSpinnerEl: document.querySelector('.modal-spinner'),
+  scrollBtnEl: document.querySelector('.arrow-up'),
 };

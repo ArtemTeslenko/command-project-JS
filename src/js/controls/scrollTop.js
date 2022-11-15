@@ -1,4 +1,5 @@
 import { refs } from '../reference/homeRefs';
+
 function onScrollShowArrow() {
   if (window.scrollY > 700) {
     refs.scrollBtnEl.classList.remove('isHiddenBtn');
@@ -6,6 +7,7 @@ function onScrollShowArrow() {
     refs.scrollBtnEl.classList.add('isHiddenBtn');
   }
 }
+
 function onClickArrow() {
   window.scrollTo(0, 0);
 }

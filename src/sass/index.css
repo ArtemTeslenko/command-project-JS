@@ -53,8 +53,6 @@ img {
 }
 
 .button-add__queue {
-  padding-top: 13px;
-  padding-bottom: 13px;
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
@@ -745,6 +743,7 @@ img {
 }
 
 .modal-card__list {
+  flex-shrink: 0;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -864,6 +863,7 @@ img {
 }
 
 .about-text {
+  overflow: auto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -875,11 +875,13 @@ img {
 @media screen and (min-width: 768px) {
   .about-text {
     width: 264px;
+    max-height: 236px;
   }
 }
 @media screen and (min-width: 1280px) {
   .about-text {
     width: 391px;
+    max-height: 160px;
   }
 }
 
@@ -911,9 +913,22 @@ img {
 
 .button-add__queue {
   width: 110px;
+  min-height: 44px;
+  margin-right: 20px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+}
+@media screen and (min-width: 768px) {
+  .button-add__queue {
+    width: 120px;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button-add__queue {
+    width: 136px;
+  }
 }
 
 .modal-spinner {
@@ -1191,7 +1206,8 @@ img {
 }
 
 .team__face {
-  min-width: 250px;
+  width: 100%;
+  height: 100%;
 }
 
 .team__desc {
@@ -1242,6 +1258,7 @@ img {
 }
 
 .team__svg {
+  text-align: center;
   border: 1px solid #ff6b08;
   border-radius: 50%;
   stroke: #ff6b08;

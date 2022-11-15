@@ -1,9 +1,10 @@
 import Notiflix from 'notiflix';
 import { getDatabase, ref, set } from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
-
+import { getSavedUserFilm } from '../../index';
 import { auth } from '../../index';
 import { refs } from '../../../reference/homeRefs';
+import { refs } from '../../../reference/libraryRefs';
 
 export function addFilmProfail(filmData) {
   const btnWached = document.querySelector('.button-add__watched');
@@ -53,8 +54,11 @@ export function addFilmProfail(filmData) {
             null
           )
             .then(() => {
+              getSavedUserFilm('watched');
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               });
               // console.log('Данные записаны.');
             })
@@ -63,6 +67,8 @@ export function addFilmProfail(filmData) {
                 'Error!!! Failed to add movie to library.',
                 {
                   position: 'center-top',
+                  showOnlyTheLastOne: true,
+                  clickToClose: true,
                 }
               );
               // console.log(error);
@@ -91,8 +97,18 @@ export function addFilmProfail(filmData) {
             null
           )
             .then(() => {
+              if (
+                refs.queueEl &&
+                refs.queueEl.classList.contains('is-active__btn')
+              ) {
+                // console.log(refs.queueEl);
+                getSavedUserFilm('queue');
+              }
+
               Notiflix.Notify.success('Film deleted', {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               });
               // console.log('Данные записаны.');
             })
@@ -101,6 +117,8 @@ export function addFilmProfail(filmData) {
                 'Error!!! Failed to add movie to library.',
                 {
                   position: 'center-top',
+                  showOnlyTheLastOne: true,
+                  clickToClose: true,
                 }
               );
               // console.log(error);
@@ -145,9 +163,11 @@ export function addFilmProfail(filmData) {
           movieData
         )
           .then(() => {
-            Notiflix.Notify.success('Film added to the library', {
-              position: 'center-top',
-            });
+            // Notiflix.Notify.success('Film added to the library', {
+            //   position: 'center-top',
+            //   showOnlyTheLastOne: true,
+            //   clickToClose: true,
+            // });
             // console.log('Данные записаны.');
           })
           .catch(error => {
@@ -155,6 +175,8 @@ export function addFilmProfail(filmData) {
               'Error!!! Failed to add movie to library.',
               {
                 position: 'center-top',
+                showOnlyTheLastOne: true,
+                clickToClose: true,
               }
             );
             // console.log(error);

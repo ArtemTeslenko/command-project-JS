@@ -3,7 +3,8 @@ import { refs } from '../reference/homeRefs';
 // import { cleanModal } from './renderFilmCard'; // to delete
 
 export function renderTeam(member) {
-  //const container = document.querySelector('.modal-card');//Ganna
+  refs.modalCardEl.innerHTML = '<div class="team"></div>';
+  const container = document.querySelector('.team'); //Ganna
   // container.innerHTML = footerMarkup(member);//Ganna
-  refs.modalCardEl.innerHTML = footerMarkup(member); //Ganna
+  container.innerHTML = footerMarkup(member); //Ganna
 }

@@ -16,7 +16,7 @@ try {
   watchedFilmList = [...JSON.parse(localStorage.getItem(STORAGE_WATCHED_KEY))];
   queueFilmList = [...JSON.parse(localStorage.getItem(STORAGE_QUEUE_KEY))];
 } catch (error) {
-  console.log(error);
+  // console.log(error);
 }
 
 // Додае ключ та значення в Lokal Storage

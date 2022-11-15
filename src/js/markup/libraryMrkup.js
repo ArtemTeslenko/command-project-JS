@@ -19,7 +19,7 @@ export function createLibraryMarkup(arrFilms) {
                 ${genres} 
                 
               </p>
-              <p class="film-card__average">${voteAverage}</p>
+              <p class="film-card__average">${voteAverage.toFixed(1)}</p>
             </div>
           </div>
         </a>
