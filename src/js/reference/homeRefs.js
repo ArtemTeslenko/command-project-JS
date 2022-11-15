@@ -38,4 +38,8 @@ export const refs = {
   filmCardLinkEl: document.querySelector('.film-card__link'),
   filmsGalleryEl: document.querySelector('.films-gallery'),
   footerBtn: document.querySelector('.footer__btn'),
+  //-----filter
+  openFilterBtn: document.querySelector('.filter_open_btn'),
+  closeFilterBtn: document.querySelector('.filter_close_btn'),
+  filterEl: document.querySelector('.filter'),
 };

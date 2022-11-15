@@ -19,11 +19,9 @@
       (-o-min-device-pixel-ratio: 2/1),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-    
-        background-image: url('../../src/images/header_mob_all@2x.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-    
+      background-image: url('../../src/images/header_mob_all@2x.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
@@ -36,9 +34,7 @@
       (-o-min-device-pixel-ratio: 2/1),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-    
-        background-image: url('../../src/images/header_tabl_all@2x.jpg');
-    
+      background-image: url('../../src/images/header_tabl_all@2x.jpg');
     }
 
     @include desktop {
@@ -50,9 +46,7 @@
         (-o-min-device-pixel-ratio: 2/1),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
-      
-          background-image: url('../../src/images/header_desk_all@2x.jpg');
-      
+        background-image: url('../../src/images/header_desk_all@2x.jpg');
       }
     }
   }
@@ -145,6 +139,7 @@
   }
 }
 .search-form__input {
+  margin-bottom: 20px;
   border: none;
   border-bottom: 0.5px solid rgba(255, 255, 255, 1);
   width: 100%;

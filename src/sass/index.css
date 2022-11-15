@@ -254,6 +254,7 @@ img {
 }
 
 .search-form__input {
+  margin-bottom: 20px;
   border: none;
   border-bottom: 0.5px solid rgb(255, 255, 255);
   width: 100%;
@@ -1476,4 +1477,48 @@ html {
   100% {
     transform: rotate(360deg);
   }
+}
+.filter_open_btn {
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+.filter {
+  margin-top: 20px;
+  position: relative;
+  padding: 40px;
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+@media screen and (max-width: 450px) {
+  .filter {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: 450px) {
+  .filter {
+    width: 450px;
+  }
+}
+
+.filter-form {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-genre {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.input-year {
+  display: flex;
+  align-items: center;
+}
+.input-year input {
+  margin-right: 20px;
 }/*# sourceMappingURL=index.css.map */
