@@ -1,6 +1,10 @@
 .filter_open_btn {
   margin-left: 50%;
   transform: translate(-50%);
+  @extend %secondary-btn;
+  background-color: rgb(238, 235, 235);
+  color: black;
+  width: 120px;
 }
 .filter {
   background-color: #000;
@@ -30,35 +34,45 @@
 // }
 .filter-form {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  column-gap: 40px;
 }
 .checkbox-genre {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 170px;
   align-items: flex-start;
+}
+.input-year__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .input-year {
   display: flex;
   position: relative;
-  width: 300px;
-  height: 300px;
-  float: left;
+
+  height: 150px;
+  //   float: left;
   justify-content: center;
 }
 .rangeValues {
-  position: relative;
-  width: 200px;
-  // height: 300px;
-  float: left;
+  // outline: 1px solid #ff4500;
+  color: #000;
+  //   position: relative;
+
+  height: 30px;
+  //   float: left;
   text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
 }
 input[type='range'] {
   pointer-events: none;
   position: absolute;
   -webkit-appearance: none;
   //   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  border: 1px solid #ff4500;
+  border: 1px solid getColor('orange-btn'); //#ff4500;
   border-radius: 14px;
   //background: #f1efef;
   background-color: transparent;
@@ -93,4 +107,10 @@ input[type='range']::-webkit-slider-runnable-track {
   // background: #ddd;
   // border: none;
   // border-radius: 3px;
+}
+
+.filter__submit {
+  @extend %common-btn;
+  width: 120px;
+  height: 50px;
 }

@@ -38,7 +38,7 @@ img {
   padding-bottom: 60px;
 }
 
-.form-auth__button-reg, .form-auth__btn-submit, .load-more-btn, .button-add__watched {
+.filter__submit, .form-auth__button-reg, .form-auth__btn-submit, .load-more-btn, .button-add__watched {
   background-color: #ff6b08;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -47,12 +47,12 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-auth__button-reg:hover, .form-auth__btn-submit:hover, .load-more-btn:hover, .button-add__watched:hover, .form-auth__button-reg:focus, .form-auth__btn-submit:focus, .load-more-btn:focus, .button-add__watched:focus {
+.filter__submit:hover, .form-auth__button-reg:hover, .form-auth__btn-submit:hover, .load-more-btn:hover, .button-add__watched:hover, .filter__submit:focus, .form-auth__button-reg:focus, .form-auth__btn-submit:focus, .load-more-btn:focus, .button-add__watched:focus {
   background-color: #de5900;
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
 }
 
-.button-add__queue {
+.filter_open_btn, .button-add__queue {
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
@@ -61,7 +61,7 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-add__queue:hover, .button-add__queue:focus {
+.filter_open_btn:hover, .button-add__queue:hover, .filter_open_btn:focus, .button-add__queue:focus {
   background-color: #de5900;
   border: 1px solid #de5900;
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
@@ -1481,6 +1481,9 @@ html {
 .filter_open_btn {
   margin-left: 50%;
   transform: translate(-50%);
+  background-color: rgb(238, 235, 235);
+  color: black;
+  width: 120px;
 }
 
 .filter {
@@ -1507,37 +1510,44 @@ html {
 
 .filter-form {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
 
 .checkbox-genre {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 170px;
   align-items: flex-start;
+}
+
+.input-year__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-year {
   display: flex;
   position: relative;
-  width: 300px;
-  height: 300px;
-  float: left;
+  height: 150px;
   justify-content: center;
 }
 
 .rangeValues {
-  position: relative;
-  width: 200px;
-  float: left;
+  color: #000;
+  height: 30px;
   text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 input[type=range] {
   pointer-events: none;
   position: absolute;
   -webkit-appearance: none;
-  border: 1px solid #ff4500;
+  border: 1px solid #ff6b08;
   border-radius: 14px;
   background-color: transparent;
   top: 50px;
@@ -1558,4 +1568,9 @@ input[type=range]::-webkit-slider-thumb {
   background: #ff4500;
   margin-top: 1px;
   margin-bottom: 1px;
+}
+
+.filter__submit {
+  width: 120px;
+  height: 50px;
 }/*# sourceMappingURL=index.css.map */

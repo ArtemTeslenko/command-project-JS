@@ -115,10 +115,27 @@
             Western
           </label>
         </div>
-        <div class="input-year">
-          <span class="rangeValues">1920 - 2022</span>
-          <input value="1950" min="1920" max="2022" step="1" type="range" />
-          <input value="2000" min="1920" max="2022" step="1" type="range" />
+        <div class="input-year__overlay">
+          <div class="input-year">
+            <span class="rangeValues"></span>
+            <input
+              class="filter__input"
+              value="1950"
+              min="1920"
+              max="2022"
+              step="1"
+              type="range"
+            />
+            <input
+              class="filter__input"
+              value="2000"
+              min="1920"
+              max="2022"
+              step="1"
+              type="range"
+            />
+          </div>
+          <button class="filter__submit" type="submit">Apply</button>
         </div>
       </form>
     </div>
