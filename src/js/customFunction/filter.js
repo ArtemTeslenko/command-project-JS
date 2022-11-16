@@ -1,3 +1,4 @@
+import { refs } from '../reference/homeRefs';
 // const refs = {
 //  openFilterBtn: document.querySelector('.filter_open_btn'),
 //   closeFilterBtn: document.querySelector('.filter_close_btn'),
@@ -12,7 +13,7 @@
 //   refs.menu.classList.toggle('is-hidden');
 //   //   refs.body.classList.toggle('no-scroll');
 // }
-const slides = document.querySelectorAll('.filter__input');
+
 const date = new Date();
 const currentYear = date.getFullYear();
 console.log(currentYear);
@@ -22,33 +23,31 @@ function getVals() {
   // Get slider values
   //var parent = this.parentNode;
   //const slides = document.querySelectorAll('.filter__input');
-  console.log('slides', slides);
-  const slide1 = parseFloat(slides[0].value);
-  const slide2 = parseFloat(slides[1].value);
+
+  const slider1 = parseFloat(refs.sliders[0].value);
+  const slider2 = parseFloat(refs.sliders[1].value);
   // Neither slider will clip the other, so make sure we determine which is larger
-  if (slide1 > slide2) {
-    const tmp = slide2;
-    slide2 = slide1;
-    slide1 = tmp;
+  if (slider1 > slider2) {
+    const tmp = slider2;
+    slider2 = slider1;
+    slider1 = tmp;
   }
 
-  const displayRangeValues = document.querySelector('.rangeValues'); //[0];
-  displayRangeValues.textContent = `${slide1} - ${slide2}`;
+  refs.displayRangeValues.textContent = `${slider1} - ${slider2}`;
 }
 //-------
 // --- слушатель
 window.onload = function () {
   // Initialize Sliders
-  const sliderSections = document.getElementsByClassName('input-year');
 
-  let sliders = document.querySelectorAll('.filter__input'); //
-  console.log(sliders);
-  for (var y = 0; y < sliders.length; y++) {
-    if (sliders[y].type === 'range') {
-      sliders[y].max = currentYear;
-      sliders[y].oninput = getVals;
+  // let sliders = document.querySelectorAll('.filter__input'); //
+  //console.log(refs.sliders);
+  for (var y = 0; y < refs.sliders.length; y++) {
+    if (refs.sliders[y].type === 'range') {
+      refs.sliders[y].max = currentYear;
+      refs.sliders[y].oninput = getVals;
       // Manually trigger event first time to display values
-      sliders[y].oninput();
+      refs.sliders[y].oninput();
     }
   }
 };

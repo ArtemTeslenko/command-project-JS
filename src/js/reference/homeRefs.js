@@ -42,4 +42,6 @@ export const refs = {
   openFilterBtn: document.querySelector('.filter_open_btn'),
   closeFilterBtn: document.querySelector('.filter_close_btn'),
   filterEl: document.querySelector('.filter'),
+  sliders: document.querySelectorAll('.filter__input'),
+  displayRangeValues: document.querySelector('.rangeValues'),
 };
