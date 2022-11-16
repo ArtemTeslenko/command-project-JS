@@ -1517,11 +1517,12 @@ html {
 }
 
 .input-year {
+  display: flex;
   position: relative;
   width: 300px;
   height: 300px;
   float: left;
-  text-align: center;
+  justify-content: center;
 }
 
 .rangeValues {
@@ -1538,7 +1539,6 @@ input[type=range] {
   border: 1px solid orangered;
   border-radius: 14px;
   background-color: transparent;
-  left: 0;
   top: 50px;
   width: 200px;
   height: 20px;
@@ -1551,8 +1551,8 @@ input[type=range]::-webkit-slider-thumb {
   outline: 0;
   -webkit-appearance: none;
   border: none;
-  height: 18px;
-  width: 18px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   background: rgba(218, 32, 32, 0.788);
   margin-top: 1px;
