@@ -281,7 +281,7 @@ img {
   display: flex;
   position: absolute;
   right: 0;
-  bottom: 6px;
+  bottom: 26px;
   cursor: pointer;
   width: 12px;
   height: 12px;
@@ -1484,14 +1484,15 @@ html {
 }
 
 .filter {
+  background-color: #000;
   margin-top: 20px;
   position: relative;
   padding: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(238, 235, 235);
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 450px) {
   .filter {
@@ -1536,7 +1537,7 @@ input[type=range] {
   pointer-events: none;
   position: absolute;
   -webkit-appearance: none;
-  border: 1px solid orangered;
+  border: 1px solid #ff4500;
   border-radius: 14px;
   background-color: transparent;
   top: 50px;
@@ -1554,7 +1555,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background: rgba(218, 32, 32, 0.788);
+  background: #ff4500;
   margin-top: 1px;
   margin-bottom: 1px;
 }/*# sourceMappingURL=index.css.map */
