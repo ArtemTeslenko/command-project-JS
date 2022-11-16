@@ -4,6 +4,7 @@ import { paginationControl } from '../customFunction/paginationControls';
 import { filmsTrendRender } from '../render';
 import { fetchFilms } from './fetchFilmsTrends';
 import { filmsTrendRender } from '../render';
+import { inFilters } from '../customFunction/filter';
 import {
   openSpinnerHome,
   closeSpinnerHome,
@@ -46,6 +47,7 @@ function onSearchSubmitMovie(event) {
     trendsControls();
     refs.searchMovieEl[0].value = '';
   } else {
+    //inFilters(); //ganna
     movieNameSubmit = movieName;
     trendUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${movieNameSubmit}&page=`;
     mainSearch();

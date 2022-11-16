@@ -16,7 +16,6 @@ import { refs } from '../reference/homeRefs';
 
 const date = new Date();
 const currentYear = date.getFullYear();
-console.log(currentYear);
 
 // --Принимает данные с инпута i запис в спан выбранный год
 function getVals() {
@@ -33,26 +32,44 @@ function getVals() {
     slider1 = tmp;
   }
 
-  refs.displayRangeValues.textContent = `${slider1} - ${slider2}`;
+  // refs.displayRangeValues.textContent = `${slider1} - ${slider2}`;
+  refs.displayMinYear.textContent = slider1;
+  refs.displayMaxYear.textContent = slider2;
 }
 //-------
 // --- слушатель
 window.onload = function () {
   // Initialize Sliders
-
+  refs.sliders[1].value = currentYear;
   // let sliders = document.querySelectorAll('.filter__input'); //
   //console.log(refs.sliders);
   for (var y = 0; y < refs.sliders.length; y++) {
     if (refs.sliders[y].type === 'range') {
       refs.sliders[y].max = currentYear;
+
       refs.sliders[y].oninput = getVals;
       // Manually trigger event first time to display values
       refs.sliders[y].oninput();
     }
   }
 };
-// --------
+// --------это в поиск?
+export function inFilters() {
+  refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
+}
 
+function onFilterSubmitBtn(evt) {
+  evt.preventDefault();
+  const minYear = refs.displayMinYear.textContent;
+  const maxYear = refs.displayMaxYear.textContent;
+  //   console.dir(evt.target.elements.yearFirst.value);
+  //   console.dir(evt.target.elements.yearSec.value);
+  kukuku(minYear, maxYear);
+  return minYear, maxYear;
+}
+function kukuku(minYear, maxYear) {
+  console.log(minYear, maxYear);
+}
 //-----------------------------------------
 ////object.addEventListener("load", myScript);
 

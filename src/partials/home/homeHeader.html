@@ -45,82 +45,87 @@
       <form class="filter-form">
         <div class="checkbox-genre">
           <label>
-            <input type="checkbox" name="hobby" value="action" />
+            <input type="checkbox" name="genre" value="action" />
             Action
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="adventure'" />
+            <input type="checkbox" name="genre" value="adventure'" />
             Adventure
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="animation" />
+            <input type="checkbox" name="genre" value="animation" />
             Animation
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="comedy" />
+            <input type="checkbox" name="genre" value="comedy" />
             Comedy
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="crime" />
+            <input type="checkbox" name="genre" value="crime" />
             Crime
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="documentary" />
+            <input type="checkbox" name="genre" value="documentary" />
             Documentary </label
           ><label>
-            <input type="checkbox" name="hobby" value="drama" />
+            <input type="checkbox" name="genre" value="drama" />
             Drama
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="family" />
+            <input type="checkbox" name="genre" value="family" />
             Family
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="fantasy" />
+            <input type="checkbox" name="genre" value="fantasy" />
             Fantasy
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="history" />
+            <input type="checkbox" name="genre" value="history" />
             History
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="horror" />
+            <input type="checkbox" name="genre" value="horror" />
             Horror
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="music" />
+            <input type="checkbox" name="genre" value="music" />
             Music </label
           ><label>
-            <input type="checkbox" name="hobby" value="romance" />
+            <input type="checkbox" name="genre" value="romance" />
             Romance
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="science fiction" />
+            <input type="checkbox" name="genre" value="science fiction" />
             Science Fiction
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="tv Movie" />
+            <input type="checkbox" name="genre" value="tv Movie" />
             TV Movie
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="thriller" />
+            <input type="checkbox" name="genre" value="thriller" />
             Thriller</label
           >
           <label>
-            <input type="checkbox" name="hobby" value="war" />
+            <input type="checkbox" name="genre" value="war" />
             War
           </label>
           <label>
-            <input type="checkbox" name="hobby" value="western" />
+            <input type="checkbox" name="genre" value="western" />
             Western
           </label>
         </div>
         <div class="input-year__overlay">
           <div class="input-year">
-            <span class="rangeValues"></span>
+            <div class="rangeValues">
+              <span class="year-min"></span>
+              <span> - </span>
+              <span class="year-max"></span>
+            </div>
             <input
               class="filter__input"
-              value="1950"
+              value="1920"
+              name="yearFirst"
               min="1920"
               max="2020"
               step="1"
@@ -128,7 +133,8 @@
             />
             <input
               class="filter__input"
-              value="2000"
+              value=""
+              name="yearSec"
               min="1920"
               max="2020"
               step="1"

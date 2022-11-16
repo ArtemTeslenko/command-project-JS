@@ -43,5 +43,9 @@ export const refs = {
   closeFilterBtn: document.querySelector('.filter_close_btn'),
   filterEl: document.querySelector('.filter'),
   sliders: document.querySelectorAll('.filter__input'),
-  displayRangeValues: document.querySelector('.rangeValues'),
+  //displayRangeValues: document.querySelector('.rangeValues'),
+  displayMinYear: document.querySelector('.year-min'),
+  displayMaxYear: document.querySelector('.year-max'),
+  filterSubmitBtn: document.querySelector('.filter__submit'),
+  filterFormEl: document.querySelector('.filter-form'),
 };
