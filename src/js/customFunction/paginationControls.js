@@ -1,8 +1,10 @@
-import { paginationRenderL } from './paginationL';
-import { paginationRenderSmall } from './paginationSmall';
 import { refs } from '../reference/homeRefs';
-import { paginationArrowHidden } from './paginationArrowHidden';
-import { paginationRenderMobile } from './paginationMobile';
+import {
+  paginationRenderL,
+  paginationRenderSmall,
+  paginationArrowHidden,
+  paginationRenderMobile,
+} from './';
 
 export function paginationControl(
   totalPage,

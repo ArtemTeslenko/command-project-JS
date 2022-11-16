@@ -9,6 +9,5 @@ import {
 
 onClickQueueAndWatchedOpen();
 onWatchedOpen();
-// onOpenModalFilm(refs.libraryEl); // to delete !!!check
 openModalShowTeam();
 onOpenModalFilm(refs.libraryEl);

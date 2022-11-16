@@ -1,13 +1,13 @@
+import { KEY, BASEURLTRAILER } from './commonKey&Url';
 import { renderTrailer } from '../render';
 
 export function trailerRequest(e) {
   e.preventDefault();
   fetch(
-    `https://api.themoviedb.org/3/movie/${e.currentTarget.id}/videos?api_key=894ef72300682f1db325dae2afe3e7e2&language=en-US`
+    `${BASEURLTRAILER}${e.currentTarget.id}/videos?api_key=${KEY}&language=en-US`
   )
     .then(res => res.json())
     .then(data => {
-      // const results = data.results.map(result => result.key); // to delete
       renderTrailer(data.results[0].key);
     });
 }
