@@ -8,6 +8,8 @@ import {
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
 import { onClickTrend } from '../controls';
+import { onClickSearch } from '../requests/fetchSearchFilm';
+let filterUrl;
 // const refs = {
 //  openFilterBtn: document.querySelector('.filter_open_btn'),
 //   closeFilterBtn: document.querySelector('.filter_close_btn'),
@@ -28,12 +30,8 @@ const currentYear = date.getFullYear();
 
 // --Принимает данные с инпута i запис в спан выбранный год
 function getVals() {
-  // Get slider values
-  //var parent = this.parentNode;
-  //const slides = document.querySelectorAll('.filter__input');
-
-  const slider1 = parseFloat(refs.sliders[0].value);
-  const slider2 = parseFloat(refs.sliders[1].value);
+  let slider1 = parseFloat(refs.sliders[0].value);
+  let slider2 = parseFloat(refs.sliders[1].value);
   // Neither slider will clip the other, so make sure we determine which is larger
   if (slider1 > slider2) {
     const tmp = slider2;
@@ -41,7 +39,6 @@ function getVals() {
     slider1 = tmp;
   }
 
-  // refs.displayRangeValues.textContent = `${slider1} - ${slider2}`;
   refs.displayMinYear.textContent = slider1;
   refs.displayMaxYear.textContent = slider2;
 }
@@ -49,54 +46,68 @@ function getVals() {
 // --- слушатель
 window.onload = function () {
   // Initialize Sliders
-  refs.sliders[1].value = currentYear;
+
   // let sliders = document.querySelectorAll('.filter__input'); //
   //console.log(refs.sliders);
   for (var y = 0; y < refs.sliders.length; y++) {
     if (refs.sliders[y].type === 'range') {
       refs.sliders[y].max = currentYear;
-
+      refs.sliders[1].value = date.getFullYear();
       refs.sliders[y].oninput = getVals;
       // Manually trigger event first time to display values
       refs.sliders[y].oninput();
     }
   }
 };
-// --------это в поиск?
+// --------это поиск?
+function onClickFilter(e) {
+  e.preventDefault();
+  filterMain(e.target.dataset.page);
+}
 
 refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
 
 function onFilterSubmitBtn(evt) {
   evt.preventDefault();
-  let page = 1;
+  refs.paginationEl.removeEventListener('click', onClickTrend);
+  refs.paginationEl.removeEventListener('click', onClickSearch);
+
   const minYear = refs.displayMinYear.textContent;
   const maxYear = refs.displayMaxYear.textContent;
-  console.dir(evt.target.elements.yearFirst.value);
+  //console.dir(evt.target.elements.yearFirst.value);
   //   console.dir(evt.target.elements.yearSec.value);
   cleanRender(refs.galleryEl);
   openSpinnerHome();
-  const trendUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}&page=`;
-  fetchFilms(page, trendUrl).then(data => {
-    try {
+  filterUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}&page=`;
+  filterMain();
+}
+
+function filterMain(page) {
+  cleanRender(refs.galleryEl);
+  fetchFilms(page, filterUrl)
+    .then(data => {
+      console.log(data);
       const destinationEl = refs.galleryEl;
       filmsTrendRender(data, destinationEl);
 
       let totalPage = data.total_pages;
-      // ------ V copie
       if (totalPage > 1) {
+        if (totalPage > 500) {
+          totalPage = 500;
+        }
         paginationControl(
-          Number(data.total_pages), // total page
+          Number(totalPage), // total page
           Number(data.page), // current page
-          trendUrl, // big part of url);
-          onClickTrend
+          filterUrl, // big part of url);
+          onClickFilter
         );
       }
-    } catch {
-      console.log(e);
-    } finally {
-      closeSpinnerHome();
-    }
-  });
+    })
+    .catch(err => {
+      console.log(err);
+      // closeSpinnerHome();
+    })
+    .finally(() => closeSpinnerHome());
 }
 
 //-----------------------------------------

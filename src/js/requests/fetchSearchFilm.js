@@ -4,7 +4,7 @@ import { paginationControl } from '../customFunction/paginationControls';
 import { filmsTrendRender } from '../render';
 import { fetchFilms } from './fetchFilmsTrends';
 import { filmsTrendRender } from '../render';
-import { inFilters } from '../customFunction/filter';
+import { onClickFilter } from '../customFunction/filter'; //Ganna filter
 import {
   openSpinnerHome,
   closeSpinnerHome,
@@ -63,6 +63,7 @@ function onClickSearch(e) {
 
 function mainSearch(page) {
   refs.paginationEl.removeEventListener('click', onClickTrend);
+  refs.paginationEl.removeEventListener('click', onClickFilter); //Ganna for filter
   openSpinnerHome();
 
   refs.galleryEl.innerHTML = '';
