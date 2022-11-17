@@ -1,4 +1,13 @@
 import { refs } from '../reference/homeRefs';
+import { filmsTrendRender } from '../render/filmsTrendRender';
+import { fetchFilms } from '../requests/fetchFilmsTrends';
+import { cleanRender } from '../customFunction/functionCleanRender';
+import { paginationControl } from '../customFunction/paginationControls';
+import {
+  openSpinnerHome,
+  closeSpinnerHome,
+} from '../customFunction/spinerHome';
+import { onClickTrend } from '../controls';
 // const refs = {
 //  openFilterBtn: document.querySelector('.filter_open_btn'),
 //   closeFilterBtn: document.querySelector('.filter_close_btn'),
@@ -54,23 +63,45 @@ window.onload = function () {
   }
 };
 // --------это в поиск?
-export function inFilters() {
-  refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
-}
+
+refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
 
 function onFilterSubmitBtn(evt) {
   evt.preventDefault();
+  let page = 1;
   const minYear = refs.displayMinYear.textContent;
   const maxYear = refs.displayMaxYear.textContent;
-  //   console.dir(evt.target.elements.yearFirst.value);
+  console.dir(evt.target.elements.yearFirst.value);
   //   console.dir(evt.target.elements.yearSec.value);
-  kukuku(minYear, maxYear);
-  return minYear, maxYear;
+  cleanRender(refs.galleryEl);
+  openSpinnerHome();
+  const trendUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}&page=`;
+  fetchFilms(page, trendUrl).then(data => {
+    try {
+      const destinationEl = refs.galleryEl;
+      filmsTrendRender(data, destinationEl);
+
+      let totalPage = data.total_pages;
+      // ------ V copie
+      if (totalPage > 1) {
+        paginationControl(
+          Number(data.total_pages), // total page
+          Number(data.page), // current page
+          trendUrl, // big part of url);
+          onClickTrend
+        );
+      }
+    } catch {
+      console.log(e);
+    } finally {
+      closeSpinnerHome();
+    }
+  });
 }
-function kukuku(minYear, maxYear) {
-  console.log(minYear, maxYear);
-}
+
 //-----------------------------------------
+//https://api.themoviedb.org/3/discover/movie?page=1&api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=2010&primary_release_date.lte=2015
+
 ////object.addEventListener("load", myScript);
 
 // window.onload = function () {

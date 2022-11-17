@@ -47,7 +47,6 @@ function onSearchSubmitMovie(event) {
     trendsControls();
     refs.searchMovieEl[0].value = '';
   } else {
-    //inFilters(); //ganna
     movieNameSubmit = movieName;
     trendUrl = `https://api.themoviedb.org/3/search/movie?api_key=${keyApi}&query=${movieNameSubmit}&page=`;
     mainSearch();
