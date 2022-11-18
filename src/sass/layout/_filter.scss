@@ -113,4 +113,5 @@ input[type='range']::-webkit-slider-runnable-track {
   @extend %common-btn;
   width: 120px;
   height: 50px;
+  cursor: pointer;
 }

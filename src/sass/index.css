@@ -1573,4 +1573,5 @@ input[type=range]::-webkit-slider-thumb {
 .filter__submit {
   width: 120px;
   height: 50px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
