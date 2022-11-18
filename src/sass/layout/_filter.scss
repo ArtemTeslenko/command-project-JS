@@ -130,14 +130,13 @@ input[type='range']::-webkit-slider-thumb {
   &:focus,
   &:hover {
     border-color: getColor('orange-btn');
+    & .filter_icon-close {
+      fill: getColor('orange-btn');
+    }
   }
 }
 .filter_icon-close {
   fill: rgba(33, 33, 33, 1);
 
   @include transitions(fill);
-  &:focus,
-  &:hover {
-    fill: getColor('orange-btn');
-  }
 }

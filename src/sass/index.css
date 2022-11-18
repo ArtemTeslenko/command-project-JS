@@ -1605,13 +1605,13 @@ input[type=range]::-webkit-slider-thumb {
 .filter_close_btn:focus, .filter_close_btn:hover {
   border-color: #ff6b08;
 }
+.filter_close_btn:focus .filter_icon-close, .filter_close_btn:hover .filter_icon-close {
+  fill: #ff6b08;
+}
 
 .filter_icon-close {
   fill: rgb(33, 33, 33);
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.filter_icon-close:focus, .filter_icon-close:hover {
-  fill: #ff6b08;
 }/*# sourceMappingURL=index.css.map */
