@@ -1500,12 +1500,26 @@ html {
 }
 @media screen and (max-width: 450px) {
   .filter {
-    max-width: 500px;
+    padding: 10px;
+    top: 230px;
   }
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 451px) and (max-width: 549px) {
+  .filter {
+    max-width: 450px;
+    top: 230px;
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 550px) {
   .filter {
     width: 500px;
+    top: 230px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter {
+    top: 220px;
   }
 }
 
@@ -1521,12 +1535,34 @@ html {
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
+@media screen and (max-width: 450px) {
+  .filter-form {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 549px) {
+  .filter-form {
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+}
 
 .checkbox-genre {
   display: flex;
   flex-direction: column;
   width: 170px;
   align-items: flex-start;
+}
+@media screen and (max-width: 450px) {
+  .checkbox-genre {
+    width: 140px;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 549px) {
+  .checkbox-genre {
+    width: 160px;
+  }
 }
 
 .input-year__overlay {
@@ -1560,6 +1596,16 @@ input[type=range] {
   top: 50px;
   width: 200px;
   height: 20px;
+}
+@media screen and (max-width: 450px) {
+  input[type=range] {
+    width: 125px;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 549px) {
+  input[type=range] {
+    width: 140px;
+  }
 }
 
 input[type=range]::-webkit-slider-thumb {
