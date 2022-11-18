@@ -12,6 +12,7 @@ import {
   listenerBack,
   listenerUserOut,
   onListenerSearchMovie,
+  onFilterBtnClick,
 } from './js/controls';
 
 onListenerSearchMovie();
@@ -22,6 +23,7 @@ onOpenModalFilm(refs.filmsGalleryEl);
 // зразок функції для відкриття чистої модалки
 scrollToTop();
 openModalShowTeam();
+onFilterBtnClick();
 listenerBack(); // names for Vlad Sid
 listenerBackFBAuth(); // names for Vlad Sid
 listenerUserOut(); // names for Vlad Sid

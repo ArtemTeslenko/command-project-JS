@@ -13,9 +13,10 @@ import { onClickTrend, onClickSearch } from '../controls';
 
 let filterUrl;
 
-refs.openFilterBtn.addEventListener('click', onToggleFilter);
+export function onFilterBtnClick() {
+  refs.openFilterBtn.addEventListener('click', onToggleFilter);
+}
 refs.closeFilterBtn.addEventListener('click', offToggleFilter);
-
 // open filter
 function onToggleFilter() {
   refs.filterEl.classList.toggle('is-hidden');
