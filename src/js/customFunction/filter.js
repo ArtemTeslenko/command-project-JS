@@ -10,35 +10,30 @@ import {
 import { onClickTrend } from '../controls';
 import { onClickSearch } from '../requests/fetchSearchFilm';
 let filterUrl;
-// const refs = {
-//  openFilterBtn: document.querySelector('.filter_open_btn'),
-//   closeFilterBtn: document.querySelector('.filter_close_btn'),
-//   filterEl: document.querySelector('.filter'),
-//   body: document.querySelector('body'),
-// };
 
 refs.openFilterBtn.addEventListener('click', onToggleFilter);
 refs.closeFilterBtn.addEventListener('click', offToggleFilter);
+
+// open filter
 function onToggleFilter() {
   refs.filterEl.classList.toggle('is-hidden');
-  //   refs.body.classList.toggle('no-scroll');
 }
+// close filter
 function offToggleFilter() {
   let checkboxes = document.querySelectorAll('input[name="genre"]:checked');
-
   checkboxes.forEach(checkbox => {
     checkbox.checked = false;
   });
+  const date = new Date();
   refs.sliders[0].value = refs.sliders[0].min;
 
   refs.sliders[1].value = date.getFullYear();
 
   getVals();
   refs.filterEl.classList.toggle('is-hidden');
-  //document.querySelectorAll('input[name="genre"]').checked = false;
 }
-const date = new Date();
-const currentYear = date.getFullYear();
+
+//const currentYear = date.getFullYear();
 
 // --Принимает данные с инпута i запис в спан выбранный год
 function getVals() {
@@ -60,11 +55,10 @@ window.onload = rangeChange();
 function rangeChange() {
   // Initialize Sliders
 
-  // let sliders = document.querySelectorAll('.filter__input'); //
-  //console.log(refs.sliders);
   for (let y = 0; y < refs.sliders.length; y++) {
     if (refs.sliders[y].type === 'range') {
-      refs.sliders[y].max = currentYear;
+      const date = new Date();
+      refs.sliders[y].max = date.getFullYear();
       refs.sliders[1].value = date.getFullYear();
       refs.sliders[y].oninput = getVals;
       // Manually trigger event first time to display values
@@ -143,22 +137,3 @@ function filterMain(page) {
 
 //-----------------------------------------
 //https://api.themoviedb.org/3/discover/movie?page=1&api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=2010&primary_release_date.lte=2015
-
-////object.addEventListener("load", myScript);
-
-// window.onload = function () {
-//   // Initialize Sliders
-//   const sliderSections = document.getElementsByClassName('input-year');
-
-//   for (var x = 0; x < sliderSections.length; x++) {
-//     //     let sliders = sliderSections[x].getElementsByTagName('input'); //
-//     let sliders = sliderSections[x].querySelectorAll('.filter__input');
-//     for (var y = 0; y < sliders.length; y++) {
-//       if (sliders[y].type === 'range') {
-//         sliders[y].oninput = getVals;
-//         // Manually trigger event first time to display values
-//         sliders[y].oninput();
-//       }
-//     }
-//   }
-// };
