@@ -1,0 +1,143 @@
+.filter_open_btn {
+  margin-left: 50%;
+  transform: translate(-50%);
+  @extend %secondary-btn;
+  background-color: rgb(238, 235, 235);
+  color: black;
+  width: 120px;
+  cursor: pointer;
+}
+.filter {
+  background-color: #000;
+  margin-top: 20px;
+  position: relative;
+  padding: 40px;
+
+  background-color: rgb(238, 235, 235);
+
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  @media screen and (max-width: 450px) {
+    max-width: 500px;
+  }
+  @media screen and (min-width: 450px) {
+    width: 500px;
+  }
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.filter-form {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+.checkbox-genre {
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  align-items: flex-start;
+}
+.input-year__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-year {
+  display: flex;
+  position: relative;
+
+  height: 150px;
+  //   float: left;
+  justify-content: center;
+}
+.rangeValues {
+  // outline: 1px solid #ff4500;
+  color: #000;
+  //   position: relative;
+
+  height: 30px;
+  //   float: left;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+}
+input[type='range'] {
+  pointer-events: none;
+  position: absolute;
+  -webkit-appearance: none;
+  //   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: 1px solid getColor('orange-btn'); //#ff4500;
+  border-radius: 14px;
+
+  background-color: transparent;
+
+  top: 50px;
+  width: 200px;
+
+  height: 20px;
+}
+input[type='range']::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  -webkit-appearance: none;
+  border: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #ff4500;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+//input[type='range']::-webkit-slider-runnable-track {
+//  width: 300px;
+//height: 5px;
+// background: #ddd;
+// border: none;
+// border-radius: 3px;
+// }
+
+.filter__submit {
+  @extend %common-btn;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+}
+.filter_close_btn {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  fill: rgba(33, 33, 33, 1);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  @include transitions(border-color);
+  &:focus,
+  &:hover {
+    border-color: getColor('orange-btn');
+  }
+}
+.filter_icon-close {
+  fill: rgba(33, 33, 33, 1);
+
+  @include transitions(fill);
+  &:focus,
+  &:hover {
+    fill: getColor('orange-btn');
+  }
+}

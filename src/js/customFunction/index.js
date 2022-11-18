@@ -7,4 +7,5 @@ export * from './paginationMobile';
 export * from './spinerHome';
 export * from './getBtnLibrary';
 export * from './checkoutBtnModalFilm';
+export * from './filter';
 export * from './paginationSmall';

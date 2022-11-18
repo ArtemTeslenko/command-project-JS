@@ -38,7 +38,7 @@ img {
   padding-bottom: 60px;
 }
 
-.form-auth__button-reg, .form-auth__btn-submit, .load-more-btn, .button-add__watched {
+.filter__submit, .form-auth__button-reg, .form-auth__btn-submit, .load-more-btn, .button-add__watched {
   background-color: #ff6b08;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -47,12 +47,12 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-auth__button-reg:hover, .form-auth__btn-submit:hover, .load-more-btn:hover, .button-add__watched:hover, .form-auth__button-reg:focus, .form-auth__btn-submit:focus, .load-more-btn:focus, .button-add__watched:focus {
+.filter__submit:hover, .form-auth__button-reg:hover, .form-auth__btn-submit:hover, .load-more-btn:hover, .button-add__watched:hover, .filter__submit:focus, .form-auth__button-reg:focus, .form-auth__btn-submit:focus, .load-more-btn:focus, .button-add__watched:focus {
   background-color: #de5900;
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
 }
 
-.button-add__queue {
+.filter_open_btn, .button-add__queue {
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
@@ -61,7 +61,7 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-add__queue:hover, .button-add__queue:focus {
+.filter_open_btn:hover, .button-add__queue:hover, .filter_open_btn:focus, .button-add__queue:focus {
   background-color: #de5900;
   border: 1px solid #de5900;
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
@@ -254,6 +254,7 @@ img {
 }
 
 .search-form__input {
+  margin-bottom: 20px;
   border: none;
   border-bottom: 0.5px solid rgb(255, 255, 255);
   width: 100%;
@@ -280,7 +281,7 @@ img {
   display: flex;
   position: absolute;
   right: 0;
-  bottom: 6px;
+  bottom: 26px;
   cursor: pointer;
   width: 12px;
   height: 12px;
@@ -1476,4 +1477,141 @@ html {
   100% {
     transform: rotate(360deg);
   }
+}
+.filter_open_btn {
+  margin-left: 50%;
+  transform: translate(-50%);
+  background-color: rgb(238, 235, 235);
+  color: black;
+  width: 120px;
+  cursor: pointer;
+}
+
+.filter {
+  background-color: #000;
+  margin-top: 20px;
+  position: relative;
+  padding: 40px;
+  background-color: rgb(238, 235, 235);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+@media screen and (max-width: 450px) {
+  .filter {
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 450px) {
+  .filter {
+    width: 500px;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+
+.checkbox-genre {
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  align-items: flex-start;
+}
+
+.input-year__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-year {
+  display: flex;
+  position: relative;
+  height: 150px;
+  justify-content: center;
+}
+
+.rangeValues {
+  color: #000;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+input[type=range] {
+  pointer-events: none;
+  position: absolute;
+  -webkit-appearance: none;
+  border: 1px solid #ff6b08;
+  border-radius: 14px;
+  background-color: transparent;
+  top: 50px;
+  width: 200px;
+  height: 20px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  -webkit-appearance: none;
+  border: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #ff4500;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.filter__submit {
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.filter_close_btn {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  fill: rgb(33, 33, 33);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter_close_btn:focus, .filter_close_btn:hover {
+  border-color: #ff6b08;
+}
+
+.filter_icon-close {
+  fill: rgb(33, 33, 33);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter_icon-close:focus, .filter_icon-close:hover {
+  fill: #ff6b08;
 }/*# sourceMappingURL=index.css.map */

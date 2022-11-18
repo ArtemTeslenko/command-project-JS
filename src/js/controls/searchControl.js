@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import { refs } from '../reference/homeRefs';
+import { onClickFilter } from '../customFunction'; //Ganna filter
 import {
   paginationControl,
   openSpinnerHome,
@@ -52,7 +53,7 @@ function onSearchSubmitMovie(event) {
 
 // -----Функция вызова слушателя кнопок и ссылок пагинации-----
 
-function onClickSearch(e) {
+export function onClickSearch(e) {
   e.preventDefault();
   mainSearch(e.target.dataset.page);
 }
@@ -60,6 +61,7 @@ function onClickSearch(e) {
 
 function mainSearch(page) {
   refs.paginationEl.removeEventListener('click', onClickTrend);
+  refs.paginationEl.removeEventListener('click', onClickFilter); //Ganna for filter
   openSpinnerHome();
 
   refs.galleryEl.innerHTML = '';
