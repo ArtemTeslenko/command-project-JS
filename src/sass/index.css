@@ -1574,4 +1574,37 @@ input[type=range]::-webkit-slider-thumb {
   width: 120px;
   height: 50px;
   cursor: pointer;
+}
+
+.filter__close-btn {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  fill: rgb(33, 33, 33);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter__close-btn:focus, .filter__close-btn:hover {
+  border-color: #ff6b08;
+}
+
+.filter__icon-close {
+  fill: rgb(33, 33, 33);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter__icon-close:focus, .filter__icon-close:hover {
+  fill: #ff6b08;
 }/*# sourceMappingURL=index.css.map */

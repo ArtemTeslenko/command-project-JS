@@ -115,3 +115,33 @@ input[type='range']::-webkit-slider-runnable-track {
   height: 50px;
   cursor: pointer;
 }
+.filter__close-btn {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  fill: rgba(33, 33, 33, 1);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  @include transitions(border-color);
+  &:focus,
+  &:hover {
+    border-color: getColor('orange-btn');
+  }
+}
+.filter__icon-close {
+  fill: rgba(33, 33, 33, 1);
+
+  @include transitions(fill);
+  &:focus,
+  &:hover {
+    fill: getColor('orange-btn');
+  }
+}
