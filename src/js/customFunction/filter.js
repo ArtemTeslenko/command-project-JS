@@ -17,14 +17,22 @@ let filterUrl;
 //   body: document.querySelector('body'),
 // };
 
-refs.openFilterBtn.addEventListener('click', toggleFilter);
-refs.closeFilterBtn.addEventListener('click', toggleFilter);
-
-function toggleFilter() {
+refs.openFilterBtn.addEventListener('click', onToggleFilter);
+refs.closeFilterBtn.addEventListener('click', offToggleFilter);
+function onToggleFilter() {
   refs.filterEl.classList.toggle('is-hidden');
   //   refs.body.classList.toggle('no-scroll');
 }
+function offToggleFilter() {
+  let checkboxes = document.querySelectorAll('input[name="genre"]:checked');
 
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+
+  refs.filterEl.classList.toggle('is-hidden');
+  //document.querySelectorAll('input[name="genre"]').checked = false;
+}
 const date = new Date();
 const currentYear = date.getFullYear();
 
