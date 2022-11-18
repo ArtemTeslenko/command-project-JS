@@ -7,8 +7,7 @@ import {
   openSpinnerHome,
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
-import { onClickTrend } from '../controls';
-import { onClickSearch } from '../requests';
+import { onClickTrend, onClickSearch } from '../controls';
 let filterUrl;
 
 refs.openFilterBtn.addEventListener('click', onToggleFilter);
