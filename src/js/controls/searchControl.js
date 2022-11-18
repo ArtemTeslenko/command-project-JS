@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 import { refs } from '../reference/homeRefs';
-import { onClickFilter } from '../customFunction'; //Ganna filter
+import { onClickFilter } from '../controls'; //Ganna filter
 import {
   paginationControl,
   openSpinnerHome,
@@ -8,7 +8,7 @@ import {
 } from '../customFunction';
 import { filmsTrendRender } from '../render';
 import { fetchFilms } from '../requests';
-import { onClickTrend, trendsControls } from './';
+import { onClickTrend, trendsControls } from '../controls';
 
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
 const textNotify =

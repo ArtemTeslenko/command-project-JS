@@ -1488,9 +1488,9 @@ html {
 }
 
 .filter {
+  position: absolute;
+  top: 220px;
   background-color: #000;
-  margin-top: 20px;
-  position: relative;
   padding: 40px;
   background-color: rgb(238, 235, 235);
   left: 50%;

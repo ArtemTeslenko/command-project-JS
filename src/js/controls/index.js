@@ -7,3 +7,4 @@ export * from './showTeamControl';
 export * from './modalControl';
 export * from './trailerControl';
 export * from './searchControl';
+export * from './filter';

@@ -1,13 +1,16 @@
 import { refs } from '../reference/homeRefs';
-import { filmsTrendRender } from '../render/filmsTrendRender';
-import { fetchFilms } from '../requests/fetchFilmsTrends';
-import { cleanRender } from '../customFunction/functionCleanRender';
-import { paginationControl } from '../customFunction/paginationControls';
+import { filmsTrendRender } from '../render';
+import { fetchFilms } from '../requests';
+//import { cleanRender } from '../customFunction';
+//import { paginationControl } from '../customFunction';
 import {
   openSpinnerHome,
   closeSpinnerHome,
-} from '../customFunction/spinerHome';
+  paginationControl,
+  cleanRender,
+} from '../customFunction';
 import { onClickTrend, onClickSearch } from '../controls';
+
 let filterUrl;
 
 refs.openFilterBtn.addEventListener('click', onToggleFilter);
