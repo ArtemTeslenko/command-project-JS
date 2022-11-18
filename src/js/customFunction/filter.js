@@ -8,7 +8,7 @@ import {
   closeSpinnerHome,
 } from '../customFunction/spinerHome';
 import { onClickTrend } from '../controls';
-import { onClickSearch } from '../requests/fetchSearchFilm';
+import { onClickSearch } from '../requests';
 let filterUrl;
 
 refs.openFilterBtn.addEventListener('click', onToggleFilter);
@@ -67,7 +67,7 @@ function rangeChange() {
   }
 }
 // --------это поиск?
-function onClickFilter(e) {
+export function onClickFilter(e) {
   e.preventDefault();
   filterMain(e.target.dataset.page);
 }

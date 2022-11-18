@@ -53,7 +53,7 @@ function onSearchSubmitMovie(event) {
 
 // -----Функция вызова слушателя кнопок и ссылок пагинации-----
 
-function onClickSearch(e) {
+export function onClickSearch(e) {
   e.preventDefault();
   mainSearch(e.target.dataset.page);
 }
