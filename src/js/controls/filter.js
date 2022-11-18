@@ -1,3 +1,4 @@
+import { KEY, BASEURLFILTER } from '../requests';
 import { refs } from '../reference/homeRefs';
 import { filmsTrendRender } from '../render';
 import { fetchFilms } from '../requests';
@@ -105,7 +106,7 @@ function onFilterSubmitBtn(evt) {
   cleanRender(refs.galleryEl);
   openSpinnerHome();
 
-  filterUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}${genrePartUrl}&page=`;
+  filterUrl = `${BASEURLFILTER}?api_key=${KEY}&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}${genrePartUrl}&page=`;
 
   filterMain();
   offToggleFilter();
