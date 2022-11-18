@@ -29,7 +29,11 @@ function offToggleFilter() {
   checkboxes.forEach(checkbox => {
     checkbox.checked = false;
   });
+  refs.sliders[0].value = refs.sliders[0].min;
 
+  refs.sliders[1].value = date.getFullYear();
+
+  getVals();
   refs.filterEl.classList.toggle('is-hidden');
   //document.querySelectorAll('input[name="genre"]').checked = false;
 }
@@ -52,7 +56,8 @@ function getVals() {
 }
 //-------
 // --- слушатель
-window.onload = function () {
+window.onload = rangeChange();
+function rangeChange() {
   // Initialize Sliders
 
   // let sliders = document.querySelectorAll('.filter__input'); //
@@ -66,7 +71,7 @@ window.onload = function () {
       refs.sliders[y].oninput();
     }
   }
-};
+}
 // --------это поиск?
 function onClickFilter(e) {
   e.preventDefault();
@@ -106,6 +111,7 @@ function onFilterSubmitBtn(evt) {
   filterUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}${genrePartUrl}&page=`;
 
   filterMain();
+  offToggleFilter();
 }
 
 function filterMain(page) {
