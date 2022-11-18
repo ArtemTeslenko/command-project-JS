@@ -5,6 +5,7 @@
   background-color: rgb(238, 235, 235);
   color: black;
   width: 120px;
+  cursor: pointer;
 }
 .filter {
   background-color: #000;
@@ -27,11 +28,11 @@
     width: 500px;
   }
 }
-// Это вернуть .is-hidden {
-//   opacity: 0;
-//   visibility: hidden;
-//   pointer-events: none;
-// }
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .filter-form {
   display: flex;
   align-items: center;
@@ -115,7 +116,7 @@ input[type='range']::-webkit-slider-runnable-track {
   height: 50px;
   cursor: pointer;
 }
-.filter__close-btn {
+.filter_close_btn {
   position: absolute;
   display: flex;
   width: 30px;
@@ -136,7 +137,7 @@ input[type='range']::-webkit-slider-runnable-track {
     border-color: getColor('orange-btn');
   }
 }
-.filter__icon-close {
+.filter_icon-close {
   fill: rgba(33, 33, 33, 1);
 
   @include transitions(fill);

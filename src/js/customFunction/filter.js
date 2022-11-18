@@ -17,13 +17,13 @@ let filterUrl;
 //   body: document.querySelector('body'),
 // };
 
-// refs.openFilterBtn.addEventListener('click', toggleMenu);
-// refs.closeFilterBtn.addEventListener('click', toggleMenu);
+refs.openFilterBtn.addEventListener('click', toggleFilter);
+refs.closeFilterBtn.addEventListener('click', toggleFilter);
 
-// function toggleFilter() {
-//   refs.menu.classList.toggle('is-hidden');
-//   //   refs.body.classList.toggle('no-scroll');
-// }
+function toggleFilter() {
+  refs.filterEl.classList.toggle('is-hidden');
+  //   refs.body.classList.toggle('no-scroll');
+}
 
 const date = new Date();
 const currentYear = date.getFullYear();
