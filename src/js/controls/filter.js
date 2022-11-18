@@ -1,5 +1,6 @@
 import { KEY, BASEURLFILTER } from '../requests';
 import { refs } from '../reference/homeRefs';
+import Notiflix from 'notiflix';
 import { filmsTrendRender } from '../render';
 import { fetchFilms } from '../requests';
 //import { cleanRender } from '../customFunction';
@@ -80,7 +81,7 @@ refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
 
 function onFilterSubmitBtn(evt) {
   evt.preventDefault();
-
+  refs.paginationEl.innerHTML = '';
   refs.paginationEl.removeEventListener('click', onClickTrend);
   refs.paginationEl.removeEventListener('click', onClickSearch);
   // --- Genre
@@ -120,6 +121,19 @@ function filterMain(page) {
       filmsTrendRender(data, destinationEl);
 
       let totalPage = data.total_pages;
+      if (totalPage === 0) {
+        Notiflix.Report.failure(
+          'UPS',
+          'Thre is no films matching your criteria. Please, change the filter!',
+          'Okay',
+          {
+            backOverlayClickToClose: true,
+            width: '420px',
+            messageFontSize: '16px',
+            titleFontSize: '20px',
+          }
+        );
+      }
       if (totalPage > 1) {
         if (totalPage > 500) {
           totalPage = 500;
