@@ -1,16 +1,14 @@
 import Notiflix from 'notiflix';
 import { refs } from '../reference/homeRefs';
-import { paginationControl } from '../customFunction/paginationControls';
-import { filmsTrendRender } from '../render';
-import { fetchFilms } from './fetchFilmsTrends';
-import { filmsTrendRender } from '../render';
-import { onClickFilter } from '../customFunction/filter'; //Ganna filter
+import { onClickFilter } from '../customFunction'; //Ganna filter
 import {
+  paginationControl,
   openSpinnerHome,
   closeSpinnerHome,
-} from '../customFunction/spinerHome';
-import { onClickTrend } from '../controls';
-import { trendsControls } from '../controls';
+} from '../customFunction';
+import { filmsTrendRender } from '../render';
+import { fetchFilms } from '../requests';
+import { onClickTrend, trendsControls } from './';
 
 const keyApi = '894ef72300682f1db325dae2afe3e7e2';
 const textNotify =

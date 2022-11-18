@@ -1,13 +1,12 @@
 import { refs } from '../reference/homeRefs';
-import { fetchGenreId } from '../requests';
-import { filmsTrendRender } from '../render/filmsTrendRender';
-import { fetchFilms } from '../requests/fetchFilmsTrends';
-import { cleanRender } from '../customFunction/functionCleanRender';
-import { paginationControl } from '../customFunction/paginationControls';
+import { fetchGenreId, fetchFilms } from '../requests';
+import { filmsTrendRender } from '../render';
 import {
+  cleanRender,
+  paginationControl,
   openSpinnerHome,
   closeSpinnerHome,
-} from '../customFunction/spinerHome';
+} from '../customFunction';
 
 export let genreIdArr = [];
 

@@ -11,8 +11,8 @@ import {
   listenerBackFBAuth,
   listenerBack,
   listenerUserOut,
+  onListenerSearchMovie,
 } from './js/controls';
-import { onListenerSearchMovie } from './js/requests';
 
 onListenerSearchMovie();
 ////onSearchPagination();
