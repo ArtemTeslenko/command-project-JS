@@ -1,18 +1,24 @@
+import { KEY, BASEURLFILTER } from '../requests';
 import { refs } from '../reference/homeRefs';
-import { filmsTrendRender } from '../render/filmsTrendRender';
-import { fetchFilms } from '../requests/fetchFilmsTrends';
-import { cleanRender } from '../customFunction/functionCleanRender';
-import { paginationControl } from '../customFunction/paginationControls';
+import Notiflix from 'notiflix';
+import { filmsTrendRender } from '../render';
+import { fetchFilms } from '../requests';
+//import { cleanRender } from '../customFunction';
+//import { paginationControl } from '../customFunction';
 import {
   openSpinnerHome,
   closeSpinnerHome,
-} from '../customFunction/spinerHome';
+  paginationControl,
+  cleanRender,
+} from '../customFunction';
 import { onClickTrend, onClickSearch } from '../controls';
+
 let filterUrl;
 
-refs.openFilterBtn.addEventListener('click', onToggleFilter);
+export function onFilterBtnClick() {
+  refs.openFilterBtn.addEventListener('click', onToggleFilter);
+}
 refs.closeFilterBtn.addEventListener('click', offToggleFilter);
-
 // open filter
 function onToggleFilter() {
   refs.filterEl.classList.toggle('is-hidden');
@@ -75,7 +81,7 @@ refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
 
 function onFilterSubmitBtn(evt) {
   evt.preventDefault();
-
+  refs.paginationEl.innerHTML = '';
   refs.paginationEl.removeEventListener('click', onClickTrend);
   refs.paginationEl.removeEventListener('click', onClickSearch);
   // --- Genre
@@ -101,7 +107,7 @@ function onFilterSubmitBtn(evt) {
   cleanRender(refs.galleryEl);
   openSpinnerHome();
 
-  filterUrl = `https://api.themoviedb.org/3/discover/movie?api_key=894ef72300682f1db325dae2afe3e7e2&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}${genrePartUrl}&page=`;
+  filterUrl = `${BASEURLFILTER}?api_key=${KEY}&primary_release_date.gte=${minYear}&primary_release_date.lte=${maxYear}${genrePartUrl}&page=`;
 
   filterMain();
   offToggleFilter();
@@ -115,6 +121,19 @@ function filterMain(page) {
       filmsTrendRender(data, destinationEl);
 
       let totalPage = data.total_pages;
+      if (totalPage === 0) {
+        Notiflix.Report.failure(
+          'UPS',
+          'Thre is no films matching your criteria. Please, change the filter!',
+          'Okay',
+          {
+            backOverlayClickToClose: true,
+            width: '420px',
+            messageFontSize: '16px',
+            titleFontSize: '20px',
+          }
+        );
+      }
       if (totalPage > 1) {
         if (totalPage > 500) {
           totalPage = 500;
