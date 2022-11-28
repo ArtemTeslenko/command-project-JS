@@ -18,7 +18,11 @@ let filterUrl;
 export function onFilterBtnClick() {
   refs.openFilterBtn.addEventListener('click', onToggleFilter);
 }
-refs.closeFilterBtn.addEventListener('click', offToggleFilter);
+
+if (refs.closeFilterBtn) {
+  refs.closeFilterBtn.addEventListener('click', offToggleFilter);
+}
+
 // open filter
 function onToggleFilter() {
   refs.filterEl.classList.toggle('is-hidden');
@@ -77,7 +81,9 @@ export function onClickFilter(e) {
   filterMain(e.target.dataset.page);
 }
 
-refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
+if (refs.filterFormEl) {
+  refs.filterFormEl.addEventListener('submit', onFilterSubmitBtn);
+}
 
 function onFilterSubmitBtn(evt) {
   evt.preventDefault();
